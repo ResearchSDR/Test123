@@ -100,7 +100,8 @@
         "message": "={{ $json.body }}",
         "options": {
           "appendAttribution": false,
-          "ccList": "joep@fcurban.com"
+          "ccList": "joep@fcurban.com",
+          "bccList": "brian@fcurban.com"
         }
       },
       "type": "n8n-nodes-base.gmail",
