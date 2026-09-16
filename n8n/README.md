@@ -29,6 +29,11 @@ Execute  →  Get leads from sheet  →  Build send queue  →  Loop over leads 
   the run — that row gets `Failed` instead of `Emailed`.
 * **Wait between sends** throttles to one email per 20s.
 
+`Compose email` runs in **Run Once for Each Item** mode — it handles one lead and
+returns one item. Leave it there. In "Run Once for All Items" it still works
+while `Loop over leads` has Batch Size 1, but raise that batch size and it would
+compose the first lead of each batch and silently drop the rest.
+
 ## How sent leads are tracked
 
 The sheet is the record, written **per lead, as the run goes** — not at the end.
@@ -156,6 +161,7 @@ Two options:
 | Batch size (now **2**, for testing) | `Build send queue` → `const LIMIT` |
 | Delay between sends | `Wait between sends` → Amount |
 | Email copy / subject | `Compose email` → the `body` array |
+| Leads per loop pass | `Loop over leads` → Batch Size (keep at 1) |
 | Which rows count as "done" | `Build send queue` → `STATUS_COL` check |
 
 ## Before you run 300
