@@ -77,13 +77,63 @@ won't break anything. To run a different city, change the `sheetName` value on
 1. **Add three columns** to the tab, to the right of the existing 13:
    `Status`, `Sent at`, `Send error`. The workflow only sends to rows where
    `Status` is empty, and writes into all three afterwards. Without them nothing
-   gets marked and every run re-sends the same leads.
+   gets marked and every run re-sends the same leads. Add `WhatsApp status` and
+   `WhatsApp at` too if you plan to enable the WhatsApp branch.
 2. **Credentials** — pick your Google Sheets OAuth2 credential on both Sheets
    nodes, and your Gmail OAuth2 credential on **Send email**. The account must
    have edit access to the spreadsheet above.
 3. **Re-pick the update columns** — open **Mark as emailed** / **Mark as failed**,
    let the column list load once, and confirm the mapping is
    `row_number` (matching) + `Status` / `Sent at` / `Send error`.
+
+## WhatsApp branch (disabled — read this before enabling)
+
+Hangs off `Mark as emailed` as a side branch, so it can never affect email
+sending or tracking: `Has a mobile number?` → `Send WhatsApp` → `Mark WhatsApp status`.
+
+Two more sheet columns: `WhatsApp status`, `WhatsApp at`.
+
+**Only 10% of your numbers can receive WhatsApp.** It delivers to mobiles only,
+and this sheet is mostly switchboards:
+
+| Tab | Rows | Mobile | Landline | Blank |
+|---|---|---|---|---|
+| London | 6,211 | 433 (7%) | 4,381 (70%) | 1,341 (21%) |
+| Amsterdam | 4,220 | 459 (10%) | 2,758 (65%) | 967 (22%) |
+| Stockholm | 4,337 | 732 (16%) | 2,849 (65%) | 734 (16%) |
+| Munich | 1,881 | 112 (5%) | 1,389 (73%) | 376 (19%) |
+
+`Compose email` normalises `Phone (international)` to E.164 and keeps it only if
+the prefix is a mobile range (UK `447`, NL `316`, SE `467`, DE `4915-4917`,
+ES `346/347`, BE `324`). Everything else becomes `''` and the IF node routes it
+past the branch. Dry run over London: **434 messaged, 5,777 skipped.**
+
+**Why it ships disabled.** The WhatsApp Business Cloud API rejects free-form
+messages to people who have not messaged you in the last 24 hours. Cold outreach
+*must* use a Meta-approved template. So before enabling:
+
+1. In Meta WhatsApp Manager, create a **Marketing** template. Submit something like:
+
+   > Hi {{1}}, Joe here from FC Urban. We run social football games near {{2}}
+   > and are looking for local companies to play after work. We sort the pitch,
+   > payments and organisation. Interested in trying it? Reply STOP to opt out.
+
+2. Wait for approval (hours to days).
+3. Un-disable **Send WhatsApp** and **Mark WhatsApp status** (both — enabling only
+   the first sends without recording it).
+4. On `Send WhatsApp`: attach your WhatsApp Business Cloud credential, set
+   `phoneNumberId`, and pick the approved template from the dropdown. Map
+   `{{1}}` → `{{ $('Compose email').item.json.waName }}` and
+   `{{2}}` → `{{ $('Compose email').item.json.waVenue }}`. The variable fields
+   only appear once the template is selected, which is why they are not pre-filled.
+
+**The risk is real.** Marketing templates to scraped numbers that never opted in
+get marked "block/report" fast. That drops your quality rating, then your
+messaging limit, and Meta can disable the number — the same number you would use
+for real customer conversations. Email bounces cost you nothing comparable. If
+you run it, run it on a separate number, in small batches, and watch the quality
+rating in WhatsApp Manager. Under UK PECR and GDPR, messaging a personal mobile
+is closer to SMS marketing than to B2B email, and the consent bar is higher.
 
 ## Marking rows green
 
