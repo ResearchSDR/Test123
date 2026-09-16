@@ -82,11 +82,26 @@ won't break anything. To run a different city, change the `sheetName` value on
 
 ## Setup (3 things)
 
-1. **Add three columns** to the tab, to the right of the existing 13:
-   `Status`, `Sent at`, `Send error`. The workflow only sends to rows where
-   `Status` is empty, and writes into all three afterwards. Without them nothing
-   gets marked and every run re-sends the same leads. Add `WhatsApp status` and
-   `WhatsApp at` too if you plan to enable the WhatsApp branch.
+1. **Add the tracking columns.** The sheet ships with 13 columns, `A` Business
+   through `M` From list. Type these into row 1, exact spelling, no trailing
+   spaces:
+
+   | Cell | Header |
+   |---|---|
+   | `N1` | `Status` |
+   | `O1` | `Sent at` |
+   | `P1` | `Send error` |
+   | `Q1` | `WhatsApp status` — only if you enable the WhatsApp branch |
+   | `R1` | `WhatsApp at` — same |
+
+   The workflow only sends to rows where `Status` is empty, and writes into the
+   rest afterwards. **Without these columns the Sheets update writes nothing and
+   returns nothing, n8n skips the whole rest of the loop, and the run reports
+   success after one unrecorded email.** That is the single most common way this
+   workflow appears broken.
+
+   After adding them, open `Mark as emailed` and `Mark as failed` once so n8n
+   reloads the column list from the live sheet (setup step 3).
 2. **Credentials** — pick your Google Sheets OAuth2 credential on both Sheets
    nodes, and your Gmail OAuth2 credential on **Send email**. The account must
    have edit access to the spreadsheet above.
