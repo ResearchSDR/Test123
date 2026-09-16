@@ -143,6 +143,29 @@ you run it, run it on a separate number, in small batches, and watch the quality
 rating in WhatsApp Manager. Under UK PECR and GDPR, messaging a personal mobile
 is closer to SMS marketing than to B2B email, and the consent bar is higher.
 
+## If it sends one email and stops
+
+`Mark as emailed` fans out to three branches, and only one of them — `Wait
+between sends` — carries the loop back to `Loop over leads`. n8n queues
+branches by canvas position, top first, so **`Wait between sends` must sit
+above `Has a mobile number?` and `Colour row green`**. Below them, anything
+that stalls or errors in an optional branch takes the loop with it and the run
+stops after one lead.
+
+If you move nodes around, keep the Wait node the highest of the three.
+
+Other things that produce the same one-and-stop symptom:
+
+* **Wait Unit set to Hours.** n8n's default. Over 65 seconds n8n parks the
+  execution in the database instead of sleeping in process, so the run reports
+  success after one email and resumes much later. Must read **Seconds**.
+* **An error in a side branch.** Open the execution and look for a red node.
+  The WhatsApp and colour branches read back with
+  `$('Compose email').first()` rather than `.item` precisely because `.item`
+  asks n8n to trace pairedItem through both Gmail and Sheets, which can fail
+  and halt the run. `.first()` is safe only while `Loop over leads` has
+  Batch Size 1.
+
 ## Marking rows green
 
 Two options:
