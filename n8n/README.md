@@ -73,8 +73,8 @@ happens one at a time, so it can never be more than one.
 | | |
 |---|---|
 | Spreadsheet | `1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g` |
-| Tab | gid `1397729834` |
-| Link | https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit?gid=1397729834 |
+| Tab | London, gid `163781985` |
+| Link | https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit?gid=163781985 |
 
 Both Sheets nodes address the tab by **gid**, not by name, so renaming the tab
 won't break anything. To run a different city, change the `sheetName` value on
@@ -161,7 +161,7 @@ is closer to SMS marketing than to B2B email, and the consent bar is higher.
 ## If it sends one email and stops
 
 **First check: do `Status`, `Sent at` and `Send error` actually exist in the tab,
-spelled exactly like that, in row 1?** If they don't, the Sheets update node
+spelled exactly like that, in row 1?** (In the current sheet they are `N1`-`P1`.) If they don't, the Sheets update node
 writes nothing and returns nothing. n8n skips every node downstream of an empty
 output — including the loop-back — and still reports "Workflow executed
 successfully". One email goes out, the row is never marked, and the next run
@@ -208,7 +208,7 @@ Two options:
   for `=$N2="Failed"`.
 * **The `Colour row green (optional)` node.** Disabled by default. It calls the
   Sheets API `batchUpdate` to paint the row directly. Spreadsheet id and
-  `sheetId: 1397729834` are already filled in — just enable it and pick the same
+  `sheetId: 163781985` are already filled in — just enable it and pick the same
   Google Sheets OAuth2 credential.
 
 ## Things to change

@@ -22,9 +22,9 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "1397729834",
+          "value": "163781985",
           "mode": "id",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=163781985"
         },
         "options": {}
       },
@@ -128,9 +128,9 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "1397729834",
+          "value": "163781985",
           "mode": "id",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=163781985"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -171,9 +171,9 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "1397729834",
+          "value": "163781985",
           "mode": "id",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=163781985"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -211,7 +211,7 @@
         "nodeCredentialType": "googleSheetsOAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({\n  requests: [{\n    repeatCell: {\n      range: {\n        sheetId: 1397729834,\n        startRowIndex: $('Compose email').first().json.row_number - 1,\n        endRowIndex: $('Compose email').first().json.row_number,\n        startColumnIndex: 0,\n        endColumnIndex: 18\n      },\n      cell: { userEnteredFormat: { backgroundColor: { red: 0.85, green: 0.94, blue: 0.83 } } },\n      fields: \"userEnteredFormat.backgroundColor\"\n    }\n  }]\n}) }}",
+        "jsonBody": "={{ JSON.stringify({\n  requests: [{\n    repeatCell: {\n      range: {\n        sheetId: 163781985,\n        startRowIndex: $('Compose email').first().json.row_number - 1,\n        endRowIndex: $('Compose email').first().json.row_number,\n        startColumnIndex: 0,\n        endColumnIndex: 18\n      },\n      cell: { userEnteredFormat: { backgroundColor: { red: 0.85, green: 0.94, blue: 0.83 } } },\n      fields: \"userEnteredFormat.backgroundColor\"\n    }\n  }]\n}) }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -293,9 +293,9 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "1397729834",
+          "value": "163781985",
           "mode": "id",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=163781985"
         },
         "columns": {
           "mappingMode": "defineBelow",
