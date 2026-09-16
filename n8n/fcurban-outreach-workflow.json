@@ -67,7 +67,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Runs once, after the last lead. Gives you a one-line result in the UI.\nconst attempted = $('Build send queue').all().length;\nreturn [{ json: { attempted, finishedAt: $now.toISO(),\n  note: 'Check the Status column in the sheet for per-lead Emailed / Failed.' } }];\n"
+        "jsCode": "// Fires once, after the last lead. The sheet is the real record; this just totals it up.\nconst processed = $input.all();\nconst queued = $('Build send queue').all().length;\n\nconst failures = [];\nfor (const it of processed) {\n  const row = it.json;\n  if (String(row['Status'] ?? '').trim() === 'Failed') {\n    failures.push({\n      business: row['Business'] ?? '',\n      email: row['Email'] ?? '',\n      error: row['Send error'] ?? '',\n    });\n  }\n}\n\nconst sent = processed.length - failures.length;\n\nreturn [{ json: {\n  queued,\n  sent,\n  failed: failures.length,\n  notReached: queued - processed.length,   // >0 means the run stopped early\n  failures,\n  finishedAt: $now.toISO(),\n  note: `Sheet column \"Status\" is the record: ${sent} rows now say Emailed, ${failures.length} say Failed. ` +\n        `Pressing Execute again skips every row that already has a Status, so it resumes instead of re-sending.`,\n} }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -146,6 +146,9 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
       "position": [
         1080,
         60
@@ -185,6 +188,9 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
       "position": [
         1080,
         280
@@ -314,18 +320,12 @@
       "main": [
         [
           {
-            "node": "Colour row green (optional)",
+            "node": "Wait between sends",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Colour row green (optional)": {
-      "main": [
-        [
+          },
           {
-            "node": "Wait between sends",
+            "node": "Colour row green (optional)",
             "type": "main",
             "index": 0
           }

@@ -25,6 +25,37 @@ Execute  →  Get leads from sheet  →  Build send queue  →  Loop over leads 
   the run — that row gets `Failed` instead of `Emailed`.
 * **Wait between sends** throttles to one email per 20s.
 
+## How sent leads are tracked
+
+The sheet is the record, written **per lead, as the run goes** — not at the end.
+
+| Outcome | `Status` | `Sent at` | `Send error` |
+|---|---|---|---|
+| Gmail accepted it | `Emailed` | timestamp | empty |
+| Gmail rejected it | `Failed` | timestamp | the error |
+| Never reached | empty | empty | empty |
+
+The row is matched by `row_number`, so the result always lands on the lead it
+belongs to even though the sheet is 6,000 rows deep.
+
+What this buys you:
+
+* **Interrupting a run is safe.** Close the tab, hit stop, lose the connection —
+  every lead already sent is already marked. Press Execute again and
+  `Build send queue` skips anything with a `Status`, so it picks up where it
+  stopped instead of re-sending.
+* **A broken tracker stops the run.** If the sheet write fails (wrong columns,
+  revoked access), the workflow halts rather than carrying on sending
+  untracked emails. It retries 3× with a 5s gap first, so a transient Google
+  blip doesn't stop you.
+* **`Run summary`** reports `queued` / `sent` / `failed` / `notReached` at the end,
+  plus the address and error for each failure. `notReached > 0` means the run
+  stopped early — the sheet tells you exactly where.
+
+The **worst case is one unrecorded email**: Gmail accepts a lead, then the sheet
+write fails all 3 retries. That lead gets emailed twice if you re-run. Sending
+happens one at a time, so it can never be more than one.
+
 ## Target sheet (already wired in)
 
 | | |
@@ -83,4 +114,8 @@ Two options:
   exactly the pattern spam filters score on. The 50–80/day you were doing before is
   much safer for the domain. Set `LIMIT` to 75 and press execute four times over
   four days rather than once.
-* Test first: set `LIMIT = 2` and point `Get leads` at a copy of the sheet.
+* **Test first with `LIMIT = 2`.** This is the run that proves tracking works —
+  if the `Status` / `Sent at` / `Send error` columns are missing or misnamed, the
+  `Mark as emailed` node errors and the run halts after the first email. Two test
+  leads catches that; 300 catches it the expensive way. Check both rows went green
+  and show a timestamp before raising the limit.
