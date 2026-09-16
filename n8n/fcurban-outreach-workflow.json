@@ -1,0 +1,357 @@
+{
+  "name": "FC Urban - outreach batch (300 leads)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        40
+      ],
+      "id": "manual-trigger",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "PASTE_YOUR_SPREADSHEET_ID_HERE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "London",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -40,
+        40
+      ],
+      "id": "get-leads",
+      "name": "Get leads from sheet"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build the send queue: the first N leads in the sheet that have not been emailed yet.\n// \"Chronological\" = sheet order, top to bottom. Rows arrive from the Sheets node in that order.\n\nconst LIMIT = 300;            // <- how many emails this run sends\nconst STATUS_COL = 'Status';  // <- column that marks a lead as handled\nconst EMAIL_COL  = 'Email';\n\nconst seen = new Set();\nconst queue = [];\n\nfor (const item of $input.all()) {\n  const row = item.json;\n\n  const email  = String(row[EMAIL_COL] ?? '').trim().toLowerCase();\n  const status = String(row[STATUS_COL] ?? '').trim();\n\n  if (!email || !email.includes('@')) continue;  // no usable address\n  if (status) continue;                          // already emailed / skipped / bounced\n  if (seen.has(email)) continue;                 // same address twice in the list\n\n  seen.add(email);\n  queue.push({ json: { ...row, _to: email } });\n\n  if (queue.length >= LIMIT) break;\n}\n\nif (queue.length === 0) {\n  throw new Error('Nothing to send: every row either has no email or already has a Status.');\n}\n\nreturn queue;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        180,
+        40
+      ],
+      "id": "build-queue",
+      "name": "Build send queue"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        400,
+        40
+      ],
+      "id": "loop-leads",
+      "name": "Loop over leads"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Runs once, after the last lead. Gives you a one-line result in the UI.\nconst attempted = $('Build send queue').all().length;\nreturn [{ json: { attempted, finishedAt: $now.toISO(),\n  note: 'Check the Status column in the sheet for per-lead Emailed / Failed.' } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        620,
+        -80
+      ],
+      "id": "summary",
+      "name": "Run summary"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Turn one sheet row into a subject + plain text body.\nconst INFO_URL = 'https://www.fcurban.com/groups-and-company-pitch-rental/football-pitch-rental-for-groups-corporates';\n\nconst row      = $json;\nconst business = String(row['Business'] ?? '').trim() || 'there';\nconst venue    = String(row['Nearest FC Urban venue'] ?? '').trim();\nconst city     = String(row['City'] ?? '').trim() || 'your city';\nconst walk     = Number(row['Walk (min)']);\nconst type     = String(row['Email type'] ?? '').trim();\n\n// \"Hi Ben,\" when the address clearly belongs to a person, otherwise \"Hi <Company> team,\".\nlet greeting = `Hi ${business} team,`;\nif (type === 'person_or_other') {\n  const local = String(row['_to']).split('@')[0].replace(/[._\\-+0-9].*$/, '');\n  const generic = ['info', 'hello', 'hi', 'contact', 'office', 'enquiries', 'enquiry',\n                   'admin', 'sales', 'press', 'events', 'team', 'mail', 'support'];\n  if (/^[a-z]{2,15}$/i.test(local) && !generic.includes(local.toLowerCase())) {\n    greeting = `Hi ${local.charAt(0).toUpperCase() + local.slice(1)},`;\n  }\n}\n\n// Proximity line, only claimed when we actually have a venue in the sheet.\nlet proximity;\nif (venue && Number.isFinite(walk) && walk > 0) {\n  proximity = `We already organise games at ${venue}, around a ${walk} minute walk from your ${city} office.`;\n} else if (venue) {\n  proximity = `We already organise games at ${venue}, just around the corner from your ${city} office.`;\n} else {\n  proximity = `We already organise games across ${city}.`;\n}\n\nconst subject = `After work football for the ${business} team`;\n\nconst body = [\n  greeting,\n  ``,\n  `I'm Joe from FC Urban. We organise social football games across ${city} where people can simply turn up and play.`,\n  ``,\n  proximity,\n  ``,\n  `We are looking for local companies who might be interested in playing regular football together after work.`,\n  ``,\n  `FC Urban takes care of the pitch, payments and organisation. For smaller teams, we can also fill the remaining spaces with other FC Urban players, so it can be an easy weekly social without someone internally having to organise everything.`,\n  ``,\n  `Would this be something the ${business} team might be interested in trying?`,\n  ``,\n  `You can find more information here:`,\n  INFO_URL,\n  ``,\n  `Best,`,\n  ``,\n  `Joe`,\n  `FC Urban`,\n  ``,\n  `--`,\n  `You are receiving this at a business address because we think FC Urban could be a fit for your team. Reply with \"no thanks\" and I won't contact you again.`,\n].join('\\n');\n\nreturn { json: { ...row, to: row._to, subject, body } };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        620,
+        160
+      ],
+      "id": "compose-email",
+      "name": "Compose email"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.to }}",
+        "subject": "={{ $json.subject }}",
+        "emailType": "text",
+        "message": "={{ $json.body }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        840,
+        160
+      ],
+      "id": "send-email",
+      "name": "Send email",
+      "onError": "continueErrorOutput",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 3000
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "PASTE_YOUR_SPREADSHEET_ID_HERE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "London",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Compose email').item.json.row_number }}",
+            "Status": "Emailed",
+            "Sent at": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "Send error": ""
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1080,
+        60
+      ],
+      "id": "mark-as-emailed",
+      "name": "Mark as emailed"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "PASTE_YOUR_SPREADSHEET_ID_HERE",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "London",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Compose email').item.json.row_number }}",
+            "Status": "Failed",
+            "Sent at": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "Send error": "={{ $json.error?.message || $json.error || 'send failed' }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1080,
+        280
+      ],
+      "id": "mark-as-failed",
+      "name": "Mark as failed"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/PASTE_YOUR_SPREADSHEET_ID_HERE:batchUpdate",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  requests: [{\n    repeatCell: {\n      range: {\n        sheetId: 0,\n        startRowIndex: $('Compose email').item.json.row_number - 1,\n        endRowIndex: $('Compose email').item.json.row_number,\n        startColumnIndex: 0,\n        endColumnIndex: 16\n      },\n      cell: { userEnteredFormat: { backgroundColor: { red: 0.85, green: 0.94, blue: 0.83 } } },\n      fields: \"userEnteredFormat.backgroundColor\"\n    }\n  }]\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        60
+      ],
+      "id": "colour-row",
+      "name": "Colour row green (optional)",
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1520,
+        160
+      ],
+      "id": "throttle",
+      "name": "Wait between sends",
+      "webhookId": "fcurban-outreach-throttle"
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Get leads from sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get leads from sheet": {
+      "main": [
+        [
+          {
+            "node": "Build send queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build send queue": {
+      "main": [
+        [
+          {
+            "node": "Loop over leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop over leads": {
+      "main": [
+        [
+          {
+            "node": "Run summary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compose email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compose email": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send email": {
+      "main": [
+        [
+          {
+            "node": "Mark as emailed",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark as failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as emailed": {
+      "main": [
+        [
+          {
+            "node": "Colour row green (optional)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Colour row green (optional)": {
+      "main": [
+        [
+          {
+            "node": "Wait between sends",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as failed": {
+      "main": [
+        [
+          {
+            "node": "Wait between sends",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait between sends": {
+      "main": [
+        [
+          {
+            "node": "Loop over leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "pinData": {}
+}
