@@ -67,7 +67,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Fires once, after the last lead. The sheet is the real record; this just totals it up.\nconst processed = $input.all();\nconst queued = $('Build send queue').all().length;\n\nconst failures = [];\nfor (const it of processed) {\n  const row = it.json;\n  if (String(row['Status'] ?? '').trim() === 'Failed') {\n    failures.push({\n      business: row['Business'] ?? '',\n      email: row['Email'] ?? '',\n      error: row['Send error'] ?? '',\n    });\n  }\n}\n\nconst sent = processed.length - failures.length;\n\nreturn [{ json: {\n  queued,\n  sent,\n  failed: failures.length,\n  notReached: queued - processed.length,   // >0 means the run stopped early\n  failures,\n  finishedAt: $now.toISO(),\n  note: `Sheet column \"Status\" is the record: ${sent} rows now say Emailed, ${failures.length} say Failed. ` +\n        `Pressing Execute again skips every row that already has a Status, so it resumes instead of re-sending.`,\n} }];\n"
+        "jsCode": "// Fires once, after the last lead. The sheet is the real record; this just totals it up.\nconst processed = $input.all();\nconst queued = $('Build send queue').all().length;\n\nconst failures = [];\nlet echoed = 0;   // rows the Sheets node actually handed back\nfor (const it of processed) {\n  const row = it.json ?? {};\n  const status = String(row['Status'] ?? '').trim();\n  if (status) echoed++;\n  if (status === 'Failed') {\n    failures.push({\n      business: row['Business'] ?? '',\n      email: row['Email'] ?? '',\n      error: row['Send error'] ?? '',\n    });\n  }\n}\n\nconst sent = processed.length - failures.length;\n\nreturn [{ json: {\n  queued,\n  sent,\n  failed: failures.length,\n  notReached: queued - processed.length,   // >0 means the run stopped early\n  failures,\n  finishedAt: $now.toISO(),\n  note: (echoed === 0\n    ? `The Sheets node returned empty rows, so sent/failed here are counts of loop passes, not statuses - read the Status column for the truth. `\n    : `Sheet column \"Status\" is the record: ${sent} rows now say Emailed, ${failures.length} say Failed. `) +\n    `Pressing Execute again skips every row that already has a Status, so it resumes instead of re-sending.`,\n} }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -149,6 +149,7 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
+      "alwaysOutputData": true,
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
@@ -191,6 +192,7 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
+      "alwaysOutputData": true,
       "retryOnFail": true,
       "maxTries": 3,
       "waitBetweenTries": 5000,
@@ -324,13 +326,27 @@
     },
     {
       "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// The sheet write above is the only thing stopping a lead being emailed twice.\n// If it quietly wrote nothing, stop the entire run here rather than mail the\n// remaining leads with no way to record them.\nconst written = $json ?? {};\nconst lead = $('Compose email').first().json;\n\nif (Object.keys(written).length === 0 || !String(written['Status'] ?? '').trim()) {\n  throw new Error(\n    `Row ${lead.row_number} (${lead.Business}) was EMAILED but NOT marked in the sheet, ` +\n    `so it would be emailed again on the next run. The update returned nothing, which ` +\n    `means the tab has no \"Status\" / \"Sent at\" / \"Send error\" columns, or they are ` +\n    `spelled differently. Add them to the tab (exact spelling, row 1), then run again. ` +\n    `Stopping now so only this one lead is affected.`\n  );\n}\n\n// Carry the lead itself back into the loop, so Run summary sees real rows\n// instead of whatever the Sheets API happened to return.\nreturn { json: { ...lead, Status: written['Status'], 'Sent at': written['Sent at'] } };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        -300
+      ],
+      "id": "confirm-marked",
+      "name": "Confirm row marked"
+    },
+    {
+      "parameters": {
         "amount": 20,
         "unit": "seconds"
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1300,
+        1520,
         -300
       ],
       "id": "throttle",
@@ -422,7 +438,7 @@
       "main": [
         [
           {
-            "node": "Wait between sends",
+            "node": "Confirm row marked",
             "type": "main",
             "index": 0
           },
@@ -433,6 +449,17 @@
           },
           {
             "node": "Has a mobile number?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirm row marked": {
+      "main": [
+        [
+          {
+            "node": "Wait between sends",
             "type": "main",
             "index": 0
           }

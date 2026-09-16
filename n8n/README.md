@@ -145,6 +145,18 @@ is closer to SMS marketing than to B2B email, and the consent bar is higher.
 
 ## If it sends one email and stops
 
+**First check: do `Status`, `Sent at` and `Send error` actually exist in the tab,
+spelled exactly like that, in row 1?** If they don't, the Sheets update node
+writes nothing and returns nothing. n8n skips every node downstream of an empty
+output — including the loop-back — and still reports "Workflow executed
+successfully". One email goes out, the row is never marked, and the next run
+sends that same lead again.
+
+`Confirm row marked` now catches this: it halts the run with a named row and a
+description rather than letting it continue.
+
+
+
 `Mark as emailed` fans out to three branches, and only one of them — `Wait
 between sends` — carries the loop back to `Loop over leads`. n8n queues
 branches by canvas position, top first, so **`Wait between sends` must sit
@@ -159,6 +171,10 @@ Other things that produce the same one-and-stop symptom:
 * **Wait Unit set to Hours.** n8n's default. Over 65 seconds n8n parks the
   execution in the database instead of sleeping in process, so the run reports
   success after one email and resumes much later. Must read **Seconds**.
+* **A node that returns zero items.** n8n skips everything downstream and calls
+  the run a success. The two `Mark as` nodes set `alwaysOutputData` so they
+  always emit something, and `Confirm row marked` turns a silent no-write into a
+  loud stop.
 * **An error in a side branch.** Open the execution and look for a red node.
   The WhatsApp and colour branches read back with
   `$('Compose email').first()` rather than `.item` precisely because `.item`
