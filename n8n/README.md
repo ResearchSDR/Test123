@@ -25,18 +25,28 @@ Execute  →  Get leads from sheet  →  Build send queue  →  Loop over leads 
   the run — that row gets `Failed` instead of `Emailed`.
 * **Wait between sends** throttles to one email per 20s.
 
-## Setup (5 things)
+## Target sheet (already wired in)
 
-1. **Add three columns** to the sheet, to the right of the existing 13:
+| | |
+|---|---|
+| Spreadsheet | `1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g` |
+| Tab | gid `1397729834` |
+| Link | https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit?gid=1397729834 |
+
+Both Sheets nodes address the tab by **gid**, not by name, so renaming the tab
+won't break anything. To run a different city, change the `sheetName` value on
+`Get leads from sheet`, `Mark as emailed` and `Mark as failed` to that tab's gid.
+
+## Setup (3 things)
+
+1. **Add three columns** to the tab, to the right of the existing 13:
    `Status`, `Sent at`, `Send error`. The workflow only sends to rows where
-   `Status` is empty, and writes into all three afterwards.
-2. **Spreadsheet ID** — replace `PASTE_YOUR_SPREADSHEET_ID_HERE` in the two Google
-   Sheets nodes (and in the optional HTTP node's URL). It's the long id in the
-   sheet URL between `/d/` and `/edit`.
-3. **Tab name** — the nodes are set to `London`. Change it if you run another city.
-4. **Credentials** — pick your Google Sheets OAuth2 credential on both Sheets nodes,
-   and your Gmail OAuth2 credential on **Send email**.
-5. **Re-pick the update columns** — open **Mark as emailed** / **Mark as failed**,
+   `Status` is empty, and writes into all three afterwards. Without them nothing
+   gets marked and every run re-sends the same leads.
+2. **Credentials** — pick your Google Sheets OAuth2 credential on both Sheets
+   nodes, and your Gmail OAuth2 credential on **Send email**. The account must
+   have edit access to the spreadsheet above.
+3. **Re-pick the update columns** — open **Mark as emailed** / **Mark as failed**,
    let the column list load once, and confirm the mapping is
    `row_number` (matching) + `Status` / `Sent at` / `Send error`.
 
@@ -50,10 +60,9 @@ Two options:
   Rows turn green the moment the workflow writes `Emailed`. Add a second red rule
   for `=$N2="Failed"`.
 * **The `Colour row green (optional)` node.** Disabled by default. It calls the
-  Sheets API `batchUpdate` to paint the row directly. Enable it, set the
-  spreadsheet id in the URL, and set `sheetId` in the JSON body to the tab's `gid`
-  (the number at the end of the sheet URL). Its credential is the same Google
-  Sheets OAuth2 one.
+  Sheets API `batchUpdate` to paint the row directly. Spreadsheet id and
+  `sheetId: 1397729834` are already filled in — just enable it and pick the same
+  Google Sheets OAuth2 credential.
 
 ## Things to change
 

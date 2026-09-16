@@ -16,13 +16,15 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "PASTE_YOUR_SPREADSHEET_ID_HERE",
-          "mode": "id"
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
         },
         "sheetName": {
           "__rl": true,
-          "value": "London",
-          "mode": "name"
+          "value": "1397729834",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
         },
         "options": {}
       },
@@ -117,13 +119,15 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "PASTE_YOUR_SPREADSHEET_ID_HERE",
-          "mode": "id"
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
         },
         "sheetName": {
           "__rl": true,
-          "value": "London",
-          "mode": "name"
+          "value": "1397729834",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -154,13 +158,15 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "PASTE_YOUR_SPREADSHEET_ID_HERE",
-          "mode": "id"
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
         },
         "sheetName": {
           "__rl": true,
-          "value": "London",
-          "mode": "name"
+          "value": "1397729834",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=1397729834"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -189,12 +195,12 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://sheets.googleapis.com/v4/spreadsheets/PASTE_YOUR_SPREADSHEET_ID_HERE:batchUpdate",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g:batchUpdate",
         "authentication": "predefinedCredentialType",
         "nodeCredentialType": "googleSheetsOAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({\n  requests: [{\n    repeatCell: {\n      range: {\n        sheetId: 0,\n        startRowIndex: $('Compose email').item.json.row_number - 1,\n        endRowIndex: $('Compose email').item.json.row_number,\n        startColumnIndex: 0,\n        endColumnIndex: 16\n      },\n      cell: { userEnteredFormat: { backgroundColor: { red: 0.85, green: 0.94, blue: 0.83 } } },\n      fields: \"userEnteredFormat.backgroundColor\"\n    }\n  }]\n}) }}",
+        "jsonBody": "={{ JSON.stringify({\n  requests: [{\n    repeatCell: {\n      range: {\n        sheetId: 1397729834,\n        startRowIndex: $('Compose email').item.json.row_number - 1,\n        endRowIndex: $('Compose email').item.json.row_number,\n        startColumnIndex: 0,\n        endColumnIndex: 16\n      },\n      cell: { userEnteredFormat: { backgroundColor: { red: 0.85, green: 0.94, blue: 0.83 } } },\n      fields: \"userEnteredFormat.backgroundColor\"\n    }\n  }]\n}) }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
