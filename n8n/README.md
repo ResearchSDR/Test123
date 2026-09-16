@@ -27,7 +27,10 @@ Execute  →  Get leads from sheet  →  Build send queue  →  Loop over leads 
   6,211 London rows that is 129 by first name, 6,082 as `Hi <Company> team,`.
 * **Send email** has a real error output, so a bounce or a bad address does not kill
   the run — that row gets `Failed` instead of `Emailed`.
-* **Wait between sends** throttles to one email per 20s.
+* **Wait between sends** throttles to one email per 20s. The Unit field must say
+  **seconds** — n8n defaults it to *hours*, and a wait over 65s makes n8n park the
+  execution in the database instead of sleeping in process, so the run appears to
+  "succeed" after one email and resumes hours later.
 
 `Compose email` runs in **Run Once for Each Item** mode — it handles one lead and
 returns one item. Leave it there. In "Run Once for All Items" it still works
@@ -158,17 +161,20 @@ Two options:
 
 | What | Where |
 |---|---|
-| Batch size (now **2**, for testing) | `Build send queue` → `const LIMIT` |
-| Delay between sends | `Wait between sends` → Amount |
+| Batch size (now **75**) | `Build send queue` → `const LIMIT` |
+| Delay between sends | `Wait between sends` → Amount **and Unit** (see below) |
 | Email copy / subject | `Compose email` → the `body` array |
 | Leads per loop pass | `Loop over leads` → Batch Size (keep at 1) |
 | Which rows count as "done" | `Build send queue` → `STATUS_COL` check |
 
 ## Before you run 300
 
-* 300 × 20s ≈ **100 minutes** of wall clock. A manual execution has to stay open
+* 75 × 20s ≈ **25 minutes** of wall clock. A manual execution has to stay open
   that long. Either lower the wait, or swap the Manual Trigger for a Schedule
   Trigger and let it run in the background.
+* Every send CCs `joep@fcurban.com`, so Joep receives a copy of all 75. The
+  address is also visible to each recipient. Switch `ccList` to `bccList` in the
+  `Send email` node's options to hide it from them.
 * Gmail caps external recipients at 500/day (personal) or 2,000/day (Workspace) —
   300 fits, but 300 near-identical cold emails from one mailbox in one sitting is
   exactly the pattern spam filters score on. The 50–80/day you were doing before is
