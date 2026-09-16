@@ -205,6 +205,7 @@ Two options:
 | Email copy / subject | `Compose email` → the `body` array |
 | Leads per loop pass | `Loop over leads` → Batch Size (keep at 1) |
 | Which rows count as "done" | `Build send queue` → `STATUS_COL` check |
+| Addresses to never email | `Build send queue` → `SKIP_EMAILS` |
 
 ## Before you run 300
 
