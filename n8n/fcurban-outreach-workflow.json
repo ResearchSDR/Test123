@@ -99,9 +99,7 @@
         "emailType": "html",
         "message": "={{ $json.html }}",
         "options": {
-          "appendAttribution": false,
-          "ccList": "joep@fcurban.com",
-          "bccList": "brian@fcurban.com"
+          "appendAttribution": false
         }
       },
       "type": "n8n-nodes-base.gmail",

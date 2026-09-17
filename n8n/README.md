@@ -248,10 +248,6 @@ Two options:
 * 75 × 20s ≈ **25 minutes** of wall clock. A manual execution has to stay open
   that long. Either lower the wait, or swap the Manual Trigger for a Schedule
   Trigger and let it run in the background.
-* Every send copies two colleagues, so each of them receives all 75:
-  `joep@fcurban.com` on **CC** (visible to the recipient) and
-  `brian@fcurban.com` on **BCC** (hidden). Both are in the `Send email` node's
-  options as `ccList` / `bccList`. Moving Joep to `bccList` hides him too.
 * Gmail caps external recipients at 500/day (personal) or 2,000/day (Workspace) —
   300 fits, but 300 near-identical cold emails from one mailbox in one sitting is
   exactly the pattern spam filters score on. The 50–80/day you were doing before is
