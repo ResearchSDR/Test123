@@ -21,10 +21,8 @@ Execute  →  Get leads from sheet  →  Build send queue  →  Loop over leads 
   and duplicate addresses. Takes the first 300 that remain, top to bottom.
 * **Compose email** personalises greeting, city, nearest venue and walking time
   from the sheet. It only claims a venue/walk distance when those cells are filled.
-  Greeting uses a first name only when the mailbox local part matches a real
-  first-name list — `Email type = person_or_other` is not trustworthy on its own
-  (it holds `wholesale@`, `flowers@`, `getstuffed@`, `myqueryto@`). Across the
-  6,211 London rows that is 129 by first name, 6,082 as `Hi <Company> team,`.
+  Every lead is greeted as `Hi <Company> team,` — a trailing parenthetical is
+  stripped first, so `MOO Print Limited (UK)` becomes `MOO Print Limited`.
 * **Send email** has a real error output, so a bounce or a bad address does not kill
   the run — that row gets `Failed` instead of `Emailed`.
 * **Wait between sends** throttles to one email per 20s. The Unit field must say
@@ -218,6 +216,8 @@ Two options:
 | Batch size (now **75**) | `Build send queue` → `const LIMIT` |
 | Delay between sends | `Wait between sends` → Amount **and Unit** (see below) |
 | Email copy / subject | `Compose email` → the `body` array |
+| Venue named in the closing line | `Compose email` → `VENUE_MENTION` |
+| The opt-out line | `Compose email` → `OPT_OUT` (set to `''` to drop) |
 | Leads per loop pass | `Loop over leads` → Batch Size (keep at 1) |
 | Which rows count as "done" | `Build send queue` → `STATUS_COL` check |
 | Addresses to never email | `Build send queue` → `SKIP_EMAILS` |
