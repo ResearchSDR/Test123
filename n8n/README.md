@@ -195,6 +195,30 @@ Other things that produce the same one-and-stop symptom:
   and halt the run. `.first()` is safe only while `Loop over leads` has
   Batch Size 1.
 
+## Venue links
+
+The closing line hyperlinks **FC Urban** and **the nearest venue**. The email is
+sent as HTML (`Send email` → Email Type: HTML, body `{{ $json.html }}`).
+
+`VENUE_URLS` at the top of `Compose email` maps a venue name, spelled exactly as
+it appears in the sheet, to its page URL. All 26 London venue names are already
+listed with empty values — paste a URL next to one and every lead nearest that
+venue starts getting a link:
+
+```js
+const VENUE_URLS = {
+  'Ark King Solomon': 'https://www.fcurban.com/...',
+  'Borough Academy': '',   // still plain text
+  ...
+};
+```
+
+**An entry left empty renders the venue as plain text, never as a broken link.**
+That is deliberate: an unfilled URL costs a hyperlink, a wrong one costs a lead.
+
+Company names are HTML-escaped before they hit the markup, so `Catherine Walker
+& Co` does not break the message.
+
 ## Marking rows green
 
 Two options:
@@ -216,7 +240,8 @@ Two options:
 | Batch size (now **75**) | `Build send queue` → `const LIMIT` |
 | Delay between sends | `Wait between sends` → Amount **and Unit** (see below) |
 | Email copy / subject | `Compose email` → the `body` array |
-| Venue named in the closing line | `Compose email` → `VENUE_MENTION` |
+| Venue page links | `Compose email` → `VENUE_URLS` |
+| The FC Urban link | `Compose email` → `FC_URBAN_URL` |
 | The opt-out line | `Compose email` → `OPT_OUT` (set to `''` to drop) |
 | Leads per loop pass | `Loop over leads` → Batch Size (keep at 1) |
 | Which rows count as "done" | `Build send queue` → `STATUS_COL` check |
