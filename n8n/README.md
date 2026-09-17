@@ -197,27 +197,23 @@ Other things that produce the same one-and-stop symptom:
 
 ## Venue links
 
-The closing line hyperlinks **FC Urban** and **the nearest venue**. The email is
-sent as HTML (`Send email` → Email Type: HTML, body `{{ $json.html }}`).
+The closing line hyperlinks **FC Urban** and **the nearest venue**. The email
+goes out as HTML (`Send email` → Email Type: HTML, body `{{ $json.html }}`).
 
-`VENUE_URLS` at the top of `Compose email` maps a venue name, spelled exactly as
-it appears in the sheet, to its page URL. All 26 London venue names are already
-listed with empty values — paste a URL next to one and every lead nearest that
-venue starts getting a link:
+`VENUE_SLUGS` in `Compose email` maps a venue name, spelled exactly as the sheet
+spells it, to its `fcurban.com/location/<slug>` slug. **108 venues across all 15
+city tabs**, every slug taken from `fcurban.com/sitemap.xml` and confirmed to
+return HTTP 200 with a page title matching the venue.
 
-```js
-const VENUE_URLS = {
-  'Ark King Solomon': 'https://www.fcurban.com/...',
-  'Borough Academy': '',   // still plain text
-  ...
-};
-```
+Slugs are not derivable from the name — Brixton is `brixton-03dac` — so the map
+is explicit rather than generated. A venue missing from it renders as plain
+text, never as a broken link.
 
-**An entry left empty renders the venue as plain text, never as a broken link.**
-That is deliberate: an unfilled URL costs a hyperlink, a wrong one costs a lead.
+London coverage is complete: all 26 venues, all 6,209 queued leads linked.
+To add a venue later, find it in `fcurban.com/sitemap.xml` and add the pair.
 
-Company names are HTML-escaped before they hit the markup, so `Catherine Walker
-& Co` does not break the message.
+Company and venue names are HTML-escaped, so `Catherine Walker & Co` cannot
+break the message.
 
 ## Marking rows green
 
@@ -240,7 +236,7 @@ Two options:
 | Batch size (now **75**) | `Build send queue` → `const LIMIT` |
 | Delay between sends | `Wait between sends` → Amount **and Unit** (see below) |
 | Email copy / subject | `Compose email` → the `body` array |
-| Venue page links | `Compose email` → `VENUE_URLS` |
+| Venue page links | `Compose email` → `VENUE_SLUGS` |
 | The FC Urban link | `Compose email` → `FC_URBAN_URL` |
 | The opt-out line | `Compose email` → `OPT_OUT` (set to `''` to drop) |
 | Leads per loop pass | `Loop over leads` → Batch Size (keep at 1) |
