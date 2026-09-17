@@ -25,7 +25,11 @@ Execute  →  Get leads from sheet  →  Build send queue  →  Loop over leads 
   stripped first, so `MOO Print Limited (UK)` becomes `MOO Print Limited`.
 * **Send email** has a real error output, so a bounce or a bad address does not kill
   the run — that row gets `Failed` instead of `Emailed`.
-* **Wait between sends** throttles to one email per 20s. The Unit field must say
+* **Wait between sends** throttles to one email per 20s.
+* **Replies go to `joep@fcurban.com`** via a `Reply-To` header. The *From*
+  address is still whatever Google account the Gmail credential holds — n8n
+  cannot change that — so a reply is only redirected when the recipient's mail
+  client honours `Reply-To`, which all mainstream ones do. The Unit field must say
   **seconds** — n8n defaults it to *hours*, and a wait over 65s makes n8n park the
   execution in the database instead of sleeping in process, so the run appears to
   "succeed" after one email and resumes hours later.
@@ -235,7 +239,8 @@ Two options:
 |---|---|
 | Batch size (now **75**) | `Build send queue` → `const LIMIT` |
 | Delay between sends | `Wait between sends` → Amount **and Unit** (see below) |
-| Email copy / subject | `Compose email` → the `body` array |
+| Email copy / subject | `Compose email` → the `paras` array |
+| Where replies land | `Send email` → options → `replyTo` |
 | Venue page links | `Compose email` → `VENUE_SLUGS` |
 | The FC Urban link | `Compose email` → `FC_URBAN_URL` |
 | The opt-out line | `Compose email` → `OPT_OUT` (set to `''` to drop) |

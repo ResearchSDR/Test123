@@ -99,7 +99,8 @@
         "emailType": "html",
         "message": "={{ $json.html }}",
         "options": {
-          "appendAttribution": false
+          "appendAttribution": false,
+          "replyTo": "joep@fcurban.com"
         }
       },
       "type": "n8n-nodes-base.gmail",
