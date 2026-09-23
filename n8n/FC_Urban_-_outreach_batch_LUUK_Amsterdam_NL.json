@@ -1,0 +1,746 @@
+{
+  "name": "FC Urban - outreach batch LUUK Amsterdam (NL)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1552,
+        352
+      ],
+      "id": "1fe0082f-d0e5-4114-bd94-5934efb6640f",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "319875148",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=319875148"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -1328,
+        352
+      ],
+      "id": "e5611d72-054d-4aa1-8909-7ea2fd49b436",
+      "name": "Get leads from sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CgtVA6dqeksRRiqh",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build the send queue: the first N leads in the sheet that have not been emailed yet.\n// \"Chronological\" = sheet order, top to bottom. Rows arrive from the Sheets node in that order.\n\nconst LIMIT = 75;             // <- how many emails this run sends. Raise once a test run looks right.\nconst STATUS_COL = 'Status';  // <- column that marks a lead as handled\nconst EMAIL_COL  = 'Email';\n\n// Never email these, whatever the sheet says. Both went out twice already while\n// the sheet write was silently failing. Delete a line to put one back in play.\nconst SKIP_EMAILS = new Set([\n  'info@bisazza.com',       // Bisazza\n  'myqueryto@cescauk.org',  // Cesca Accounting\n]);\n\nconst seen = new Set();\nconst queue = [];\n\nfor (const item of $input.all()) {\n  const row = item.json;\n\n  const email  = String(row[EMAIL_COL] ?? '').trim().toLowerCase();\n  const status = String(row[STATUS_COL] ?? '').trim();\n\n  if (!email || !email.includes('@')) continue;  // no usable address\n  if (SKIP_EMAILS.has(email)) continue;          // manually excluded\n  if (status) continue;                          // already emailed / skipped / bounced\n  if (seen.has(email)) continue;                 // same address twice in the list\n\n  seen.add(email);\n  queue.push({ json: { ...row, _to: email } });\n\n  if (queue.length >= LIMIT) break;\n}\n\nif (queue.length === 0) {\n  throw new Error('Nothing to send: every row either has no email or already has a Status.');\n}\n\nreturn queue;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        352
+      ],
+      "id": "076bbf6f-3df3-4d8e-952f-f50fe5ad88e8",
+      "name": "Build send queue"
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -896,
+        352
+      ],
+      "id": "4b2beaba-8585-4a23-ae45-20e309634880",
+      "name": "Loop over leads"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fires once, after the last lead. The sheet is the real record; this just totals it up.\nconst processed = $input.all();\nconst queued = $('Build send queue').all().length;\n\nconst failures = [];\nlet echoed = 0;   // rows the Sheets node actually handed back\nfor (const it of processed) {\n  const row = it.json ?? {};\n  const status = String(row['Status'] ?? '').trim();\n  if (status) echoed++;\n  if (status === 'Failed') {\n    failures.push({\n      business: row['Business'] ?? '',\n      email: row['Email'] ?? '',\n      error: row['Send error'] ?? '',\n    });\n  }\n}\n\nconst sent = processed.length - failures.length;\n\nreturn [{ json: {\n  queued,\n  sent,\n  failed: failures.length,\n  notReached: queued - processed.length,   // >0 means the run stopped early\n  failures,\n  finishedAt: $now.toISO(),\n  note: (echoed === 0\n    ? `The Sheets node returned empty rows, so sent/failed here are counts of loop passes, not statuses - read the Status column for the truth. `\n    : `Sheet column \"Status\" is the record: ${sent} rows now say Emailed, ${failures.length} say Failed. `) +\n    `Pressing Execute again skips every row that already has a Status, so it resumes instead of re-sending.`,\n} }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        224
+      ],
+      "id": "15fdf639-8db4-489e-bd23-2330ed50534f",
+      "name": "Run summary"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Zet een rij uit de sheet om in een onderwerp + HTML body (Nederlands).\n\nconst FC_URBAN_URL = 'https://www.fcurban.com/groups-and-company-pitch-rental/football-pitch-rental-for-groups-corporates';\n\n// Locatienaam (exact zoals in de sheet) -> de fcurban.com slug. Elke slug komt\n// uit fcurban.com/sitemap.xml en is gecontroleerd op HTTP 200 met een\n// paginatitel die bij de locatie hoort. Een locatie die hier niet in staat\n// wordt als platte tekst getoond, nooit als kapotte link.\nconst VENUE_BASE = 'https://www.fcurban.com/location/';\nconst VENUE_SLUGS = {\n  \"'T Hert\": 't-hert',\n  \"ASV Blauw-Wit\": 'asv-blauwwit',\n  \"AVV SDZ\": 'avv-sdz',\n  \"Acton\": 'acton',\n  \"Ark King Solomon\": 'ark-king-solomon',\n  \"Ark Walworth\": 'ark-walworth',\n  \"Aspuddens Idrottsplats\": 'aspuddens-idrottsplats',\n  \"Barnet\": 'barnet',\n  \"Battersea - Powerleague\": 'battersea-powerleague',\n  \"Bellevue Bollplan\": 'bellevue-bollplan',\n  \"Bergshamra IP\": 'bergshamra-ip',\n  \"Bermondsey\": 'bermondsey',\n  \"Betondorp\": 'betondorp',\n  \"Blauw-wit Erasmuspark\": 'blauwwit-erasmuspark',\n  \"Borgerstraat\": 'borgerstraat',\n  \"Borough Academy\": 'borough-academy',\n  \"Brixton\": 'brixton-03dac',\n  \"Brixton - St Johns Angell Town School\": 'brixton-st-johns-angell-town-school',\n  \"COLA Shoreditch Park\": 'cola-shoreditch-park',\n  \"Camden - Castlehaven\": 'camden-castlehaven',\n  \"Chelsea\": 'chelsea',\n  \"Club San Jorge\": 'club-san-jorge',\n  \"Corantijnstraat\": 'corantijnstraat',\n  \"Coubertin\": 'coubertin',\n  \"DVVA (SV De Meer)\": 'dvva-sv-de-meer',\n  \"De Parrel\": 'de-parrel',\n  \"Denmark Road Sports Centre\": 'denmark-road-sports-centre',\n  \"Docklands - Surrey Quays\": 'docklands-surrey-quays',\n  \"Drakenbergsparken Bollplan\": 'drakenbergsparken-bollplan',\n  \"Enskede IP\": 'enskede-ip',\n  \"Eriksdals Bollplan\": 'eriksdals-bollplan',\n  \"Eriksdalshallen\": 'eriksdalshallen',\n  \"Garrincha\": 'garrincha',\n  \"Gymzaal Heidebloemstraat\": 'gymzaal-heidebloemstraat',\n  \"Gymzaal Kanunnik Faberstraat\": 'gymzaal-kanunnik-faberstraat',\n  \"Gymzaal Theophile de Bockstraat\": 'gymzaal-theophile-de-bockstraat',\n  \"Hackney\": 'hackney',\n  \"Hampstead 3G\": 'hampstead-3g',\n  \"Hart van Noord\": 'hart-van-noord',\n  \"Heideveldstraat\": 'heideveldstraat',\n  \"High Tech Soccer Academy\": 'high-tech-soccer-academy',\n  \"Hjorthagens Idrottsplats\": 'hjorthagens-idrottsplats',\n  \"Hjulsta BP\": 'hjulsta-bp',\n  \"Indoor Blauw-Wit\": 'indoor-blauwwit',\n  \"Indoor Oosterpark\": 'indoor-oosterpark-0f6f2',\n  \"Indoor Soccer\": 'indoor-soccer',\n  \"Jaarbeursplein\": 'jaarbeursplein',\n  \"Karlbergsskolans BP\": 'karlbergsskolans-bp',\n  \"Kennington\": 'kennington',\n  \"Klipperstraat\": 'klipperstraat',\n  \"Knutby BP\": 'knutby-bp',\n  \"Kristinebergs IP\": 'kristinebergs-ip',\n  \"LLoyd Multiplein\": 'lloyd-multiplein',\n  \"Leisure United Bullocksteads\": 'leisure-united-bullocksteads',\n  \"Market Road\": 'market-road',\n  \"Muiderpoort\": 'muiderpoort',\n  \"Norra Real Bollplan\": 'norra-real-bollplan',\n  \"Old St - Moreland Primary School\": 'old-st-moreland-primary-school',\n  \"Olympiapark SoccArena\": 'olympiapark-soccarena',\n  \"PSV Handbal\": 'psv-handbal',\n  \"PVC\": 'pvc',\n  \"Poplar\": 'poplar',\n  \"Power League\": 'power-league',\n  \"Powerleague - Manchester Nicholls\": 'powerleague-manchester-nicholls',\n  \"Powerleague- Manchester Central\": 'powerleague-manchester-central',\n  \"RVV Blijdorp\": 'rvv-blijdorp',\n  \"Rinkeby Bollplan\": 'rinkeby-bollplan',\n  \"Rinkebyhallen\": 'rinkebyhallen',\n  \"Rooftop Zuid-As\": 'rooftop-zuidas',\n  \"Rosemary Gardens 3G - Islington\": 'rosemary-gardens-3g-islington',\n  \"SV Houtwijk\": 'sv-houtwijk',\n  \"SVH\": 'svh',\n  \"Scheck Club\": 'scheck-club',\n  \"Shoreditch Rooftop\": 'shoreditch-rooftop',\n  \"Skanskvarnshallen\": 'skanskvarnshallen',\n  \"Soccerworld\": 'soccerworld',\n  \"Sofiaskolan Bollplan\": 'sofiaskolan-bollplan',\n  \"South Kensington\": 'south-kensington',\n  \"Speed Soccer Arnhem\": 'speed-soccer-arnhem',\n  \"Sportcentrum CVT\": 'sportcentrum-cvt',\n  \"Sportcentrum Wilrijkse Plein\": 'sportcentrum-wilrijkse-plein',\n  \"Sportcentrum de Houtzagerij\": 'sportcentrum-de-houtzagerij',\n  \"Sporthal Gaslaan\": 'sporthal-gaslaan',\n  \"Sporthal Lipa\": 'sporthal-lipa',\n  \"Sporthal Nieuw Welgelegen\": 'sporthal-nieuw-welgelegen',\n  \"Sporthal Oostenburg\": 'sporthal-oostenburg',\n  \"Sporthal Zuiderpark\": 'sporthal-zuiderpark',\n  \"Sportpark Bijlmer\": 'sportpark-bijlmer',\n  \"Sportpark Lunetten\": 'sportpark-lunetten',\n  \"Sportpark Spieringshorn\": 'sportpark-spieringshorn',\n  \"Sporttraum\": 'sporttraum',\n  \"Sporttraum GmbH\": 'sporttraum-gmbh',\n  \"Sportzaal Evertsweertplantsoen\": 'sportzaal-evertsweertplantsoen',\n  \"Sportzaal Radbout\": 'sportzaal-radbout',\n  \"Sportzaal Weesperzijde\": 'sportzaal-weesperzijde',\n  \"St John's Wood\": 'st-johns-wood',\n  \"Stadshagens IP\": 'stadshagens-ip',\n  \"Stepney 3G\": 'stepney-3g',\n  \"Sturebyskolans BP\": 'sturebyskolans-bp',\n  \"Tantolunden Bollplann\": 'tantolunden-bollplann',\n  \"Transvaalbuurt\": 'transvaalbuurt-a9cd5',\n  \"Trinity Sports Centre\": 'trinity-sports-centre',\n  \"USV hercules\": 'usv-hercules',\n  \"VV Vredenburch\": 'vv-vredenburch',\n  \"Vintervikshallen\": 'vintervikshallen',\n  \"Voetbalvereniging EDO\": 'voetbalvereniging-edo',\n  \"Vondelpark\": 'vondelpark',\n  \"Walker Activity Dome\": 'walker-activity-dome',\n  \"Westerpark\": 'westerpark-c309c',\n  \"Whitechapel\": 'whitechapel',\n  \"Whittington Park\": 'whittington-park',\n  \"Ärvingehallen\": 'rvingehallen',\n  \"Åkeshovs BP\": 'keshovs-bp',\n  \"Östermalms IP\": 'stermalms-ip',\n  \"Östra Reals Bollplan\": 'stra-reals-bollplan',\n};\n\n// Afmeldregel, voor AVG-dekking bij koude B2B-mail. Zet op '' om weg te laten.\nconst OPT_OUT = 'Geen interesse? Stuur even een reply en ik neem geen contact meer op.';\n\nconst row = $json;\n// Haal een achterliggende haakjes-toevoeging weg, zodat er niet\n// \"Hoi MOO Print Limited (UK),\" staat.\nconst business = (String(row['Business'] ?? '').replace(/\\s*\\([^)]*\\)\\s*$/, '').trim()\n                  || String(row['Business'] ?? '').trim() || 'daar');\nconst venue = String(row['Nearest FC Urban venue'] ?? '').trim();\nconst city  = String(row['City'] ?? '').trim() || 'jullie stad';\nconst walk  = Number(row['Walk (min)']);\n\n// WhatsApp komt alleen aan op mobiele nummers. Ongeveer 90% van deze sheet is\n// vast, dus de meeste rijen geven hier '' terug en gaan via de IF-node langs\n// de WhatsApp-tak heen.\nfunction mobileE164(raw) {\n  const d = String(raw ?? '').replace(/[^\\d+]/g, '');\n  if (!d.startsWith('+')) return '';\n  const n = d.slice(1);\n  const isMobile =\n       /^447\\d{9}$/.test(n)        // UK\n    || /^316\\d{8}$/.test(n)        // NL\n    || /^467\\d{8}$/.test(n)        // SE\n    || /^491[5-7]\\d{7,9}$/.test(n) // DE\n    || /^34[67]\\d{8}$/.test(n)     // ES\n    || /^324\\d{8}$/.test(n);       // BE\n  return isMobile ? n : '';\n}\nconst waTo = mobileE164(row['Phone (international)']);\n\n// Bedrijfsnamen bevatten & en af en toe een aanhalingsteken - escapen voordat\n// ze in de HTML terechtkomen.\nconst esc = (t) => String(t)\n  .replace(/&/g, '&amp;').replace(/</g, '&lt;')\n  .replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\nconst link = (text, url) => url ? `<a href=\"${esc(url)}\">${esc(text)}</a>` : esc(text);\n\n// Claim alleen een afstand die de sheet echt geeft.\nlet proximity;\nif (venue && Number.isFinite(walk) && walk > 0) {\n  const min = walk === 1 ? 'minuut' : 'minuten';\n  proximity = `We spelen al bij ${esc(venue)}, ongeveer ${walk} ${min} lopen van jullie kantoor.`;\n} else if (venue) {\n  proximity = `We spelen al bij ${esc(venue)}, vlak bij jullie kantoor.`;\n} else {\n  proximity = `We organiseren potjes door heel ${esc(city)}.`;\n}\n\nconst venueSlug = VENUE_SLUGS[venue];\nconst venueLink = venue ? link(venue, venueSlug ? VENUE_BASE + venueSlug : '') : esc(city);\nconst closing = `Je vindt meer informatie over ${link('FC Urban', FC_URBAN_URL)}`\n              + ` en over onze locatie ${venueLink}.`;\n\nconst subject = `Na werktijd voetballen met het team van ${business}`;\n\nconst paras = [\n  `Hoi ${esc(business)},`,\n  `Ik ben Luuk van FC Urban. Wij organiseren sociale voetbalpotjes in ${esc(city)} waar je gewoon kunt aansluiten en meespelen.`,\n  proximity,\n  `We zijn op zoek naar iemand binnen ${esc(business)} die het leuk zou vinden om te helpen een vast voetbalmoment na werktijd op te zetten voor collega's.`,\n  `FC Urban regelt het veld, vult de groep aan met spelers als dat nodig is, en verzorgt de betalingen en de organisatie. We hebben vooral iemand intern nodig die van voetbal houdt en collega's enthousiast kan maken.`,\n  `Zou je me in contact kunnen brengen met degene die zich bezighoudt met vitaliteit, HR of personeelsuitjes in ${esc(city)}?`,\n  closing,\n  `Groet,`,\n  `Luuk<br>FC Urban`,\n];\nif (OPT_OUT) paras.push(`<span style=\"color:#888;font-size:12px\">${esc(OPT_OUT)}</span>`);\n\nconst html = paras.map((p) => `<p>${p}</p>`).join('\\n');\n\nreturn { json: { ...row, to: row._to, waTo, waName: business, waVenue: venue || city, subject, html } };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        464
+      ],
+      "id": "ce7b53c4-f3e5-46c4-9037-40c8ba8f6372",
+      "name": "Compose email"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.to }}",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false,
+          "replyTo": "joep@fcurban.com"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -448,
+        464
+      ],
+      "id": "d369f1a1-2fee-4aaf-aa1b-eeb7567c280a",
+      "name": "Send email",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 3000,
+      "webhookId": "9c8c4812-4c16-4ad5-932d-66f80c8da01f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6Gy97oZhEwTusnkI",
+          "name": "Gmail - Luuk"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "319875148",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=319875148"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Compose email').item.json.row_number }}",
+            "Status": "Emailed",
+            "Sent at": "={{ $now.format('yyyy-MM-dd HH:mm') }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "Business",
+              "displayName": "Business",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email type",
+              "displayName": "Email type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Phone (international)",
+              "displayName": "Phone (international)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Industry",
+              "displayName": "Industry",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Address",
+              "displayName": "Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Postcode",
+              "displayName": "Postcode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "City",
+              "displayName": "City",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Country",
+              "displayName": "Country",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nearest FC Urban venue",
+              "displayName": "Nearest FC Urban venue",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Walk (min)",
+              "displayName": "Walk (min)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "From list",
+              "displayName": "From list",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sent at",
+              "displayName": "Sent at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Send error",
+              "displayName": "Send error",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "WhatsApp status",
+              "displayName": "WhatsApp status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "WhatsApp at",
+              "displayName": "WhatsApp at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "position": [
+        -208,
+        368
+      ],
+      "id": "fc14473b-51fc-450d-8a92-0b04f6772e80",
+      "name": "Mark as emailed",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CgtVA6dqeksRRiqh",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "319875148",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=319875148"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Compose email').item.json.row_number }}",
+            "Status": "Failed",
+            "Sent at": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "Send error": "={{ $json.error?.message || $json.error || 'send failed' }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "position": [
+        -208,
+        592
+      ],
+      "id": "474a98ad-9d00-45ac-87b1-5fd30bb70e01",
+      "name": "Mark as failed",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CgtVA6dqeksRRiqh",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g:batchUpdate",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  requests: [{\n    repeatCell: {\n      range: {\n        sheetId: 319875148,\n        startRowIndex: $('Compose email').first().json.row_number - 1,\n        endRowIndex: $('Compose email').first().json.row_number,\n        startColumnIndex: 0,\n        endColumnIndex: 18\n      },\n      cell: { userEnteredFormat: { backgroundColor: { red: 0.85, green: 0.94, blue: 0.83 } } },\n      fields: \"userEnteredFormat.backgroundColor\"\n    }\n  }]\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        368
+      ],
+      "id": "da668389-3211-4a09-9da2-bb8f1c3c10f7",
+      "name": "Colour row green (optional)",
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "has-mobile",
+              "leftValue": "={{ $('Compose email').first().json.waTo }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        192
+      ],
+      "id": "963732b8-cb64-4a1b-805c-b85a1800a0e5",
+      "name": "Has a mobile number?"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "PASTE_YOUR_WHATSAPP_PHONE_NUMBER_ID",
+        "recipientPhoneNumber": "={{ $('Compose email').first().json.waTo }}",
+        "messageType": "template"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        224,
+        192
+      ],
+      "id": "9566efea-3e4b-4339-80b5-d7ef46f1deba",
+      "name": "Send WhatsApp",
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 3000,
+      "webhookId": "0cb53bba-3c01-41c7-941a-f21beecf45d4",
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "319875148",
+          "mode": "id",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1Knj2jXfZLK6-rgyQtyCXYu_Kg7WwqqZp9CqG0wn5F6g/edit#gid=319875148"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Compose email').first().json.row_number }}",
+            "WhatsApp status": "={{ $json.error ? 'Failed' : 'Sent' }}",
+            "WhatsApp at": "={{ $now.format('yyyy-MM-dd HH:mm') }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": []
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "position": [
+        448,
+        192
+      ],
+      "id": "3e8c5ab7-e8c5-4e27-993b-e31a3fc1cc94",
+      "name": "Mark WhatsApp status",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "CgtVA6dqeksRRiqh",
+          "name": "Google Sheets account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// The sheet write above is the only thing stopping a lead being emailed twice.\n// If it quietly wrote nothing, stop the entire run here rather than mail the\n// remaining leads with no way to record them.\nconst written = $json ?? {};\nconst lead = $('Compose email').first().json;\n\nif (Object.keys(written).length === 0 || !String(written['Status'] ?? '').trim()) {\n  throw new Error(\n    `Row ${lead.row_number} (${lead.Business}) was EMAILED but NOT marked in the sheet, ` +\n    `so it would be emailed again on the next run. The update returned nothing, which ` +\n    `means the tab has no \"Status\" / \"Sent at\" / \"Send error\" columns, or they are ` +\n    `spelled differently. Add them to the tab (exact spelling, row 1), then run again. ` +\n    `Stopping now so only this one lead is affected.`\n  );\n}\n\n// Carry the lead itself back into the loop, so Run summary sees real rows\n// instead of whatever the Sheets API happened to return.\nreturn { json: { ...lead, Status: written['Status'], 'Sent at': written['Sent at'] } };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2e05740e-173e-4048-aaa8-7bf53ecb86b9",
+      "name": "Confirm row marked"
+    },
+    {
+      "parameters": {
+        "amount": 1.51,
+        "unit": "seconds"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "ac4d1acf-efd7-46f5-8cad-e6211e6be55c",
+      "name": "Wait between sends",
+      "webhookId": "f72fb4a6-2973-4789-93f4-5fa2d76136d0"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Get leads from sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get leads from sheet": {
+      "main": [
+        [
+          {
+            "node": "Build send queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build send queue": {
+      "main": [
+        [
+          {
+            "node": "Loop over leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop over leads": {
+      "main": [
+        [
+          {
+            "node": "Run summary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compose email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compose email": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send email": {
+      "main": [
+        [
+          {
+            "node": "Mark as emailed",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mark as failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as emailed": {
+      "main": [
+        [
+          {
+            "node": "Confirm row marked",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Colour row green (optional)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Has a mobile number?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirm row marked": {
+      "main": [
+        [
+          {
+            "node": "Wait between sends",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has a mobile number?": {
+      "main": [
+        [
+          {
+            "node": "Send WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Mark WhatsApp status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark as failed": {
+      "main": [
+        [
+          {
+            "node": "Wait between sends",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait between sends": {
+      "main": [
+        [
+          {
+            "node": "Loop over leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c01081d6-bc5c-426c-91bd-d0871f183fd7",
+  "meta": {
+    "instanceId": "70ecb7fc79ed0fad40a162bdaee2769ad0682157eb82ea39f058c4a832b129a8"
+  },
+  "id": "1Vclmb7YVnbcnXXn",
+  "tags": []
+}
