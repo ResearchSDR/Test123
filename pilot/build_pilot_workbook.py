@@ -192,6 +192,8 @@ cols = [  # (header, band, width)
  ('Fallback venue','Fallback pitch',26),('Fallback slot','Fallback pitch',19),('Format','Fallback pitch',10),('Cost per player at cost (£)','Fallback pitch',10),
  ('Lead with: venue','Lead with (message)',24),('Lead with: slot','Lead with (message)',19),('Lead with: format','Lead with (message)',10),
  ('Lead with: price per player (£)','Lead with (message)',10),('Lead-with line (for drafting)','Lead with (message)',60),
+ ('Subject','Lead with (message)',44),('Email draft','Lead with (message)',60),('LinkedIn / DM draft','Lead with (message)',50),
+ ('DM length','Lead with (message)',6),('Draft status','Lead with (message)',16),
  ('Owner','Tracking — fill in',9),('Channel','Tracking — fill in',11),('Contacted on','Tracking — fill in',12),('Replied','Tracking — fill in',8),
  ('Call booked','Tracking — fill in',8),('Group created','Tracking — fill in',8),('First game booked','Tracking — fill in',8),
  ('Second game booked','Tracking — fill in',8),('Sees us as competitor?','Tracking — fill in',10),
@@ -259,6 +261,31 @@ for n, r in enumerate(leads, 3):
         f'" · £"&TEXT({C("Lead with: price per player (£)")}{n},"0.00")&" per player",'
         f'" · price TBC (cost £"&TEXT({C("Cost per player at cost (£)")}{n},"0.00")&" pp)"))'),
     }
+    SL_, VN_, FM_, PR_, OW_, BZ_ = (f'{C("Lead with: slot")}{n}', f'{C("Lead with: venue")}{n}', f'{C("Lead with: format")}{n}',
+                                    f'{C("Lead with: price per player (£)")}{n}', f'{C("Owner")}{n}', f'{C("Business")}{n}')
+    price = f'IF({PR_}<>"","£"&IF({PR_}=INT({PR_}),TEXT({PR_},"0"),TEXT({PR_},"0.00")),"[PRICE PER PLAYER]")'
+    jlink = "IF('Pilot offer'!$C$19<>\"\",'Pilot offer'!$C$19,\"[JOINING LINK]\")"
+    dline = "IF('Pilot offer'!$C$20<>\"\",TEXT('Pilot offer'!$C$20,\"dddd d mmmm\"),\"[COMMIT DEADLINE]\")"
+    name  = f'IF({OW_}<>"",{OW_},"[NAME]")'
+    when_long  = f'TEXT({SL_},"dddd d mmmm")&" at "&TEXT({SL_},"hh:mm")'
+    when_short = f'TEXT({SL_},"ddd d mmm")&", "&TEXT({SL_},"hh:mm")'
+    NL = 'CHAR(10)'
+    row['Subject'] = f'=IF({SL_}="","",{FM_}&" at "&{VN_}&", "&{when_short}&" · "&{price}&" a player")'
+    row['Email draft'] = (
+        f'=IF({SL_}="","","Hi "&{BZ_}&" team,"&{NL}&{NL}'
+        f'&"We\'re putting on a "&{FM_}&" game at "&{VN_}&" on "&{when_long}&" and we\'re looking for a group of colleagues to take it."&{NL}&{NL}'
+        f'&"It\'s "&{price}&" a player. FC Urban handles the pitch booking, sign-ups and payments, so all it takes is one person sharing the link with the team."&{NL}&{NL}'
+        f'&"Would you be up for it, or is there someone at "&{BZ_}&" who\'d enjoy getting a group together? Spots are held until "&{dline}&": "&{jlink}&{NL}&{NL}'
+        f'&"Best,"&{NL}&{name}&{NL}&"FC Urban")')
+    dm_full  = (f'"Hi, we\'re putting on a "&{FM_}&" game at "&{VN_}&" on "&{when_short}&" · "&{price}&" a player. '
+                f'FC Urban handles booking, sign-ups and payments; you just share one link with colleagues. '
+                f'Up for it, or is there someone at "&{BZ_}&" who\'d organise? "&{name}&", FC Urban"')
+    dm_short = (f'"Hi, we\'re putting on a "&{FM_}&" game at "&{VN_}&" on "&{when_short}&" · "&{price}&" a player. '
+                f'FC Urban handles booking, sign-ups and payments. Up for it, or know who\'d organise? "&{name}&", FC Urban"')
+    row['LinkedIn / DM draft'] = f'=IF({SL_}="","",IF(LEN({dm_full})<=300,{dm_full},{dm_short}))'
+    row['DM length'] = f'=LEN({C("LinkedIn / DM draft")}{n})'
+    row['Draft status'] = (f'=IF({C("Email draft")}{n}="","No slot",IF(ISNUMBER(SEARCH("[",{C("Email draft")}{n})),'
+                           f'"Fill placeholders","Ready to send"))')
     for h, v in row.items():
         c = wo.cell(row=n, column=ci[h], value=v); c.font = fnt; c.border = box; c.alignment = top
         if isinstance(v, str) and v.startswith('='): c.font = green
@@ -396,6 +423,15 @@ for j, (h, v) in enumerate(zip(ex_h, ex_v), 1):
 wr.cell(row=rr+1, column=3).number_format = D
 rr += 3
 rules = [
+ ('Outreach message (built per row in Outreach › Email draft and LinkedIn / DM draft)', bold),
+ ('Subject: {format} at {venue}, {ddd d mmm}, {hh:mm} · {price} a player', fnt),
+ ('Hi {Business} team,', fnt),
+ ('We’re putting on a {format} game at {venue} on {weekday d month} at {hh:mm} and we’re looking for a group of colleagues to take it.', fnt),
+ ('It’s {price} a player. FC Urban handles the pitch booking, sign-ups and payments, so all it takes is one person sharing the link with the team.', fnt),
+ ('Would you be up for it, or is there someone at {Business} who’d enjoy getting a group together? Spots are held until {commit deadline}: {joining link}', fnt),
+ ('Best, {Owner} · FC Urban', fnt),
+ ('Anything still in [BRACKETS] comes from an empty cell on Pilot offer or Owner — Draft status says “Ready to send” only when none are left.', fnt),
+ ('', fnt),
  ('Rules used', bold),
  ('Tier: 1 = E2 and E8 (closest to Yorkton St); 2 = N1 and EC2A; 3 = E1.', fnt),
  ('Segment: grouped from the Industry column — Office & professional, Coworking / shared office, Hospitality, Education, Retail, Leisure & culture, Health, Other.', fnt),
