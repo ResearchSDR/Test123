@@ -1,8 +1,6 @@
 venue,kind,address,postcode,lat,lon,fcurban_page
 Bermondsey Riverside,FC Urban venue,"George Row, SE16 4UP",SE16 4UP,51.498952,-0.069276,https://www.fcurban.com/locations/bermondsey-riverside
 Borough Academy,FC Urban venue,"King's Ct, SE1 0BU",SE1 0BU,51.501467,-0.099356,https://www.fcurban.com/locations/borough-academy
-COLA Shoreditch Park,FC Urban venue,"Hyde Rd, N1 5JU",N1 5JU,51.53547,-0.083448,https://www.fcurban.com/locations/cola-shoreditch-park
-Docklands - Surrey Quays,FC Urban venue,"Salter Rd, SE16 5AA",SE16 5AA,51.499203,-0.035147,https://www.fcurban.com/locations/docklands-surrey-quays
 Isle of Dogs (Canary Wharf) - George Green's School,FC Urban venue,"Manchester Road, E14 3DW",E14 3DW,51.488127,-0.007607,https://www.fcurban.com/locations/isle-of-dogs-canary-wharf-george-greens-school
 Liverpool St - Attlee Centre,FC Urban venue,"Thrawl Street, E1 6RT",E1 6RT,51.517879,-0.072915,https://www.fcurban.com/locations/liverpool-st-attlee-centre
 Old St - Moreland Primary School,FC Urban venue,"Gard Street, EC1V 8DW",EC1V 8DW,51.528875,-0.098128,https://www.fcurban.com/locations/old-st-moreland-primary-school
@@ -13,3 +11,7 @@ St Pancras - Coram's Fields 3G,FC Urban venue,"Brunswick Square, WC1N 1AZ",WC1N 
 Whitechapel,FC Urban venue,"Richard St, E1 2JR",E1 2JP,51.514507,-0.060432,https://www.fcurban.com/locations/whitechapel
 PlayFootball Canary Wharf - Westferry (E14 8HH),Other bookable pitch,,E14 8HH,51.51119,-0.029731,
 Fives Dockland Centre (E14 9GW),Other bookable pitch,,E14 9GW,51.509848,-0.000376,
+City of London School (EC4V 3AL),Other bookable pitch,,EC4V 3AL,51.511026,-0.099361,
+Marlborough Sports Garden (SE1 1SD),Other bookable pitch,,SE1 1SD,51.50351,-0.093363,
+Angel Centre (EC1V 7DD),Other bookable pitch,,EC1V 7DD,51.530347,-0.104655,
+Finsbury Leisure Centre (EC1V 3PU),Other bookable pitch,,EC1V 3PU,51.526119,-0.095129,

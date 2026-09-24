@@ -14,6 +14,7 @@ MAXR = int(os.environ.get('MAXR', '1000'))
 rd = lambda f: list(csv.DictReader(open(f'{HERE}/{f}', encoding='utf-8')))
 corps, venues, slots = rd('city_canary_wharf_corporates_400.csv'), rd('venues.csv'), rd('slots.csv')
 contacts = {r['venue']: r for r in rd('booking_contacts.csv')}
+emails = {r['company']: r for r in rd('emails.csv')} if os.path.exists(f'{HERE}/emails.csv') else {}
 if os.environ.get('SAMPLE'): corps = corps[:int(os.environ['SAMPLE'])]
 
 # ---------- styles ----------
@@ -112,8 +113,8 @@ V = lambda col: f"Venues!${col}$2:${col}${nV+1}"
 wp = wb.create_sheet('Offer')
 wp['B1'] = 'Offer · after-work football for City and Canary Wharf teams'; wp['B1'].font = title
 wp['B2'] = 'Yellow cells are inputs. They feed every draft on Outreach. The pitch and slot per company come from Venues (Lead-with slot).'; wp['B2'].font = fnt
-P = [('Price per player (£)', None, 'Joep', 'Corporate teams can carry more than the Haggerston pilot. Compare with Venues › Cost per player at earliest.'),
-     ('Default sender (when Owner is empty)', 'Joep', '', ''),
+P = [('Price per player (£)', None, 'Brian', 'Corporate teams can carry more than the Haggerston pilot. Compare with Venues › Cost per player at earliest.'),
+     ('Default sender (when Owner is empty)', 'Brian', '', ''),
      ('Joining link (app)', None, '', ''),
      ('Deadline for players to commit', None, '', 'Date. Leave empty to drop the sentence.'),
      ('Game length (min)', 60, '', ''),
@@ -138,18 +139,19 @@ wp.column_dimensions['D'].width = 8; wp.column_dimensions['E'].width = 80
 wo = wb.create_sheet('Outreach', 0)
 cols = [
  ('#', 'Company', 5), ('Priority', 'Company', 7), ('Segment', 'Company', 20), ('Area', 'Company', 13), ('Company', 'Company', 36),
- ('Name for messages', 'Company', 26), ('Companies House no.', 'Company', 11), ('Companies House', 'Company', 12), ('LinkedIn search', 'Company', 12),
+ ('Name for messages', 'Company', 26), ('Website', 'Company', 26), ('Email', 'Company', 30), ('Email type', 'Company', 13), ('Email source', 'Company', 14),
+ ('Companies House no.', 'Company', 11), ('Companies House', 'Company', 12),
  ('Accounts', 'Company', 9), ('Incorporated', 'Company', 11), ('Registered address', 'Company', 34), ('Postcode', 'Company', 10),
  ('In 933 research list?', 'Company', 16),
  ('Contact first name', 'Contact — fill in', 12), ('Contact full name', 'Contact — fill in', 20), ('Job title', 'Contact — fill in', 22),
- ('LinkedIn URL', 'Contact — fill in', 28), ('Email', 'Contact — fill in', 28), ('Phone', 'Contact — fill in', 14),
+ ('Direct email', 'Contact — fill in', 28), ('Phone', 'Contact — fill in', 14),
  ('Nearest pitch', 'Nearest pitch', 28), ('Walk (min)', 'Nearest pitch', 7), ('Other pitches ≤19 min', 'Nearest pitch', 34),
  ('Lead with: pitch', 'Lead with (message)', 28), ('Walk to it (min)', 'Lead with (message)', 7), ('Pitch status', 'Lead with (message)', 15),
  ('Open slots', 'Lead with (message)', 7), ('Lead with: slot', 'Lead with (message)', 19), ('Lead with: format', 'Lead with (message)', 10),
  ('Price per player (£)', 'Lead with (message)', 9), ('Lead-with line', 'Lead with (message)', 56),
- ('Subject', 'Lead with (message)', 44), ('Email draft', 'Lead with (message)', 60), ('LinkedIn connection note', 'Lead with (message)', 50),
- ('Note length', 'Lead with (message)', 6), ('LinkedIn follow-up DM', 'Lead with (message)', 50), ('Draft status', 'Lead with (message)', 16),
- ('Owner', 'Tracking — fill in', 9), ('Channel', 'Tracking — fill in', 11), ('Contacted on', 'Tracking — fill in', 12), ('Connection accepted', 'Tracking — fill in', 9),
+ ('Send to', 'Lead with (message)', 30), ('Subject', 'Lead with (message)', 44), ('Email draft', 'Lead with (message)', 60),
+ ('Follow-up email (day 4)', 'Lead with (message)', 50), ('Draft status', 'Lead with (message)', 16),
+ ('Owner', 'Tracking — fill in', 9), ('Channel', 'Tracking — fill in', 11), ('Contacted on', 'Tracking — fill in', 12), ('Follow-up sent on', 'Tracking — fill in', 12),
  ('Replied', 'Tracking — fill in', 8), ('Call booked', 'Tracking — fill in', 8), ('Group created', 'Tracking — fill in', 8),
  ('First game booked', 'Tracking — fill in', 8), ('Second game booked', 'Tracking — fill in', 8), ('Objection (exact words)', 'Tracking — fill in', 40),
  ('Next step', 'Tracking — fill in', 28), ('Notes', 'Tracking — fill in', 30)]
@@ -172,7 +174,10 @@ for n, r in enumerate(corps, 3):
     row = {
      '#': int(r['#']), 'Priority': int(r['Priority']), 'Segment': r['Segment'], 'Area': r['Area'], 'Company': r['Company name'],
      'Name for messages': r['Name for messages'], 'Companies House no.': r['Companies House number'] or None,
-     'Companies House': 'Open' if r['Companies House link'] else None, 'LinkedIn search': 'Search',
+     'Companies House': 'Open' if r['Companies House link'] else None,
+     'Website': (emails.get(r['Company name'], {}).get('website') or None), 'Email': (emails.get(r['Company name'], {}).get('email') or None),
+     'Email type': (emails.get(r['Company name'], {}).get('email_type') or 'Not found'),
+     'Email source': ('Open page' if emails.get(r['Company name'], {}).get('source', '').startswith('http') else (emails.get(r['Company name'], {}).get('via') or None)),
      'Accounts': r['Accounts type'] or None, 'Incorporated': datetime.datetime.strptime(r['Incorporated'], '%d/%m/%Y').date() if r['Incorporated'] else None,
      'Registered address': r['Registered address'] or None, 'Postcode': r['Postcode'],
      'In 933 research list?': ('Yes' if r['Also in earlier 933 research list (not messaged)'] else 'No'),
@@ -190,7 +195,8 @@ for n, r in enumerate(corps, 3):
     has_slot = f'ISNUMBER({SL_})'
     price = f'IF({PR_}<>"","£"&IF({PR_}=INT({PR_}),TEXT({PR_},"0"),TEXT({PR_},"0.00")),"[PRICE PER PLAYER]")'
     sender = f'IF({OW_}<>"",{OW_},IF({SENDER}<>"",{SENDER},"[NAME]"))'
-    hi = f'"Hi"&IF({FN_}<>""," "&{FN_},"")&","'
+    hi = f'"Hi "&IF({FN_}<>"",{FN_},{CO_}&" team")&","'
+    row['Send to'] = f'=IF({ref("Direct email")}<>"",{ref("Direct email")},IF({ref("Email")}<>"",{ref("Email")},""))'
     when_long = f'IF({has_slot},"on "&TEXT({SL_},"dddd d mmmm")&" at "&TEXT({SL_},"hh:mm"),"on a weekday evening that suits your team")'
     when_short = f'IF({has_slot},TEXT({SL_},"ddd d mmm")&", "&TEXT({SL_},"hh:mm"),"weekday evenings")'
     jl = f'IF({JLINK}<>"",{JLINK},"[JOINING LINK]")'
@@ -208,18 +214,11 @@ for n, r in enumerate(corps, 3):
         f'It\'s "&{price}&" a player and we handle the pitch booking, sign-ups and payments, so all it takes is one person sharing a link with the team."&{NL}&{NL}'
         f'&"It works well as a team social or "&{a_co}&{CO_}&" vs clients game. Would your team be up for it, or is there someone who\'d enjoy organising it?"&{dl}&" "&{jl}&{NL}&{NL}'
         f'&"Best,"&{NL}&{sender}&{NL}&"FC Urban"')
-    note_full = (f'{hi}&" FC Urban runs after-work football for "&{place}&" teams. We have a "&{FM_}&" pitch at "&{VN_}&", "&{WK_}&" min from your office, "'
-                 f'&{when_short}&", "&{price}&" a player. We handle booking, sign-ups and payments. Fancy "&{a_co}&{CO_}&" team game? "&{sender}')
-    note_short = (f'{hi}&" FC Urban runs after-work football for "&{place}&" teams: "&{FM_}&" at "&{VN_}&", "&{WK_}&" min from your office, "'
-                  f'&{when_short}&", "&{price}&" pp. We handle booking and payments. Up for a team game? "&{sender}')
-    row['LinkedIn connection note'] = f'=IF(LEN({note_full})<=300,{note_full},LEFT({note_short},300))'
-    row['Note length'] = f'=LEN({ref("LinkedIn connection note")})'
-    row['LinkedIn follow-up DM'] = (
-        f'="Thanks for connecting"&IF({FN_}<>"",", "&{FN_},"")&". "&IF({has_slot},"The "&{FM_}&" slot at "&{VN_}&" is "&{when_short},"We can book "&{FM_}&" at "&{VN_}&" on a weekday evening that suits you")&" and it\'s "&{price}'
-        f'&" a player, all booked and paid through one link. If football isn\'t your thing, who at "&{CO_}&" would be the right person to organise a team game?"'
-        f'&{dl}&" "&{jl}')
-    row['Draft status'] = (f'=IF(OR(ISNUMBER(SEARCH("[",{ref("Email draft")})),ISNUMBER(SEARCH("[",{ref("LinkedIn follow-up DM")}))),"Fill placeholders",'
-                           f'IF({has_slot},"Ready to send","Ready · no fixed slot"))')
+    row['Follow-up email (day 4)'] = (
+        f'={hi}&{NL}&{NL}&"Just bumping this up. The "&{FM_}&" pitch at "&{VN_}&" is still free "&{when_short}&", "&{a_walk}&{WK_}&"-minute walk from your office, "'
+        f'&{price}&" a player. Happy to hold it for "&{CO_}&" if someone on the team fancies organising a game."&{dl}&" "&{jl}&{NL}&{NL}&"Best,"&{NL}&{sender}&{NL}&"FC Urban"')
+    row['Draft status'] = (f'=IF({ref("Send to")}="","No email yet",IF(ISNUMBER(SEARCH("[",{ref("Email draft")})),"Fill placeholders",'
+                           f'IF({has_slot},"Ready to send","Ready · no fixed slot")))')
     for h, v in row.items():
         c = wo.cell(row=n, column=ci[h], value=v); c.border = box; c.alignment = top
         c.font = green if isinstance(v, str) and v.startswith('=') else fnt
@@ -229,16 +228,18 @@ for n, r in enumerate(corps, 3):
     wo.cell(row=n, column=ci['Contacted on']).number_format = D
     if r['Companies House link']:
         c = wo.cell(row=n, column=ci['Companies House']); c.hyperlink = r['Companies House link']; c.font = link
-    c = wo.cell(row=n, column=ci['LinkedIn search'])
-    c.hyperlink = 'https://www.linkedin.com/search/results/companies/?keywords=' + r['Name for messages'].replace('&', '%26').replace(' ', '%20'); c.font = link
+    e = emails.get(r['Company name'], {})
+    if e.get('website', '').startswith('http'): c = wo.cell(row=n, column=ci['Website']); c.hyperlink = e['website']; c.font = link
+    if e.get('source', '').startswith('http'): c = wo.cell(row=n, column=ci['Email source']); c.hyperlink = e['source']; c.font = link
 last = len(corps) + 2
 def dv(h, opts):
     d = DataValidation(type='list', formula1='"' + ','.join(opts) + '"', allow_blank=True)
     wo.add_data_validation(d); d.add(f'{C(h)}3:{C(h)}{MAXR}')
-dv('Owner', ['Joep', 'Luuk', 'Brian', 'Stan', 'Nero', 'Nicky'])
-dv('Channel', ['LinkedIn', 'Email', 'InMail', 'Phone', 'Walk-in', 'Other'])
-for h in ('Connection accepted', 'Replied', 'Call booked', 'Group created', 'First game booked', 'Second game booked'): dv(h, ['Yes', 'No'])
-dd = DataValidation(type='date', allow_blank=True); wo.add_data_validation(dd); dd.add(f'{C("Contacted on")}3:{C("Contacted on")}{MAXR}')
+dv('Owner', ['Brian', 'Joep', 'Luuk', 'Stan', 'Nero', 'Nicky'])
+dv('Channel', ['Email', 'Phone', 'Walk-in', 'Other'])
+for h in ('Replied', 'Call booked', 'Group created', 'First game booked', 'Second game booked'): dv(h, ['Yes', 'No'])
+dd = DataValidation(type='date', allow_blank=True); wo.add_data_validation(dd)
+for h in ('Contacted on', 'Follow-up sent on'): dd.add(f'{C(h)}3:{C(h)}{MAXR}'); [setattr(wo.cell(row=k, column=ci[h]), 'number_format', D) for k in range(3, last + 1)]
 wo.freeze_panes = f'{C("Name for messages")}3'
 wo.auto_filter.ref = f'A2:{L(len(H))}{last}'
 wo.cell(row=2, column=ci['Priority']).comment = Comment('1 = target sector (law, bank, public bank, private bank, fund admin) with group/large accounts. 2 = target sector, or any sector with group accounts. 3 = fund managers / insurers / advisory with full accounts.', 'FC Urban')
@@ -272,8 +273,9 @@ block('Companies by segment and area', SEGS,
       lambda rr: [f'=COUNTIFS({O("Segment")},$A{rr},{O("Area")},"City of London")', f'=COUNTIFS({O("Segment")},$A{rr},{O("Area")},"Canary Wharf")',
                   f'=COUNTIF({O("Segment")},$A{rr})'], ('Segment', 'City of London', 'Canary Wharf', 'Total'))
 block('Companies by priority', [1, 2, 3], lambda rr: [f'=COUNTIF({O("Priority")},A{rr})'])
+block('Email found', ['general', 'role (other)', 'named person', 'privacy / compliance', 'Not found'], lambda rr: [f'=COUNTIF({O("Email type")},A{rr})'])
 block('Companies by lead-with pitch', [v['venue'] for v in venues], lambda rr: [f'=COUNTIF({O("Lead with: pitch")},A{rr})'])
-STAGES = [('Contacted', 'Contacted on', '>0'), ('Connection accepted', 'Connection accepted', 'Yes'), ('Replied', 'Replied', 'Yes'),
+STAGES = [('Contacted', 'Contacted on', '>0'), ('Follow-up sent', 'Follow-up sent on', '>0'), ('Replied', 'Replied', 'Yes'),
           ('Call booked', 'Call booked', 'Yes'), ('Group created', 'Group created', 'Yes'), ('First game booked', 'First game booked', 'Yes'),
           ('Second game booked', 'Second game booked', 'Yes')]
 wt.cell(row=r, column=1, value='Funnel (from the Tracking columns on Outreach)').font = bold; r += 1
@@ -317,7 +319,7 @@ lines = [
   'within a 19-minute walk of a pitch. Each row leads with a specific pitch, slot and price per player.', fnt),
  ('', fnt),
  ('Tabs', bold),
- ('Outreach — one row per company. Find a contact (LinkedIn search link on the row), fill the yellow Contact columns, send the drafts, log the Tracking columns.', fnt),
+ ('Outreach — one row per company with its website and a published contact email (Email source links to the page it came from). Send to = Direct email if you add one, else Email. Send the Email draft, then the Follow-up email after 4 days; log the Tracking columns.', fnt),
  ('Offer — price per player, default sender, joining link and commit deadline. These feed every draft.', fnt),
  (f'Venues — {len(venues)} pitches ({nfc} FC Urban venues + others found nearby): open slots, earliest slot, cost per player, who to call. '
   'Put a confirmed slot in Chosen slot (override) and every draft for that pitch uses it.', fnt),
@@ -338,9 +340,12 @@ lines = [
  ('7. Geocoded each registered-office postcode (postcodes.io). Kept companies within 1.8 km of Bank or Canary Wharf and within a 19-minute walk of a pitch (straight line × 1.3, 4.8 km/h).', fnt),
  ('8. Picked all target-sector companies (law, banks, public banks, private banks, fund admin), then filled to 400 with fund managers, insurers and advisory firms, balanced between them, largest accounts and shortest walk first.', fnt),
  ('', fnt),
+ ('9. Only companies with a pitch that has a confirmed open after-work slot within 19 minutes. No Canary Wharf pitch had one (all enquiry-only), so this list is City-only; Canary Wharf firms can be added once Poplar / George Green\'s / Westferry confirm a slot.', fnt),
+ ('10. Emails: scraped from each firm\'s own website (contact / office pages), then a web search for the rest; every address was checked against the firm\'s own domain. Where two sources existed, a general inbox beat a named person.', fnt),
+ ('', fnt),
  ('Caveats', bold),
  ('Registered office ≠ always the working office (some firms register at their accountant or lawyer). Check the walk time before you send.', fnt),
- ('Contact names, emails and LinkedIn URLs are not in Companies House — the Contact columns are for you to fill.', fnt),
+ ('Emails were taken only from each firm\'s own website or an official register (never guessed). Most are general inboxes (info@, enquiries@); "named person" means a published address of a specific person; "privacy / compliance" is a last resort — swap in a better one if you find it.', fnt),
  ('Better (GLL) venues release slots about 6 days ahead, and school pitches are often enquiry-only: those show as Contact required. Call, then put the agreed slot in Venues › Chosen slot (override).', fnt),
  ('Bank of England is a statutory body, not on Companies House; it was added by hand. Public / state-owned banks are those owned by a government (e.g. Indian, Korean, Chinese and Ghanaian state banks).', fnt),
 ]

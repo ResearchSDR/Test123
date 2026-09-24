@@ -1,0 +1,401 @@
+company,website,email,email_type,source,via
+Allen Overy Shearman Sterling LLP,https://www.aoshearman.com,dparisi@aoshearman.com,named person,https://www.aoshearman.com/en/industries/private-capital/family-office,website scrape
+Baker & McKenzie LLP,https://www.bakermckenzie.com,hkalumni@bakermckenzie.com,named person,https://www.bakermckenzie.com/en/locations/asia-pacific/china/hong-kong,website scrape
+Shoosmiths LLP,https://www.shoosmiths.com,generalenquiries@shoosmiths.com,named person,https://www.shoosmiths.com/contact,website scrape
+Herbert Smith Freehills Kramer Global LLP,https://www.hsfkramer.com,,,,
+Ashurst Perkins Coie UK LLP,https://www.ashurstperkinscoie.com,london@ashurstperkinscoie.com,general,https://www.ashurstperkinscoie.com/en/our-locations/london-duval-square/,web search
+Carey Olsen LLP,https://www.careyolsen.com,londonco@careyolsen.com,general,https://www.careyolsen.com/locations/london,web search
+Eversheds Sutherland (International) LLP,https://www.eversheds-sutherland.com,rachelreid@eversheds-sutherland.com,named person,https://www.eversheds-sutherland.com/en/global/capabilities/services/data-privacy-security-and-technology/cybersecurity,website scrape
+Goodwin Procter (UK) LLP,https://www.goodwinlaw.com,etan@goodwinlaw.com,named person,https://www.goodwinlaw.com/en/about/about-us,website scrape
+Withers LLP,https://www.withersworldwide.com,hello@withersworldwide.com,general,https://www.withersworldwide.com/en-gb/locations/europe/london,web search
+Charles Russell Speechlys LLP,https://www.charlesrussellspeechlys.com,london@charlesrussellspeechlys.com,general,https://www.charlesrussellspeechlys.com/en/our-locations/offices/london/,web search
+CMS Cameron McKenna Nabarro Olswang LLP,https://cms.law,,,,
+Bryan Cave Leighton Paisner LLP,https://www.bclplaw.com,kwfries@bclplaw.com,named person,https://www.bclplaw.com/en-US/about/about-bclp.html,website scrape
+Osborne Clarke LLP,https://www.osborneclarke.com,luis.gil@osborneclarke.com,named person,https://www.osborneclarke.com/what-our-clients-are-talking-about/green-hydrogen,website scrape
+Fragomen (GB) Limited,https://www.fragomen.com,london@fragomen.com,general,https://www.fragomen.com/offices/london.html,web search
+Fieldfisher LLP,https://www.fieldfisher.com,london@fieldfisher.com,general,https://www.fieldfisher.com/en/locations/united-kingdom/contact-us/offices/london,web search
+Hogan Lovells Cadwalader International LLP,https://www.hlc.com,connect@hlc.com,named person,https://www.hlc.com/en/locations/connect,website scrape
+Mills & Reeve LLP,https://www.mills-reeve.com,info@mills-reeve.com,general,https://www.mills-reeve.com/,website scrape
+DLA Piper International LLP,https://www.dlapiper.com,communications@dlapiper.com,role (press / marketing),https://www.dlapiper.com/en-us/legal-notices/additional/privacy-policy,website scrape
+Lighthouse Global Europe Limited,https://lighthouse.com,,,,
+Howard Kennedy LLP,https://www.howardkennedy.com,london@howardkennedy.com,general,https://www.howardkennedy.com/contact-us,web search
+Linklaters LLP,https://www.linklaters.com,pressoffice@linklaters.com,role (press / marketing),https://www.linklaters.com/,website scrape
+Three Crowns (Services) LLP,https://www.threecrownsllp.com,london@threecrownsllp.com,general,https://www.threecrownsllp.com/contact/,web search
+Stephenson Harwood LLP,https://www.stephensonharwood.com,info@stephensonharwood.com,general,https://www.stephensonharwood.com/contact-us/,website scrape
+Devonshires Solicitors LLP,https://www.devonshires.com,info@devonshires.co.uk,general,https://www.devonshires.com/,website scrape
+PGMBM Ltd,https://pogustgoodhead.com,mydata@pogustgoodhead.com,privacy / compliance,https://pogustgoodhead.com/gdpr-privacy-policy/,website scrape
+Squire Patton Boggs (UK) LLP,https://www.squirepattonboggs.com,enquiries@squirepb.com,general,https://www.squirepattonboggs.com/contact-us/,web search
+Simmons & Simmons LLP,https://www.simmons-simmons.com,london@simmons-simmons.com,general,https://www.simmons-simmons.com/en/offices/london,web search
+Beale & Company Solicitors LLP,https://beale.co.uk,graham@beale.co.uk,named person,https://beale.co.uk/,website scrape
+Kennedys Law LLP,https://www.kennedyslaw.com,contactus@kennedyslaw.com,named person,https://www.kennedyslaw.com/en/,website scrape
+Holman Fenwick Willan LLP,https://www.hfw.com,hello@hfw.com,general,https://www.hfw.com/contact-us,web search
+Duncan Lewis Solicitors Ltd,https://www.duncanlewis.co.uk,contact@duncanlewis.com,general,https://www.duncanlewis.co.uk/Home/Contact,web search
+Cynergy Bank PLC,https://www.cynergybank.co.uk,businessbanking@cynergybank.co.uk,role (other),https://www.cynergybank.co.uk/support/contact-us,web search
+Itaú BBA International PLC,https://www.itaubba.eu,enquiries@itaubba.eu,general,https://www.itaubba.eu,web search
+Mizuho International PLC,https://www.mizuho.com,customerservice@mizuho.com,general,https://www.mizuho.com/,website scrape
+National Westminster Bank Public Limited Company,https://www.natwest.com,,,,
+Starling Bank Limited,https://www.starlingbank.com,help@starlingbank.com,general,https://www.starlingbank.com/contact/,web search
+Lloyds Bank PLC,https://www.lloydsbank.com,worldwideservice@lloydsbank.com,role (other),https://www.lloydsbank.com/help-guidance/call-us.html,web search
+Allica Bank Limited,https://www.allica.bank,customer.services@allica.bank,role (other),https://www.allica.bank/contact,web search
+Standard Chartered Bank,https://www.sc.com,info@sc.com,general,https://www.sc.com/uk/contact/,web search
+Gatehouse Bank PLC,https://gatehousebank.com,bdteam@gatehousebank.com,role (other),https://gatehousebank.com/intermediaries/contact-us-1,website scrape
+Hampshire Trust Bank PLC,https://www.htb.co.uk,bfenquiries@htb.co.uk,named person,https://www.htb.co.uk/about-us/contact/,website scrape
+Shawbrook Bank Limited,https://www.shawbrook.co.uk,media@shawbrook.co.uk,role (press / marketing),https://www.shawbrook.co.uk/about-us/media-centre/,website scrape
+ICBC Standard Bank PLC,https://www.icbcstandard.com,londonmarketing@icbcstandard.com,general,https://www.icbcstandard.com,web search
+Bank of England,https://www.bankofengland.co.uk,outreach@bankofengland.co.uk,named person,https://www.bankofengland.co.uk/about/get-involved/citizens-panels,website scrape
+Agdevco Limited,https://www.agdevco.com,info@agdevco.com,general,https://www.agdevco.com/contact-us/,website scrape
+Investec Bank PLC,https://www.investec.com,,,,
+"Morgan, Lewis & Bockius UK LLP",https://www.morganlewis.com,london@morganlewis.com,general,https://www.morganlewis.com/contact-us,web search
+Dechert LLP,https://www.dechert.com,londonlateralrecruitment@dechert.com,general,https://www.dechert.com/about/contact-us.html,website scrape
+K&L Gates LLP,https://www.klgates.com,infoaus@klgates.com,general,https://www.klgates.com/privacy-policy,website scrape
+Burford Capital Services Limited,https://burford.com,info@burford.com,general,https://burford.com/,website scrape
+Katten Muchin Rosenman UK LLP,https://katten.com,gil.soffer@katten.com,named person,https://katten.com/about,website scrape
+Bristows (Services) Limited,https://www.bristows.com,london@bristows.com,general,https://www.bristows.com/contact/,web search
+Maples and Calder,https://maples.com,london@maplesandcalder.com,general,https://maples.com,web search
+Enyo Law LLP,https://enyo.co.uk,enquiries@enyolaw.com,general,https://enyolaw.com/contact/,web search
+Bates Wells & Braithwaite London LLP,https://bates-wells.co.uk,mail@bates-wells.co.uk,general,https://bates-wells.co.uk/,website scrape
+Abion UK Limited,https://abion.com,support@abion.com,role (other),https://abion.com/contact/,website scrape
+"Orrick, Herrington & Sutcliffe (Europe) LLP",https://www.orrick.com,london@orrick.com,general,https://www.orrick.com,web search
+National Legal Service Limited,https://nationallegalservice.co.uk,info@nationallegalservice.co.uk,general,https://nationallegalservice.co.uk/,website scrape
+Marriott Harrison LLP,https://www.marriottharrison.com,enquiries@marriottharrison.com,general,https://www.marriottharrison.com/,website scrape
+Watson Farley & Williams LLP,https://www.wfw.com,info@wfw.com,general,https://www.wfw.com/legal-and-regulatory/,website scrape
+Sacker & Partners LLP,https://www.sackers.com,enquiries@sackers.com,general,https://www.sackers.com/,website scrape
+Haynes and Boone Cdg LLP,https://www.haynesboone.com,london@haynesboone.com,general,https://www.haynesboone.com/locations/london,web search
+Broadfield Law UK LLP,https://www.broadfield.com,sales@broadfield.com,general,https://www.broadfield.com/,website scrape
+Steptoe International (UK) LLP,https://www.steptoe.com,london@steptoe.com,general,https://www.steptoe.com/en/offices/london.html,web search
+Winston & Strawn London LLP,https://www.winston.com,info@winston.com,general,https://www.winston.com,web search
+Peters & Peters Solicitors LLP,https://www.petersandpeters.com,law@petersandpeters.com,named person,https://www.petersandpeters.com/,website scrape
+Dac Beachcroft Claims Limited,https://www.dacbeachcroft.com,london@dacbeachcroft.com,general,https://www.dacbeachcroft.com/en/Location/United-Kingdom/England/London,web search
+MFB Solicitors Limited,http://www.m-f-b.co.uk,mail@m-f-b.co.uk,general,http://www.m-f-b.co.uk/contact-us,web search
+Stewarts Law LLP,https://stewarts.com,info@stewarts.com,general,https://stewarts.com/,website scrape
+Rawlinson & Hunter LLP,https://www.rawlinson-hunter.com,webenquiry@rawlinson-hunter.com,named person,https://www.rawlinson-hunter.com/,website scrape
+Conyers Dill & Pearman,https://www.conyers.com,christopher.johnson-gilbert@conyersdill.com,role (other),https://www.conyers.com,web search
+Boies Schiller Flexner Legacy (UK) LLP,https://www.bsfllp.com,dhunt@bsfllp.com,named person,https://www.bsfllp.com/london-legal-notices.html,website scrape
+Paul Hastings (Europe) LLP,https://www.paulhastings.com,pr@paulhastings.com,role (press / marketing),https://www.paulhastings.com/contact,website scrape
+Batlaw Limited,,,,,
+Runnymede Law Limited,https://www.runnymede.com,,,,
+Doyle Clayton Solicitors Limited,https://doyleclayton.co.uk,info@doyleclayton.co.uk,general,https://doyleclayton.co.uk/,website scrape
+Michael Osborne LLP,https://osborneslaw.com,enquires@osborneslaw.com,named person,https://osborneslaw.com/contact-us/,web search
+Stewartsbridge LLP,https://www.stewartslaw.com,info@stewartslaw.com,general,https://www.stewartslaw.com/contact-us/,web search
+ALM Global (EMEA) Ltd,https://www.almglobal.com,london@almglobal.com,general,https://www.almglobal.com,web search
+39 Essex Chambers (Services) Limited,https://www.39essex.com,info@39essex.com,general,https://www.39essex.com,web search
+White & Case LLP,https://www.whitecase.co.uk,londonearlycareers@whitecase.com,general,https://www.whitecase.com/locations/emea/london,web search
+"Greenberg Traurig, LLP",https://www.gtlaw.com,london@gtlaw.com,general,https://www.gtlaw.com/en/locations/london,web search
+Keystone Law Limited,https://www.keystone.com,info@keystone.com,general,https://www.keystone.com/,website scrape
+Shearwater Law Ltd.,https://shearwater.com,info@shearwater.com,general,https://shearwater.com/pages/contact,website scrape
+Anthony Gold Solicitors LLP,https://anthonygold.co.uk,mail@anthonygold.co.uk,general,https://anthonygold.co.uk/,website scrape
+King & Spalding International LLP,https://www.kslaw.com,london@kslaw.com,general,https://www.kslaw.com/offices/london,web search
+McDermott Will & Schulte UK LLP,https://www.mcdermottlaw.com,,,,
+Payne Hicks Beach LLP,https://www.phb.co.uk,enquiries@phb.co.uk,general,https://www.phb.co.uk/,website scrape
+Secretariat International UK Ltd,https://secretariat-intl.com,marketing@secretariat-intl.com,role (press / marketing),https://secretariat-intl.com/privacy-policy/,website scrape
+Clearbank Limited,https://clear.bank,press@clear.bank,role (press / marketing),https://clear.bank/contact-us,website scrape
+United Bank for Africa (UK) Limited,https://www.ubagroup.com,cfc@ubagroup.com,named person,https://www.ubagroup.com,web search
+Monzo Bank Limited,https://monzo.com,help@monzo.com,general,https://monzo.com/legal/terms-and-conditions,website scrape
+Fire Financial Services Limited,https://www.fire.com,sales@fire.com,general,https://www.fire.com/,website scrape
+Kroo Bank Ltd,https://kroo.com,help@kroo.com,general,https://help.kroo.com/hc/en-gb/articles/9285279736721-Contacting-Customer-Support,web search
+ADIB (UK) Limited,https://www.adib.com,info@adib.com,general,https://www.adib.com/contact-us,website scrape
+DNB (UK) Limited,https://www.dnb.com,acquisitiont@dnb.com,named person,https://www.dnb.com/en-us/about/careers.html,website scrape
+Nomura Bank International PLC.,https://www.nomura.com,pressoffice@nomura.com,role (press / marketing),https://www.nomura.com,web search
+UBS International IB Limited,https://www.ubs.com,lee.osullivan@ubs.com,named person,https://www.ubs.com/locations/united-kingdom/london/5-broadgate/,web search
+British Arab Commercial Bank PLC,https://www.bacb.co.uk/,gil.cohen@bacb.co.uk,named person,https://www.bacb.co.uk/,web search
+Recognise Bank Limited,https://recognisebank.co.uk,help@recognisebank.co.uk,general,https://recognisebank.co.uk/contact-us/,website scrape
+Goldman Sachs International Bank,https://www.goldmansachs.com,,,,
+Birmingham Bank Limited,https://www.birminghambank.com,info@birminghambank.com,general,https://www.birminghambank.com/,website scrape
+This Bank Limited,https://thisbank.co.uk/,customerservice@thisbank.co.uk,general,https://thisbank.co.uk/contact-us,web search
+Alpha Bank London Limited,https://www.enersys.com,compliance@enersys.com,privacy / compliance,https://www.enersys.com/en/about-us/suppliers/,website scrape
+SMBC Bank International PLC,https://www.smbcgroup.com,kazutomo_yoshida@sa.smbcgroup.com,named person,https://www.smbcgroup.com/emea/privacy,website scrape
+Fidbank UK Limited,https://fidbank.co.uk,info@fidbank.uk,general,https://fidbank.co.uk/contact-us.html,website scrape
+Zenith Bank (UK) Limited,https://zenith.com,info@zenith.com,general,https://zenith.com/,website scrape
+Sc Ventures Holdings Limited,https://scventures.io/,,,,
+Afin Bank Limited,https://afinbank.com,media@afinbank.com,role (press / marketing),https://afinbank.com/about/media-centre/,website scrape
+RBC Europe Limited,https://rbc.co.uk,brian@rbc.co.uk,named person,https://rbc.co.uk/,website scrape
+LHV Bank Limited,https://www.lhv.com,info@lhv.com,general,https://www.lhv.com/about/contact,web search
+Turkish Bank (UK) Limited,https://turkish.co.uk,,,,
+Firstbank UK Limited,https://www.fbnbank.co.uk/,info@fbnbank.co.uk,general,https://www.fbnbank.co.uk/contact-us/,website scrape
+Reliance Bank Limited,https://www.reliance.com,investor@reliance.com,general,https://www.reliance.com/about/faq/,website scrape
+DB UK Bank Limited,https://www.db.com,media.uki@db.com,role (press / marketing),https://country.db.com/uk/press,web search
+FCMB Bank (UK) Limited,https://fcmbuk.com/,info@fcmbuk.com,general,https://fcmbuk.com/contact/,web search
+Ghana International Bank Public Limited Company,https://ghana.com,support@ghana.com,role (other),https://ghana.com/,website scrape
+Union Bank of India (UK) Limited,https://www.unionbankofindiauk.co.uk/,info@unionbankofindiauk.co.uk,general,https://www.unionbankofindiauk.co.uk/personal-banking,website scrape
+Punjab National Bank (International) Limited,https://www.pnbint.co.uk/,help@pnbint.co.uk,general,https://rocketreach.co/punjab-national-bank-international-limited-london-email-format_b5d20405f42e3b91,web search
+The Private Infrastructure Development Group Limited,https://www.pidg.com,,,,
+KEXIM Bank (UK) Limited,https://www.kexim.co.uk/,london@kexim.co.uk,general,https://bankchart.co.uk/catalogue/banks/id/134,web search
+N. M. Rothschild & Sons Limited,http://www.nmrothschild.com,,,,
+Brown Shipley & Co. Limited,https://brownshipley.com,maria.shum@brownshipley.co.uk,named person,https://brownshipley.com/en-gb/contact-us,website scrape
+Habib Bank Zurich PLC,https://habibbank.com/gb/,customerservice.uk@habibbank.com,general,https://habibbank.com/gb/contact-us/,web search
+BNY Mellon Investment Management Holdings (Germany) Limited,https://www.bny.com,iminstitutional.clientserviceemea@bnymellon.com,role (other),https://www.bny.com/investments/uk/en/institutional/contact-us.html,web search
+Langham Hall UK LLP,https://www.langhamhall.com,mia.chen@langhamhall.com,named person,https://www.langhamhall.com/locations/shenzhen,website scrape
+FNZ Securities Limited,https://www.fnz.com,chris.taylor@fnz.com,named person,https://www.fnz.com/contact,web search
+Morningstar Wealth Administration Limited,https://www.morningstar.com,reprints@morningstar.com,named person,https://www.morningstar.com/,website scrape
+Asper Platform Services Limited,,,,,
+Carne International Financial Services (UK) Limited,https://www.carnegroup.com,info@carnegroup.com,general,https://www.carnegroup.com/get-in-touch/,website scrape
+Apex Corporate and Business Services UK Limited,https://www.apex.co.uk,mail@apex.co.uk,general,https://www.apex.co.uk/,website scrape
+Alter Domus Fund Services (UK) Limited,https://alterdomus.com,,,,
+Hearthstone Investments Limited,https://www.hearthstone.com,hearthstone@hearthstone.com,named person,https://www.hearthstone.com/,website scrape
+Resonance Asset Management Limited,https://nmr.oxinst.com,rivacycn@oxinst.com,named person,https://www.oxinst.com/corporate-content/privacy,website scrape
+Stafford Capital Partners Limited,https://www.stafford.co.uk,support@stafford.co.uk,role (other),https://www.stafford.co.uk/privacy.aspx,website scrape
+Tritax Management LLP,https://tritax.co.uk,enquiries@tritax.co.uk,general,https://tritax.co.uk/,website scrape
+Capital Dynamics Limited,https://www.microsoft.com,askect@microsoft.com,named person,https://www.microsoft.com/en-us/legal/compliance/recycling,website scrape
+Crowdcube Limited,https://www.crowdcube.com,info@crowdcube.com,general,https://www.crowdcube.com/contact,web search
+Steamship Mutual Underwriting Association Limited,https://www.steamshipmutual.com,,,,
+Momenta Finance Limited,https://momentafinance.co.uk,contact@momentafinance.co.uk,general,https://momentafinance.co.uk/,website scrape
+Ap Ventures LLP,https://apventures.com,info@apventures.com,general,https://apventures.com/get-in-touch,website scrape
+"Vanguard Asset Services, Ltd.",https://investor.vanguard.com,usoffshore@vanguard.com,named person,https://investor.vanguard.com/privacy-center/do-not-sell,website scrape
+Scottish Widows Limited,https://www.scottishwidows.co.uk,,,,
+Pi Capital (Holdings) Ltd,https://www.picapital.com,info@picapital.com,general,https://www.picapital.com/,website scrape
+Cryder Capital Partners LLP,https://crydercapital.com,ir@crydercapital.com,general,https://crydercapital.com/contact-us/,website scrape
+Prytania Asset Management Limited,https://www.prytania.com,info@prytania.com,general,https://www.prytania.com/contact,website scrape
+Tindall Riley & Co Limited,https://tindallriley.co.uk,triley@tindallriley.com,named person,https://tindallriley.co.uk/contact-us/,website scrape
+Map Equity Limited,,,,,
+Aberforth Partners LLP,https://www.aberforth.co.uk,info@aberforth.co.uk,general,https://www.aberforth.co.uk/,website scrape
+Dale Partners Limited,https://dale.com,contact.ae@dale.com,general,https://dale.com/privacy,website scrape
+MMC Ventures Partners LLP,,info@mmcventures.com,general,https://mmc.vc/contact-us/,web search
+Aerius Associates Advisers LLP,https://www.aeriusassociates.com,info@aeriusassociates.com,general,https://www.aeriusassociates.com/,website scrape
+Iris Insurance Brokers Limited,https://www.iris.co.uk,support@iris.co.uk,role (other),https://www.iris.co.uk/,website scrape
+Stockdale Street Limited,https://www.stockdalestreet.co.uk,info@stockdalestreet.co.uk,general,https://www.stockdalestreet.co.uk/,website scrape
+TT International Asset Management Ltd,,info@ttint.com,general,https://www.ttint.com/get-in-touch/,web search
+Platina Partners LLP,https://www.platina.com,info@platina.com,general,https://www.platina.com/,website scrape
+Apposite Capital LLP,https://appositecapital.com,enquiry@appositecapital.com,named person,https://appositecapital.com/,website scrape
+Montanaro Asset Management Limited,https://montanaro.co.uk,enquiries@montanaro.co.uk,general,https://montanaro.co.uk/,website scrape
+International Risk Solutions Limited,https://risksolutions.com,dh@risksolutions.com,named person,https://risksolutions.com/,website scrape
+Panmure Liberum Capital Limited,https://www.panmureliberum.com,enquiries@panmureliberum.com,general,https://www.panmureliberum.com/contact/,web search
+Howden Group Holdings Limited,https://www.chartindustries.com,paul.shields@chartindustries.com,named person,https://www.chartindustries.com/Businesses-Brands/Howden,website scrape
+Meacock Capital PLC,https://www.meacockcapital.co.uk,,,,
+Arcus Infrastructure Partners LLP,,info@arcusip.com,general,https://arcusip.com,web search
+Epic Investment Partners LLP,https://www.epic.com,info@epic.com,general,https://www.epic.com/contact/,website scrape
+Global Aerospace Underwriting Managers Limited,,,,,
+Primary Capital Partners LLP,https://www.primary.com,help@primary.com,general,https://www.primary.com/,website scrape
+Robus Capital Management Limited,https://robus.com,info@robus.com,general,https://robus.com/,website scrape
+Euclid Transactional UK Limited,https://euclidtransactional.com,info@euclidtransactional.com,general,https://euclidtransactional.com/,website scrape
+Shackleton Ventures Limited,,info@shackletonventures.com,general,https://shackletonventures.com/contact/,web search
+Sharegain Ltd,https://sharegain.com,info@sharegain.com,general,https://sharegain.com/,website scrape
+Westonwilliamson+Partners LLP,,studio@westonwilliamson.com,general,https://www.westonwilliamson.com/contact,web search
+International Transport Intermediaries Club Limited,,,,,
+The United Kingdom Mutual Steam Ship Assurance Association Limited,,,,,
+The London Steam-Ship Owners' Mutual Insurance Association Limited,,,,,
+Brit Group Holdings Limited,,,,,
+Pine Walk Capital Limited,https://www.pinewalkcapital.com,,,,
+Wealth Wizards Limited,https://company.wizards.com,press@wizards.com,role (press / marketing),https://company.wizards.com/en,website scrape
+Barker Poland Asset Management LLP,https://www.barkerpoland.co.uk,info@barkerpoland.co.uk,general,https://www.barkerpoland.co.uk/,website scrape
+Clearbrook Capital Partners LLP,https://clearbrook.com,info@clearbrook.com,general,https://clearbrook.com/,website scrape
+Suecia Re & Marine Insurance Company Limited,,,,,
+Ultima Markets UK Limited,https://trustmarqueultima.com,info@trustmarqueultima.com,general,https://trustmarqueultima.com/contact-us,website scrape
+Heronsgate Capital LLP,https://www.heronsgatecapital.com,contactus@heronsgatecapital.com,named person,https://www.heronsgatecapital.com/contact/,website scrape
+Irg Advisors LLP,https://www.irg.com,info@irg.com,general,https://www.irg.com/,website scrape
+Tenax Capital Limited,https://www.tenaxcapital.com,info@tenaxcapital.com,general,https://www.tenaxcapital.com/,website scrape
+Allspring Global Investments (UK) Limited,https://www.allspring.com,allspringinternational@allspringglobal.com,named person,https://www.allspringglobal.com/contact-us,web search
+Sparrows Capital Limited,https://sparrowscapital.com,info@sparrowscapital.com,general,https://sparrowscapital.com/contact/,web search
+Post Office Management Services Limited,https://www.postoffice.com,,,,
+Janus Henderson Investors International Limited,https://www.janushenderson.com,bryan.powell@janushenderson.com,named person,https://www.janushenderson.com/contact-us,website scrape
+Nordstar Partners Management LLP,https://www.nordstar.com,contact@nordstar.com,general,https://www.nordstar.com/contact,website scrape
+Premier Portfolio Managers Limited,https://www.premiermiton.com,contactus@premiermiton.com,named person,https://www.premiermiton.com/contact/,web search
+Tabula Investment Management Limited,https://www.tabulaim.com,ir@tabulagroup.com,general,https://www.tabulaim.com,web search
+Tellworth Investments LLP,https://www.premiermiton.com,info@premiermiton.com,general,https://www.premiermiton.com/tellworth-funds/,website scrape
+Finalto Financial Services Limited,https://finalto.com,support@finalto.com,role (other),https://finalto.com/contact-us/,web search
+Astatine Capital Partners LLP,https://astatineip.com,investors@astatineip.com,general,https://astatineip.com/contact/,web search
+"Bain Capital Private Equity (Europe), LLP",https://www.bain.com,celina.oda@bain.com,named person,https://www.bain.com/offices/bogota/,website scrape
+London Stock Exchange Lei Limited,https://www.lseg.com,lei@lseg.com,named person,https://www.lseg.com/en/contact-us,web search
+Autonomy Capital Research LLP,https://autonomycapital.com,info@autonomycapital.com,general,https://autonomycapital.com/contact/,web search
+Capital Markets Trading UK LLP,https://www.trading.com,support.uk@trading.com,role (other),https://www.trading.com/uk/,web search
+Flywire Payments Limited,https://www.flywire.com,support@flywire.com,role (other),https://www.flywire.com/legal/us-states-disclosure,website scrape
+Navera Investment Management Limited,https://navera.co.uk,info@navera.co.uk,general,https://navera.co.uk/,website scrape
+Vertis Capital Partners Limited,https://vertis.com,info@vertiscap.com,general,https://www.vertiscapital.com/,web search
+V.Scope Risk Management Ltd,http://v-risk.com/,,,,
+Alvarez & Marsal Transaction Advisory Group Europe LLP,https://www.alvarezandmarsal.com,,,,
+Financial Guaranty UK Limited,https://www.guaranty.co.uk,,,,
+Tompay Ltd,https://www.tompayment.com,info@tompayment.com,general,https://register.fca.org.uk/s/firm?id=0014G00002WzXEEQA3,web search
+EBS Dealing Resources International Limited,https://www.ebs.ltd.uk,info@ebs.ltd.uk,general,https://www.ebs.ltd.uk/,website scrape
+Osttra Sef Limited,https://osttra.com,contactus@osttra.com,named person,https://osttra.com/contact/,web search
+Stellex Capital Management UK LLP,https://stellex.co.uk,sales@stellex.co.uk,general,https://stellex.co.uk/,website scrape
+Traiana Limited,,support@traiana.com,role (other),https://www.crunchbase.com/organization/traiana,web search
+Trg Management UK LLP,https://trg.com,info@trg.com,general,https://trg.com/contact/,website scrape
+Diagram Capital Ltd,https://www.diagramcapital.co.uk,info@diagramcapital.co.uk,general,https://www.diagramcapital.co.uk/,website scrape
+The Entrepreneur's Investment Office Limited,https://www.entioffice.com,info@entioffice.com,general,https://www.salezshark.com/company/the-entrepreneur-s-investment-office,web search
+Floww Markets Limited,https://floww.com,info@floww.com,general,https://floww.com/,website scrape
+Rcc Insurance Brokers PLC,https://forsale.dynadot.com,,,,
+St Bride's Managers LLP,https://www.stbridesmanagers.com,info@stbridesmanagers.com,general,https://www.stbridesmanagers.com/contact,website scrape
+Natixis Investment Managers UK Limited,https://www.im.natixis.com/en-gb,ted.meyer@natixis.com,named person,https://www.im.natixis.com/en-gb/about/contact-us,website scrape
+Hedge Funds Investment Management Limited,https://www.names.co.uk,support@names.co.uk,role (other),https://www.names.co.uk/default/holding/index/domain/www.hedge.co.uk,website scrape
+Amicus Capital Consulting LLP,,info@amicuscapital.com,general,https://amicuscapitalgroup.com/contact-us/,web search
+Socii Capital LLP,https://sociicapital.com,team@sociicapital.com,general,https://sociicapital.com/,website scrape
+Integralife UK Limited,,,,,
+RSM UK Restructuring Advisory LLP,https://www.rsmuk.com,,,,
+S&W Partners LLP,https://www.swgroup.com,olivier.pecon@swgroup.com,named person,https://www.swgroup.com/,web search
+Evelyn Partners Investment Management Services Limited,https://www.evelyn.com,niraj.vyas@evelyn.com,named person,https://www.evelyn.com/,website scrape
+Ardea Investment Management (UK) Limited,https://www.ardea.com.au,info@ardea.com.au,general,https://www.ardea.com.au/contact-us/,website scrape
+Pyrford International Limited,https://www.columbiathreadneedle.com,gbi_emea_cpo@columbiathreadneedle.com,role (other),https://www.columbiathreadneedle.com/en/gb/institutional/contact/,web search
+Threadneedle Asset Management Limited,https://www.columbiathreadneedle.com,gbi_emea_cpo@columbiathreadneedle.com,role (other),https://www.columbiathreadneedle.com/en/gb/institutional/contact/,web search
+Hsf Health Plan Limited,https://www.hsf.co.uk,,,,
+Anchorman Insurance Consultants Limited,https://www.anchormaninsurance.co.uk,info@anchormaninsurance.co.uk,general,https://www.anchormaninsurance.co.uk/contact-us,web search
+Assuredpartners London Limited,https://www.assuredpartners.com,enquiries@assuredpartners.co.uk,general,https://www.assuredpartners.com,web search
+Evolin Broking Limited,https://www.evolin.com,enquiries@evolinbroking.com,general,https://evolinbroking.com/contact/,web search
+Continuum Advisory Partners Limited,https://continuumadvisory.com,info@continuumadvisory.com,general,https://continuumadvisory.com/,website scrape
+London LGPS CIV Limited,https://londonciv.org.uk,info@londonciv.org.uk,general,https://londonciv.org.uk/contact,web search
+Gm Insurance Brokers Limited,,,,,
+Cobalt Underwriting Services Limited,https://cobaltuw.com,enquiry@cobaltuw.com,named person,https://cobaltuw.com/,website scrape
+Icap Global Derivatives Limited,https://tpicap.com,sefexecution.specialists@us.icap.com,named person,https://tpicap.com/tpicap/contact-us,web search
+Louis Capital Markets UK LLP,https://www.louiscapital.com,contact@louiscapital.com,general,https://www.louiscapital.com/contact-london.php,web search
+Vantage Capital Markets LLP,https://www.vantage.com,consumer.marketing@vantage.com,named person,https://www.vantage.com/privacy-policy,website scrape
+Helford Capital Partners LLP,https://www.helfordcapitalpartners.com,info@helfordcapitalpartners.com,general,https://www.helfordcapitalpartners.com/,website scrape
+Global Insight Solutions Limited,https://insightsolutions.com,contact@insightsolutions.com,general,https://insightsolutions.com/contact/,website scrape
+LBV Asset Management LLP,https://www.lbv.co.uk,voice@lbv.co.uk,named person,https://www.lbv.co.uk/contact/,website scrape
+Verso Investment Management LLP,https://www.verso.com,info@versoim.com,general,https://www.versoim.com/,web search
+Municipal Mutual Insurance Limited,https://www.mminsurance.co.uk,enquiries@mminsurance.co.uk,general,https://www.mminsurance.co.uk/data-privacy-policy,website scrape
+Cg Asset Management Limited,https://www.cgasset.com,info@cgasset.com,general,https://www.cgasset.com/contact/,website scrape
+Altitude Investment Management PLC,https://www.altitude.com,info@altitudein.com,general,https://www.altitude-investments.com/contact/,web search
+Quantile Technologies Limited,,info@quantiletechnologies.com,general,https://www.quantiletechnologies.com/about/,web search
+Broadstone Financial Solutions Limited,,info@broadstone.co.uk,general,https://broadstone.co.uk/contact-us/,web search
+Freetrade Limited,https://freetrade.io,hello@freetrade.io,general,https://freetrade.io/,website scrape
+Laven Advisors LLP,https://laven.com,info@laven.com,general,https://laven.com/,website scrape
+Lumen Asset Management Limited,https://www.lumen.com,investor.relations@lumen.com,general,https://www.lumen.com/en-us/about/corporate-responsibility.html,website scrape
+Jones Lang Lasalle Corporate Finance Limited,https://www.jll.com,jllinvestorrelations@jll.com,named person,https://www.jll.com/en-us/about-jll,website scrape
+Naisbitt King Asset Management Limited,https://www.naisbittking.com,enquiries@naisbittking.com,general,https://www.naisbittking.com/contact-us/,website scrape
+Slater Investments Limited,https://slaterinvestments.com,lisa@slaterinvestments.com,named person,https://slaterinvestments.com/,website scrape
+Conduit Ventures Limited,https://www.conduit-ventures.com,office@conduit-ventures.com,general,https://www.conduit-ventures.com/,website scrape
+Marylebone Partners LLP,https://www.marylebonepartners.com,info@marylebonepartners.com,general,https://www.marylebonepartners.com/,website scrape
+Kps Global Asset Management UK Limited,https://kps.com,info@kps.com,general,https://kps.com/,website scrape
+Marnix Europe Limited,https://www.marnix.com,,,,
+ICEN Risk Limited,https://www.icenrisk.com,info@icenrisk.com,general,https://www.icenrisk.com/,website scrape
+Millennium Global Investments Limited,https://milltech.com,info@milltech.com,general,https://milltech.com/,website scrape
+Two Sigma International Limited,https://www.twosigma.com,ccpa@twosigma.com,named person,https://www.twosigma.com/privacy-policies/?entity=two-sigma-investments-lp&disclosure=privacy-policy,website scrape
+Northcross Capital LLP,https://www.northcrosscapital.com,enquiries@northcrosscapital.com,general,https://www.northcrosscapital.com/,website scrape
+Squaretrade Limited,https://www.squaretrade.com,legal@squaretrade.com,privacy / compliance,https://www.squaretrade.com/legal-notices,website scrape
+Better Society Capital Limited,https://bettersocietycapital.com,enquiries@bettersocietycapital.com,general,https://bettersocietycapital.com/contact/,website scrape
+IMC London Services Limited,https://www.imc.com,contact.zug@imc.com,general,https://www.imc.com/us/contact/offices/zug,website scrape
+Nedgroup Investments (UK) Limited,https://www.nedgroupinvestments.com,helpdesk@nedgroupinvestments.com,role (other),https://www.nedgroupinvestments.com/content/NGISingleSiteContent/Local/Individual-Investor/Contact-Us.html,website scrape
+FRP Advisory Services LLP,,,,,
+Qsm Asset Management Ltd,https://www.qsm.com,info@qsm.com,general,https://www.qsm.com/contact-us-0,website scrape
+Triple Point Investment Management LLP,https://www.triplepoint.co.uk,contact@triplepoint.co.uk,general,https://www.triplepoint.co.uk/,website scrape
+Cigna Willow Holdings Ltd,https://www.cigna.co.uk,insurance@cigna.co.uk,role (other),https://www.dnb.com/business-directory/company-profiles.cigna_walnut_holdings_ltd.90d0c01b7d99d9411094a22cd2556073.html,web search
+Adg Capital Management LLP,https://www.adg.com,info@adg.com,general,https://www.adg.com/contact,website scrape
+Belgrave Capital Management Limited,https://www.ceresioinvestors.com,info.belgrave@ceresioinvestors.com,general,https://www.ceresioinvestors.com/societa/belgrave-capital-management.html,website scrape
+Rippling UK Limited,https://www.rippling.com,carriers@rippling.com,named person,https://www.rippling.com/company/contact,website scrape
+Marshmallow Financial Services Limited,https://www.marshmallow.com,,,,
+Investengine (UK) Limited,https://investengine.com,support@investengine.com,role (other),https://investengine.com/,website scrape
+Kingsway Capital Advisors LLP,https://kingsway.com,info@kingsway.com,general,https://kingsway.com/,website scrape
+Flood Re Limited,https://www.floodre.co.uk,information@floodre.co.uk,general,https://www.floodre.co.uk/about-us/,website scrape
+Riskpoint Solutions Limited,https://riskpoint.com,info@riskpoint.com,general,https://riskpoint.com/,website scrape
+Digital Portfolio Solutions Limited,,,,,
+Pallas Partners LLP,https://www.pallaspartners.com,info@pallaspartners.com,general,https://www.pallaspartners.com/contact-us,website scrape
+Securis Investments Limited,https://securis.com,info@securis.com,general,https://securis.com/privacy-policy/,website scrape
+The Griffin Insurance Association Limited,https://griffin-insurance.co.uk,,,,
+Managing Agency Partners Limited,,,,,
+Qmetric Group Limited,,,,,
+Wren Insurance Association Limited(the),,,,,
+Ellington Management Group (UK) LLP,https://www.ellington.com,investor@ellington.com,general,https://www.ellington.com/,website scrape
+ICW Insurance Services Ltd,,,,,
+Augment Risk UK Trading Limited,,,,,
+Helios Underwriting PLC,https://www.helios.co.uk,,,,
+Artex Risk Solutions (UK) Limited,https://www.artexrisk.com,artexinfo@artexrisk.com,named person,https://www.artexrisk.com/global-privacy-notice/,website scrape
+Farringdon Capital Ltd,https://www.farringdon.com,contact@farringdon.com,general,https://www.farringdon.com/,website scrape
+Dr J H Burgoyne & Partners Limited Liability Partnership,,,,,
+Rossie House Investment Management LLP,https://rossiehouse.com,mail@rossiehouse.com,general,https://rossiehouse.com/,website scrape
+Asil Partners LLP,https://www.asilpartners.com,info@asilpartners.com,general,https://www.asilpartners.com/contact/,website scrape
+Clearance Capital Limited,https://www.clearance.com,emginc@clearance.com,named person,https://www.clearance.com/contact.htm,website scrape
+Wakam UK Limited,https://www.wakam.com,,,,
+Nursery Road Capital Management Limited,https://www.nurseryroadcapital.com,ir@nurseryroadcapital.com,general,https://www.nurseryroadcapital.com/,website scrape
+Btomorrow Ventures Limited,https://www.btomorrowv.com,contact@btomorrowv.com,general,https://www.btomorrowv.com/legal/privacy-policy,website scrape
+GAM London Limited,https://www.gam.com,clientservice@gam.com,general,https://www.gam.com/en/our-company/contacts-and-locations,website scrape
+Ariel Re UK Limited,https://www.arielre.com,info@arielre.com,general,http://www.arielre.com/contact-us/,website scrape
+Mosaic Corporate Capital Limited,https://www.mosaic.com,usnewbusiness@mosaic.com,named person,https://www.mosaic.com/en/contact,website scrape
+First Trust Global Portfolios Limited,https://www.ftportfolios.com,feedback@ftportfolios.com,named person,https://www.ftportfolios.com/retail/contactus/contactus.aspx,website scrape
+Hidden Road Partners UK LLP,https://ripple.com,support@ripple.com,role (other),https://ripple.com/legal/terms-of-use/,website scrape
+Metage Capital Limited,https://www.metage.com,ir@metage.com,general,https://www.metage.com/,website scrape
+Partners Wealth Management LLP,https://partnerswealthmanagement.co.uk,info@partnerswealthmanagement.co.uk,general,https://partnerswealthmanagement.co.uk/,website scrape
+Seven Investment Management LLP,https://www.seven.co.uk,hello@seven.co.uk,general,https://www.seven.co.uk/,website scrape
+Booker Wellman Underwriting Limited,,,,,
+Bupa Insurance Limited,https://www.bupa.com,media@bupa.com,role (press / marketing),https://www.bupa.com/contact-us,web search
+Consilium Insurance Brokers Limited,,,,,
+HCC International Insurance Company PLC,https://www.tmhcc.com,,,,
+Jenner Underwriting Limited,https://www.domainstore.co.uk,,,,
+TM Claims Service Europe Limited,https://www.tmclaims.com,,,,
+Treimco Limited,,,,,
+Alan Blunden & Co. Ltd,https://www.alanblunden.co.uk,enquiries@alanblunden.co.uk,general,https://www.alanblunden.co.uk/,website scrape
+BA (GI) Limited,https://www.balimited.co.uk,info@balimited.co.uk,general,https://www.balimited.co.uk/,website scrape
+Edge Brokers (London) Limited,https://www.edge.co.uk,abarker@edge.co.uk,named person,https://www.edge.co.uk/about-edge/contact-us/,website scrape
+Equitas Reinsurance Limited,https://www.equitas.co.uk,info@equitas.co.uk,general,https://www.equitas.co.uk/contact.html,website scrape
+GB Underwriting Ltd,https://mxunderwriting.com,enquiries@mxunderwriting.com,general,https://mxunderwriting.com/commecial-legal-indemnity,website scrape
+MX Underwriting Limited,https://mxunderwriting.com,enquiries@mxunderwriting.com,general,https://mxunderwriting.com/commecial-legal-indemnity,website scrape
+Qualis U.K. Limited,https://qualisuk.com,info@qualisuk.com,general,https://qualisuk.com/,website scrape
+Specialist Risk Insurance Solutions Limited,https://specialistrisk.com,warren@specialistrisk.com,named person,https://specialistrisk.com/contact-us,website scrape
+Conv-Ex Advisors Limited,https://www.convex.com,support@convex.com,role (other),https://www.convex.com/data-sourcing-and-privacy-compliance,website scrape
+Emerging Markets Investment Management Limited,https://www.emergingmarkets.com,info@emergingmarkets.com,general,https://www.emergingmarkets.com/,website scrape
+Lindisfarne Partners LLP,https://www.lindisfarne.com,enquire@lindisfarne.com,named person,https://www.lindisfarne.com/,website scrape
+Wm Capital Management Limited,https://www.wmcapitalmanagement.com,info@wmcapitalmanagement.com,general,https://www.wmcapitalmanagement.com/contact-us/,website scrape
+Amtrust Specialty Limited,,,,,
+British Aviation Insurance Company Limited,https://british-aviation.co.uk,,,,
+CBC UK Limited,https://cbc.co.uk,,,,
+KBIS Limited,https://kbis.com,,,,
+Kyoei Fire & Marine Insurance Co. (U.K.) Limited,,,,,
+Legal and General Assurance Society Limited,,social@landg.com,role (press / marketing),https://www.legalandgeneral.com,web search
+Centerview Partners UK LLP,https://www.centerviewpartners.com,,,,
+Hartford Underwriting Agency Limited,https://hartford.com,keanureeves@hartford.com,named person,https://hartford.com/,website scrape
+Marco Gamma Limited,https://marcocapital.net,contact@marcocapital.net,general,https://marcocapital.net/,website scrape
+Renaissance Asset Finance Limited,https://renaissanceaf.com,info@renaissanceaf.com,general,https://renaissanceaf.com/,website scrape
+Walsham Brothers & Co. Limited,https://walshams.co.uk,support@walshams.co.uk,role (other),https://walshams.co.uk/,website scrape
+Partners Group (UK) Limited,https://www.partners.com,admin@partners.com,general,https://www.partners.com/en,website scrape
+Iprism Underwriting Agency Limited,https://www.iprism.co.uk,info@iprism.co.uk,general,https://www.iprism.co.uk/,website scrape
+Alphidence Capital Limited,https://alphidence.capital,info@alphidence.capital,general,https://alphidence.capital/,website scrape
+St Andrew's Insurance PLC,https://standrewsinsurance.com,joe@standrewsinsurance.com,named person,https://standrewsinsurance.com/privacy-policy/,website scrape
+Embark Investments Limited,https://www.embark.com,help@embark.com,general,https://www.embark.com/contact/,website scrape
+John Street Capital Limited,https://www.johnstreetcapital.com,enquiries@johnstreetcapital.com,general,https://www.johnstreetcapital.com/contact.aspx,website scrape
+China Taiping Insurance (UK) Co Ltd,https://uk.cntaiping.com,tpuk@uk.cntaiping.com,named person,https://uk.cntaiping.com/uk-lo/,web search
+Sidekick Money Ltd,https://www.sidekickmoney.com,support@sidekickmoney.com,role (other),https://www.sidekickmoney.com/,website scrape
+Stubben Edge Markets Limited,https://www.stubbenedge.com,hello@stubbenedge.com,general,https://www.stubbenedge.com/privacy-policy,website scrape
+Angel Risk Management Limited,https://www.angelriskmanagement.com,info@angelriskmanagement.com,general,https://www.angelriskmanagement.com/contact-us/,web search
+Health-On-Line Company UK Limited,https://healthon.com,hello@healthon.com,general,https://healthon.com/pages/contact,website scrape
+The Permanent Health Company Limited,https://www.thephc.co.uk/,sales@thephc.co.uk,general,https://www.thephc.co.uk/contact-us/,website scrape
+Bannerman Rendell Limited,https://www.bannermanrendell.com,info@bannermanrendell.com,general,https://www.bannermanrendell.com/,website scrape
+Awbury UK Services Limited,https://www.awbury.com,awbury@awbury.com,named person,https://www.awbury.com/,website scrape
+Rondine Capital LLP,https://rondinecapital.com,info@rondinecapital.com,general,https://rondinecapital.com/contact/,website scrape
+Barnett Waddingham Actuaries and Consultants Limited,,,,,
+Dual International Limited,https://www.dual.com,info@dual.com,general,https://www.dualinsurance.com/uk-en/contact,web search
+The Consulting Consortium Limited,https://tcc.group,hello@tcc.group,general,https://tcc.group/,website scrape
+Cranbrook Underwriting Limited,https://www.cranbrook.com,rkatzaros@cranbrookuw.com,named person,https://find-and-update.company-information.service.gov.uk/company/04286691,web search
+First Underwriting Limited,https://www.first.co.uk,salesadmin@first.co.uk,named person,https://www.first.co.uk/contact/,website scrape
+Node International Ltd,https://node.uk,london@node.uk,general,https://node.uk/contact-us/,website scrape
+Oneglobal Broking Limited,https://oneglobal.com,info@oneglobal.com,general,https://oneglobal.com/about-us/,website scrape
+Osmosis Investment Management UK Limited,https://osmosis.com,reservations@osmosis.com,named person,https://osmosis.com/,website scrape
+Arcadian Risk Capital (UK) Ltd,https://www.arcadian-risk.com,info@arcadian-risk.com,general,https://www.arcadian-risk.com/locations/bermuda/,website scrape
+Fairtree Asset Management LLP,https://www.fairtree.com,clientservices@fairtree.com,role (other),https://www.fairtree.com/,website scrape
+Firmament Capital Advisors UK LLP,https://firmament.com,info@firmament.com,general,https://firmament.com/contact/,website scrape
+GLMX Europe Limited,https://www.glmx.com,sales@glmx.com,general,https://www.glmx.com/contact,website scrape
+Allianz Insurance PLC,https://www.allianz.com,info@allianz.com,general,https://www.allianz.com/en.html,website scrape
+Am Specialty Insurance Company (UK) Ltd,https://www.amspecialty.com,contact@amspecialty.com,general,https://www.amspecialty.com/contact,website scrape
+Antares Global Management Limited,https://www.antares.com,info@antaresglobal.com,general,https://antaresglobal.com/contact-us,web search
+Scorpius Mga Limited,https://scorpiusmga.com,info@scorpiusmga.com,general,https://scorpiusmga.com/,website scrape
+Ascot Underwriting Limited,https://www.ascot.com,csr@ascot.com,named person,https://www.ascot.com/about/contact,website scrape
+Hardy Underwriting Limited,https://www.hardy.co.uk,info@hardy.co.uk,general,https://www.hardy.co.uk/,website scrape
+Kiln Underwriting Limited,https://kiln.com,hello@kiln.com,general,https://kiln.com/privacy-policy/,website scrape
+Liberty Managing Agency Limited,https://www.libertylondon.com,customerservices@libertylondon.com,role (other),https://www.libertylondon.com/,website scrape
+Markel International Insurance Company Limited,https://www.markel.com,jen.blackwell@markel.com,named person,https://www.markel.com/about-us/news-and-press,website scrape
+North Star Underwriting Limited,https://www.northstar.co.uk,info@northstar.co.uk,general,https://www.northstar.co.uk/,website scrape
+Shepherd Compello Ltd,https://www.shepherdcompello.com,info@shepherdcompello.com,general,https://www.shepherdcompello.com/,website scrape
+White Oak Underwriting Agency Limited,https://whiteoak.com,contact@whiteoak.com,general,https://whiteoak.com/,website scrape
+BMG Insurance Brokers Limited,https://www.bmg.com,info@bmg.com,general,https://www.bmg.com/,website scrape
+Sanctuary Insurance Brokers Limited,https://uk.sanctuary.com,info.uk@sanctuary.com,general,https://uk.sanctuary.com/contact-us/,website scrape
+Acrisure London Wholesale Limited,https://www.acrisure.com,info-pl@acrisure.com,general,https://www.acrisure.com/legal,website scrape
+Alcor Underwriting London Limited,https://alcor.com,uk@alcor.com,general,https://alcor.com/contact-us/,website scrape
+AmWINS Global Risks Limited,https://www.amwins.com,agr.dpo@amwins.com,named person,https://www.amwins.com/privacy-amwins-global-risks,website scrape
+Brace Underwriting Limited,https://brace.co.uk,hello@brace.co.uk,general,https://brace.co.uk/,website scrape
+CFC Underwriting Limited,https://www.cfc.com,ugraves@cfc.com,named person,https://www.cfc.com/en-us/contact/,website scrape
+Chord Reinsurance Limited,https://chord.co.uk,info@chord.co.uk,general,https://chord.co.uk/privacy-policy/,website scrape
+Chubb Insurance Service Company Ltd,https://www.chubb.com,surety@chubb.com,named person,https://www.chubb.com/us-en/contact.html,website scrape
+McGill and Partners Ltd,https://www.mcgill.ca,fcc.fod@mcgill.ca,named person,https://www.mcgill.ca/facilities/contact/fcc,website scrape
+Munitus Insurance Limited,https://munitus.co.uk,bookacallwithmunitus@munitus.co.uk,named person,https://munitus.co.uk/,website scrape
+Navium Marine Limited,https://www.naviummarine.com,info@naviummarine.com,general,https://www.naviummarine.com/contact/,website scrape
+Oakside Surety Limited,https://www.oaksidesurety.com,generalenquiries@oaksidesurety.com,named person,https://www.oaksidesurety.com/contact-us/,website scrape
+Omnilife Insurance Company Limited,https://www.omnilife.com,creo@omnilife.com,named person,https://www.omnilife.com/,website scrape
+Pelagos Insurance Capital Underwriting Limited,https://www.pelagos.com,hello@pelagos.com,general,https://www.pelagos.com/contact,website scrape
+Redriff Underwriting Limited,https://redriff.cola.org.uk,enquiries@cola.org.uk,general,https://redriff.cola.org.uk/latest-news/job-opportunity-chief-executive-officer-at-city-of-london-academies-trust/,website scrape
+RGA Capital Limited,https://www.rga.com,kate.neill@rga.com,named person,https://www.rga.com/offices/australia,website scrape
+SCOR UK Company Limited,https://www.scor.com,agarcia3@scor.com,role (other),https://www.scor.com/en/terms-use-legal-notice,website scrape
+Sevanta Specialty Liability Limited,https://www.sevantaspecialty.com,info@sevantaspecialty.com,general,https://www.sevantaspecialty.com/,website scrape
+Silverflame Re Limited,https://www.silverflamere.com,info@silverflamere.com,general,https://www.silverflamere.com/,website scrape
+Statera Managing Agency Limited,https://www.statera.co.uk,info@statera.co.uk,general,https://www.statera.co.uk/,website scrape
+Tegron Specialty Limited,https://tegronspecialty.com,hello@tegronspecialty.com,general,https://tegronspecialty.com/get-in-touch/,website scrape
+Tiomanta Specialty Limited,https://www.tiomantaspecialty.com,info@tiomantaspecialty.com,general,https://www.tiomantaspecialty.com/contact-us/,website scrape
+Toyota Insurance Management UK Limited,https://www.toyota.com,dmca@toyota.com,named person,https://www.toyota.com/support/legal-terms/,website scrape
+Trenwick Underwriting Limited,https://www.trenwick.com,info@trenwick.com,general,https://www.trenwick.com/,website scrape
+Clear Insurance Management Limited,https://mediaoptions.com,broker@mediaoptions.com,named person,https://mediaoptions.com/contact-us/,website scrape
+Ulyssere Limited,https://www.ulyssere.com,info@ulyssere.com,general,https://www.ulyssere.com/,website scrape
