@@ -61,7 +61,9 @@ cols = [('#', 'Company', 5), ('Priority', 'Company', 7), ('Segment', 'Company', 
         ('Nearest pitch', 'Office & pitch', 26), ('Walk (min)', 'Office & pitch', 7),
         ('Lead with: pitch', 'Lead with (message)', 26), ('Lead with: slot', 'Lead with (message)', 30), ('Slot type', 'Lead with (message)', 10),
         ('Lead with: format', 'Lead with (message)', 9), ('Price per player (£)', 'Lead with (message)', 9), ('Personal line', 'Lead with (message)', 36),
-        ('Personal line source', 'Lead with (message)', 20), ('Send to', 'Lead with (message)', 26), ('Subject', 'Lead with (message)', 40),
+        ('Personal line source', 'Lead with (message)', 20), ('Hook type', 'Lead with (message)', 12), ('Research confidence', 'Lead with (message)', 9),
+        ('Check before sending', 'Lead with (message)', 30), ('Send to', 'Lead with (message)', 26), ('Subject', 'Lead with (message)', 40),
+        ('Personalised email (price pending)', 'Lead with (message)', 60), ('Personalised follow-up (price pending)', 'Lead with (message)', 45),
         ('Email draft', 'Lead with (message)', 60), ('Follow-up email (day 4)', 'Lead with (message)', 45),
         ('Suppression check', 'Checks', 10), ('MX check', 'Checks', 9), ('Draftable', 'Checks', 30),
         ('Owner', 'Tracking — fill in', 8), ('Contacted on', 'Tracking — fill in', 11), ('Follow-up sent on', 'Tracking — fill in', 11),
@@ -90,7 +92,7 @@ for n, r in enumerate(rows, 3):
          'Office street': r['office_street'] or None, 'Office postcode': r['office_pc'], 'Office basis': r['office_basis'],
          'Nearest pitch': r['pitch'], 'Walk (min)': round(r['walk']), 'Lead with: pitch': r['pitch'], 'Lead with: slot': o['slot_text'],
          'Slot type': o['slot_kind'], 'Lead with: format': o['format'], 'Price per player (£)': f'=IF({PRICE}="","",{PRICE})',
-         'Personal line': r['personal'] or None, 'Personal line source': r['personal_src'] or None,
+         'Personal line': r.get('hook') or r['personal'] or None, 'Personal line source': r.get('hook_src') or r['personal_src'] or None,
          'Send to': f'=IF({ref("Direct email")}<>"",{ref("Direct email")},{ref("Email")})',
          'Suppression check': 'pass', 'MX check': 'MX ok · mailbox not verified'}
     CO, FN, PR, WK, PL = ref('Name for messages'), ref('Contact first name'), ref('Price per player (£)'), ref('Walk (min)'), ref('Personal line')
@@ -99,18 +101,18 @@ for n, r in enumerate(rows, 3):
     street = f'IF({ref("Office street")}<>"",{ref("Office street")},{ref("Office postcode")})'
     pers = f'IF({PL}<>"","Saw that "&{CO}&" "&{PL}&"."&{NL}&{NL},"")'
     sender = f'IF({ref("Owner")}<>"",{ref("Owner")},{SENDER})'
-    v['Subject'] = f'=IF({PR}="","",{ref("Lead with: format")}&" football "&{ref("Lead with: slot")}&" · "&{WK}&" min from your office")'
-    v['Email draft'] = (f'=IF({PR}="","",{hi}&{NL}&{NL}&{pers}&"I\'m "&{sender}&" from FC Urban. We run weekly after-work football for London teams. '
-                        f'We have a "&{ref("Lead with: format")}&" pitch at "&{ref("Lead with: pitch")}&", a "&{WK}&"-minute walk from your office on "&{street}&", free "&{ref("Lead with: slot")}&". '
-                        f'It\'s "&{price}&" a player: we book the pitch and handle sign-ups and payments, so someone just shares one link with the team."&{NL}&{NL}'
-                        f'&"Would your team be up for a weekly game? Happy to hold the slot for "&{CO}&" this week."&{NL}&{NL}&"Best,"&{NL}&{sender}&{NL}&"FC Urban")')
-    v['Follow-up email (day 4)'] = (f'=IF({PR}="","",{hi}&{NL}&{NL}&"Quick follow-up: the "&{ref("Lead with: format")}&" pitch at "&{ref("Lead with: pitch")}&" is still free "&{ref("Lead with: slot")}&", "&{price}&" a player, "&{WK}&" minutes from your office. '
-                                    f'Shall I hold it for "&{CO}&"?"&{NL}&{NL}&"Best,"&{NL}&{sender}&{NL}&"FC Urban")')
-    v['Draftable'] = (f'=IF({PR}="","No – no confirmed London price per player",IF({ref("Send to")}="","No – no email",'
-                      f'IF({ref("Suppression check")}<>"pass","No – suppressed","Yes")))')
+    v['Hook type'] = r.get('hook_type') or None; v['Research confidence'] = r.get('confidence') or None; v['Check before sending'] = r.get('notes') or None
+    v['Personalised email (price pending)'] = r.get('body') or None; v['Personalised follow-up (price pending)'] = r.get('followup') or None
+    v['Subject'] = f'=IF({PR}="","",{chr(34) + (r.get("subject") or "").replace(chr(34), chr(34) * 2) + chr(34)})' if r.get('subject') else None
+    ptxt = f'"£"&IF({PR}=INT({PR}),TEXT({PR},"0"),TEXT({PR},"0.00"))'
+    v['Email draft'] = f'=IF(OR({PR}="",{ref("Personalised email (price pending)")}=""),"",SUBSTITUTE({ref("Personalised email (price pending)")},"{{PRICE}}",{ptxt}))'
+    v['Follow-up email (day 4)'] = f'=IF(OR({PR}="",{ref("Personalised follow-up (price pending)")}=""),"",SUBSTITUTE({ref("Personalised follow-up (price pending)")},"{{PRICE}}",{ptxt}))'
+    v['Draftable'] = (f'=IF({PR}="","No – no confirmed London price per player",IF({ref("Send to")}="","No – no email",IF({ref("Personalised email (price pending)")}="","No – no personalised email",'
+                      f'IF({ref("Suppression check")}<>"pass","No – suppressed","Yes"))))')
     for h, val in v.items():
         c = wo.cell(row=n, column=ci[h], value=val); c.border = box; c.alignment = top
         c.font = green if isinstance(val, str) and val.startswith('=') else fnt
+        if h in ('Personalised email (price pending)', 'Personalised follow-up (price pending)', 'Email draft', 'Follow-up email (day 4)'): c.alignment = wrap
     wo.cell(row=n, column=ci['Price per player (£)']).number_format = GBP
     for h, u in (('Website', r['web']), ('Companies House', f"https://find-and-update.company-information.service.gov.uk/company/{r['num']}"),
                  ('Contact source URL', r['email_src']), ('Personal line source', r['personal_src'])):
