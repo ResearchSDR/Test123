@@ -256,10 +256,10 @@
    "inc": "01/10/2010",
    "reg_addr": "2Nd Floor,, 25 Christopher Street, London",
    "reg_pc": "EC2A 2BS",
-   "fn": "Shad",
-   "full": "Shad Ameen",
+   "fn": "Melanie",
+   "full": "Melanie Reid",
    "title": "",
-   "email": "shad.ameen@stantonhouse.com",
+   "email": "melanie.reid@stantonhouse.com",
    "tier": "a/b named person",
    "email_src": "https://www.stantonhouse.com/jobs/32939-Chief-Financial-Officer",
    "office_street": "2ND FLOOR",
@@ -267,7 +267,7 @@
    "office_basis": "Website (2ND FLOOR)",
    "pitch": "Shoreditch Powerleague",
    "walk": 10.2,
-   "personal": "team of 50 professionals",
+   "personal": "team of 50 people",
    "personal_src": "https://www.stantonhouse.com/contact-us"
   },
   {
@@ -348,33 +348,6 @@
    "office_basis": "Website (12 Mallow Street)",
    "pitch": "Old St - Moreland Primary School",
    "walk": 12.7,
-   "personal": "",
-   "personal_src": ""
-  },
-  {
-   "num": "14061734",
-   "company": "Container Solutions Software Group Ltd",
-   "short": "Container Solutions Software",
-   "segment": "Tech / software",
-   "area": "EC1M",
-   "priority": 1,
-   "web": "https://www.container-solutions.com",
-   "hc": null,
-   "acc": "FULL",
-   "inc": "22/04/2022",
-   "reg_addr": "29 Clerkenwell Road, London",
-   "reg_pc": "EC1M 5RN",
-   "fn": "Container",
-   "full": "Container Solutions",
-   "title": "",
-   "email": "info@container-solutions.com",
-   "tier": "a/b named person",
-   "email_src": "https://www.container-solutions.com/",
-   "office_street": "29 CLERKENWELL ROAD",
-   "office_pc": "EC1M 5RN",
-   "office_basis": "Website (29 CLERKENWELL ROAD)",
-   "pitch": "Old St - Moreland Primary School",
-   "walk": 12.8,
    "personal": "",
    "personal_src": ""
   },
@@ -1182,7 +1155,7 @@
    "email_src": "https://hadean.com/careers/",
    "office_street": "",
    "office_pc": "EC2A 2AP",
-   "office_basis": "Website (10 days \n SCEPTRE \n Case St)",
+   "office_basis": "Website",
    "pitch": "Shoreditch Powerleague",
    "walk": 7.3,
    "personal": "",
@@ -1374,8 +1347,8 @@
    "office_basis": "Website (3 HABERDASHER STREET, LONDON)",
    "pitch": "Shoreditch Rooftop",
    "walk": 9.4,
-   "personal": "",
-   "personal_src": ""
+   "personal": "expanding globally with current growth trajectory",
+   "personal_src": "https://vivacitylabs.com/north-america/about-us/contact/"
   },
   {
    "num": "07155322",
@@ -1547,7 +1520,7 @@
    "area": "EC2A",
    "priority": 3,
    "web": "https://www.veed.io",
-   "hc": null,
+   "hc": 150,
    "acc": "GROUP",
    "inc": "20/03/2018",
    "reg_addr": "17-18 Clere Street, London",
@@ -2053,6 +2026,33 @@
    "personal_src": ""
   },
   {
+   "num": "14061734",
+   "company": "Container Solutions Software Group Ltd",
+   "short": "Container Solutions Software",
+   "segment": "Tech / software",
+   "area": "EC1M",
+   "priority": 3,
+   "web": "https://www.container-solutions.com",
+   "hc": null,
+   "acc": "FULL",
+   "inc": "22/04/2022",
+   "reg_addr": "29 Clerkenwell Road, London",
+   "reg_pc": "EC1M 5RN",
+   "fn": "",
+   "full": "",
+   "title": "",
+   "email": "info@container-solutions.com",
+   "tier": "c general inbox",
+   "email_src": "https://www.container-solutions.com/",
+   "office_street": "29 CLERKENWELL ROAD",
+   "office_pc": "EC1M 5RN",
+   "office_basis": "Website (29 CLERKENWELL ROAD)",
+   "pitch": "Old St - Moreland Primary School",
+   "walk": 12.8,
+   "personal": "",
+   "personal_src": ""
+  },
+  {
    "num": "05998321",
    "company": "Fincore Limited",
    "short": "Fincore",
@@ -2216,16 +2216,6 @@
   }
  ],
  "offer": {
-  "Old St - Moreland Primary School": {
-   "pitch": "Old St - Moreland Primary School",
-   "slot_text": "Monday 12 October at 18:00",
-   "slot_kind": "One-off",
-   "format": "6-a-side",
-   "first_date": "2026-10-12",
-   "time": "18:00",
-   "source": "PlayFootball",
-   "open_slots": 3
-  },
   "Shoreditch Powerleague": {
    "pitch": "Shoreditch Powerleague",
    "slot_text": "Monday 28 September at 17:40",
@@ -2235,6 +2225,16 @@
    "time": "17:40",
    "source": "Powerleague official website (online booking)",
    "open_slots": 4
+  },
+  "Old St - Moreland Primary School": {
+   "pitch": "Old St - Moreland Primary School",
+   "slot_text": "Monday 12 October at 18:00",
+   "slot_kind": "One-off",
+   "format": "6-a-side",
+   "first_date": "2026-10-12",
+   "time": "18:00",
+   "source": "PlayFootball",
+   "open_slots": 3
   },
   "Market Road": {
    "pitch": "Market Road",
