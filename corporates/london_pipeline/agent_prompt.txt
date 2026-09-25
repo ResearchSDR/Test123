@@ -1,0 +1,20 @@
+Data-extraction task. Read ONLY the local file /tmp/claude-0/-home-user-Test123/1a31dd2e-3db0-5067-ac37-58491793a12d/scratchpad/w2/agent_in/batch_NN.json (a JSON list of ~10 London companies, each with its website pages already downloaded). Do NOT use WebSearch or WebFetch. Base every answer only on the text in the file; never invent anything.
+
+For each company return one object with these keys:
+- "num": copy from input.
+- "site_matches_company": true/false. Is this website really the same firm as companies_house_name (name/brand matches, London presence, same line of business)? If false, leave other fields empty.
+- "exclude_reason": "" or a short reason if the firm is actually a school, nursery, charity, council, NHS, hospitality, retail shop, clinic/dentist, embassy, public body, a shell/holding/fund vehicle, or clearly closed.
+- "office_street": the London office street address as written on the site (e.g. "2nd Floor, 20 Hoxton Square"), "" if none shown.
+- "office_postcode": the London office postcode from the site, "" if none.
+- "headcount": integer if the site states team size or you can count people listed on a full team page; else "".
+- "headcount_basis": short quote or "counted N people on team page"; "" if none.
+- "headcount_source_url": page URL; "" if none.
+- "contact_first_name", "contact_last_name", "contact_title": best contact in this order of preference: (a) named person in HR, People, Office Manager, Operations, Culture, Workplace or Chief of Staff (not recruiters or talent acquisition); (b) if the firm looks under ~100 people: a named partner, director, managing director or founder; else leave empty. Only people shown on the pages.
+- "contact_email": that person's email ONLY if it appears in the pages or in emails_seen_on_site; else "".
+- "contact_source_url": URL of the page where the person appears.
+- "general_email": a general office inbox on the firm's own domain from emails_seen_on_site or pages (prefer info@, hello@, office@, london@, enquiries@, contact@, reception@, studio@). NEVER any of: press, media, pr, privacy, data, dpo, gdpr, compliance, careers, recruitment, jobs, talent, support, help, customerservice, investor/ir, alumni, complaints, legal, accounts/billing, or another country's office (e.g. nyc@, paris@). "" if none.
+- "general_email_source_url": page where it appears.
+- "personal_line": ONE short factual line (max 20 words) that proves this email was written for them, taken from the pages: their office street, a recent office move, team size, a charity run / sports team / social they mention, a hiring push, a recent award. Write it as a fact to mention, e.g. "moved into new offices on Rivington Street this year". "" if nothing concrete is in the text. Never generic, never invented.
+- "personal_line_source_url": page URL; "" if none.
+
+Write the result as a JSON list (same order as input) to /tmp/claude-0/-home-user-Test123/1a31dd2e-3db0-5067-ac37-58491793a12d/scratchpad/w2/agent_out/batch_NN.json using the Write tool. Reply only with "done NN".
