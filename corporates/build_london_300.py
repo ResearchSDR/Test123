@@ -1,7 +1,7 @@
 """Build the London after-work football lead sheet (one decision-maker email per company, real pitch slot, drafts gated on a confirmed price).
 Input: london_300_rows.json (made by the research pipeline). Output: FC_Urban_London_after_work_leads.xlsx
 """
-import json, os, datetime
+import json, os, datetime, re
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter as L
@@ -27,7 +27,7 @@ wb = Workbook()
 # ---------- Offer: one confirmed price per city ----------
 wp = wb.active; wp.title = 'Offer'
 wp['B1'] = 'Confirmed price per player (one row per city)'; wp['B1'].font = title
-wp['B2'] = 'Drafts stay empty and Draftable says No until the London price is filled in. Never type TBC.'; wp['B2'].font = fnt
+wp['B2'] = 'Not used in the first (interest-check) email. Used later in the group-invite email once a company says yes. Never type TBC.'; wp['B2'].font = fnt
 for j, h in enumerate(['City', 'Currency', 'Price per player', 'Confirmed by', 'Confirmed on'], 2):
     c = wp.cell(row=4, column=j, value=h); c.font = white; c.fill = HDR
 for i, (city, cur) in enumerate([('London', 'GBP'), ('Stockholm', 'SEK')], 5):
@@ -63,8 +63,7 @@ cols = [('#', 'Company', 5), ('Priority', 'Company', 7), ('Segment', 'Company', 
         ('Lead with: format', 'Lead with (message)', 9), ('Price per player (£)', 'Lead with (message)', 9), ('Personal line', 'Lead with (message)', 36),
         ('Personal line source', 'Lead with (message)', 20), ('Hook type', 'Lead with (message)', 12), ('Research confidence', 'Lead with (message)', 9),
         ('Check before sending', 'Lead with (message)', 30), ('Send to', 'Lead with (message)', 26), ('Subject', 'Lead with (message)', 40),
-        ('Personalised email (price pending)', 'Lead with (message)', 60), ('Personalised follow-up (price pending)', 'Lead with (message)', 45),
-        ('Email draft', 'Lead with (message)', 60), ('Follow-up email (day 4)', 'Lead with (message)', 45),
+        ('Email draft', 'Lead with (message)', 60), ('Follow-up email (day 5)', 'Lead with (message)', 45),
         ('Suppression check', 'Checks', 10), ('MX check', 'Checks', 9), ('Hold (check first)', 'Checks', 24), ('Draftable', 'Checks', 30),
         ('Owner', 'Tracking — fill in', 8), ('Contacted on', 'Tracking — fill in', 11), ('Follow-up sent on', 'Tracking — fill in', 11),
         ('Replied', 'Tracking — fill in', 8), ('Reply category', 'Tracking — fill in', 14), ('Call booked', 'Tracking — fill in', 8),
@@ -102,17 +101,16 @@ for n, r in enumerate(rows, 3):
     pers = f'IF({PL}<>"","Saw that "&{CO}&" "&{PL}&"."&{NL}&{NL},"")'
     sender = f'IF({ref("Owner")}<>"",{ref("Owner")},{SENDER})'
     v['Hook type'] = r.get('hook_type') or None; v['Research confidence'] = r.get('confidence') or None; v['Check before sending'] = r.get('notes') or None
-    v['Personalised email (price pending)'] = r.get('body') or None; v['Personalised follow-up (price pending)'] = r.get('followup') or None
-    v['Subject'] = f'=IF({PR}="","",{chr(34) + (r.get("subject") or "").replace(chr(34), chr(34) * 2) + chr(34)})' if r.get('subject') else None
-    ptxt = f'"£"&IF({PR}=INT({PR}),TEXT({PR},"0"),TEXT({PR},"0.00"))'
-    v['Email draft'] = f'=IF(OR({PR}="",{ref("Personalised email (price pending)")}=""),"",SUBSTITUTE({ref("Personalised email (price pending)")},"{{PRICE}}",{ptxt}))'
-    v['Follow-up email (day 4)'] = f'=IF(OR({PR}="",{ref("Personalised follow-up (price pending)")}=""),"",SUBSTITUTE({ref("Personalised follow-up (price pending)")},"{{PRICE}}",{ptxt}))'
-    v['Draftable'] = (f'=IF({ref("Hold (check first)")}<>"","No – hold: "&{ref("Hold (check first)")},IF({PR}="","No – no confirmed London price per player",IF({ref("Send to")}="","No – no email",IF({ref("Personalised email (price pending)")}="","No – no personalised email",'
-                      f'IF({ref("Suppression check")}<>"pass","No – suppressed","Yes")))))')
+    plain = lambda t: re.sub(r'\[([^\]]+)\]\((https?://[^)]+)\)', r'\1 (\2)', t or '')
+    v['Subject'] = r.get('subject') or None
+    v['Email draft'] = plain(r.get('body')) or None
+    v['Follow-up email (day 5)'] = plain(r.get('followup')) or None
+    v['Price per player (£)'] = 'Not in first email'
+    v['Draftable'] = ('No – hold: ' + r['hold']) if r.get('hold') else ('Yes' if r.get('body') and r['email'] else 'No – no email')
     for h, val in v.items():
         c = wo.cell(row=n, column=ci[h], value=val); c.border = box; c.alignment = top
         c.font = green if isinstance(val, str) and val.startswith('=') else fnt
-        if h in ('Personalised email (price pending)', 'Personalised follow-up (price pending)', 'Email draft', 'Follow-up email (day 4)'): c.alignment = wrap
+        if h in ('Email draft', 'Follow-up email (day 5)'): c.alignment = wrap
     wo.cell(row=n, column=ci['Price per player (£)']).number_format = GBP
     for h, u in (('Website', r['web']), ('Companies House', f"https://find-and-update.company-information.service.gov.uk/company/{r['num']}"),
                  ('Contact source URL', r['email_src']), ('Personal line source', r['personal_src'])):
@@ -140,7 +138,7 @@ lines = [('FC Urban · London after-work football leads', title),
          ('6. Contact order: named HR / People / Office / Operations person → named partner/director/founder (firms under ~100) → general inbox on the firm\'s own domain. No press, privacy, careers, support, sales or other-country inboxes. Emails were only taken where published; none guessed.', fnt),
          ('7. Headcount from the firm\'s own site where stated; firms under 20 or over 500 removed; "Not stated" otherwise.', fnt),
          ('8. Personal line: one fact from the firm\'s own pages (source linked). Blank when nothing real was found.', fnt),
-         ('9. Every email was written individually from that research (Personalised email column). {PRICE} is replaced by the confirmed price on the Offer tab; until then Email draft stays empty. Rows the research flagged are on Hold with the reason.', fnt), ('', fnt),
+         ('9. Every email was written individually from that research. First email = interest check only (no price, no dates): who we are, that we already run games nearby, and a request to forward to whoever runs staff socials / wellbeing if the reader is not the right person (per Joep\'s learnings). Price (£8–£10 pp guide) comes in the group-invite email after a yes. Rows the research flagged are on Hold with the reason.', fnt), ('', fnt),
          ('Sending rules (for when the n8n workflow is switched on)', bold),
          ('Max 150 per inbox per day, spread across working hours; one sender name per inbox (Brian on brian@fcurban.com); stop the batch if bounces exceed 3%; log Contacted on here and reply categories in Notion.', fnt)]
 for k, (t, f_) in enumerate(lines, 1): wr.cell(row=k, column=1, value=t).font = f_
