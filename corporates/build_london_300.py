@@ -65,7 +65,7 @@ cols = [('#', 'Company', 5), ('Priority', 'Company', 7), ('Segment', 'Company', 
         ('Check before sending', 'Lead with (message)', 30), ('Send to', 'Lead with (message)', 26), ('Subject', 'Lead with (message)', 40),
         ('Personalised email (price pending)', 'Lead with (message)', 60), ('Personalised follow-up (price pending)', 'Lead with (message)', 45),
         ('Email draft', 'Lead with (message)', 60), ('Follow-up email (day 4)', 'Lead with (message)', 45),
-        ('Suppression check', 'Checks', 10), ('MX check', 'Checks', 9), ('Draftable', 'Checks', 30),
+        ('Suppression check', 'Checks', 10), ('MX check', 'Checks', 9), ('Hold (check first)', 'Checks', 24), ('Draftable', 'Checks', 30),
         ('Owner', 'Tracking — fill in', 8), ('Contacted on', 'Tracking — fill in', 11), ('Follow-up sent on', 'Tracking — fill in', 11),
         ('Replied', 'Tracking — fill in', 8), ('Reply category', 'Tracking — fill in', 14), ('Call booked', 'Tracking — fill in', 8),
         ('Group created', 'Tracking — fill in', 8), ('First game booked', 'Tracking — fill in', 8), ('Notes', 'Tracking — fill in', 28)]
@@ -94,7 +94,7 @@ for n, r in enumerate(rows, 3):
          'Slot type': o['slot_kind'], 'Lead with: format': o['format'], 'Price per player (£)': f'=IF({PRICE}="","",{PRICE})',
          'Personal line': r.get('hook') or r['personal'] or None, 'Personal line source': r.get('hook_src') or r['personal_src'] or None,
          'Send to': f'=IF({ref("Direct email")}<>"",{ref("Direct email")},{ref("Email")})',
-         'Suppression check': 'pass', 'MX check': 'MX ok · mailbox not verified'}
+         'Suppression check': 'pass', 'MX check': 'MX ok · mailbox not verified', 'Hold (check first)': r.get('hold') or None}
     CO, FN, PR, WK, PL = ref('Name for messages'), ref('Contact first name'), ref('Price per player (£)'), ref('Walk (min)'), ref('Personal line')
     hi = f'"Hi "&IF({FN}<>"",{FN},{CO}&" team")&","'
     price = f'"£"&IF({PR}=INT({PR}),TEXT({PR},"0"),TEXT({PR},"0.00"))'
@@ -107,8 +107,8 @@ for n, r in enumerate(rows, 3):
     ptxt = f'"£"&IF({PR}=INT({PR}),TEXT({PR},"0"),TEXT({PR},"0.00"))'
     v['Email draft'] = f'=IF(OR({PR}="",{ref("Personalised email (price pending)")}=""),"",SUBSTITUTE({ref("Personalised email (price pending)")},"{{PRICE}}",{ptxt}))'
     v['Follow-up email (day 4)'] = f'=IF(OR({PR}="",{ref("Personalised follow-up (price pending)")}=""),"",SUBSTITUTE({ref("Personalised follow-up (price pending)")},"{{PRICE}}",{ptxt}))'
-    v['Draftable'] = (f'=IF({PR}="","No – no confirmed London price per player",IF({ref("Send to")}="","No – no email",IF({ref("Personalised email (price pending)")}="","No – no personalised email",'
-                      f'IF({ref("Suppression check")}<>"pass","No – suppressed","Yes"))))')
+    v['Draftable'] = (f'=IF({ref("Hold (check first)")}<>"","No – hold: "&{ref("Hold (check first)")},IF({PR}="","No – no confirmed London price per player",IF({ref("Send to")}="","No – no email",IF({ref("Personalised email (price pending)")}="","No – no personalised email",'
+                      f'IF({ref("Suppression check")}<>"pass","No – suppressed","Yes")))))')
     for h, val in v.items():
         c = wo.cell(row=n, column=ci[h], value=val); c.border = box; c.alignment = top
         c.font = green if isinstance(val, str) and val.startswith('=') else fnt
@@ -130,7 +130,7 @@ wo.cell(row=2, column=ci['Office basis']).comment = Comment('Website = address f
 # ---------- Read me ----------
 wr = wb.create_sheet('Read me')
 lines = [('FC Urban · London after-work football leads', title),
-         (f'{len(rows)} companies with a published email on their own domain, an office within a 15-minute walk of a pitch that has an open Mon–Thu 17:30–20:00 slot in the next 3 weeks.', fnt), ('', fnt),
+         (f'{len(rows)} companies ({sum(1 for r in rows if not r.get("hold"))} ready once the price is set, {sum(1 for r in rows if r.get("hold"))} on hold) with a published email on their own domain, an office within a 15-minute walk of a pitch that has an open Mon–Thu 17:30–20:00 slot in the next 3 weeks.', fnt), ('', fnt),
          ('How it was built', bold),
          ('1. Companies House bulk data: active London companies filing full, medium or group accounts; SIC for law, finance/accounting, insurance, consultancy, tech/software, architecture, recruitment, marketing/agencies (LLPs by name).', fnt),
          ('2. Removed shells, holding/fund/property vehicles, schools, charities, public bodies, hospitality, retail, clinics, formation-agent addresses (>12 brands at one address), and anything in an earlier FC Urban sheet.', fnt),
@@ -139,7 +139,8 @@ lines = [('FC Urban · London after-work football leads', title),
          ('5. Walk = straight line × 1.3 at 4.8 km/h to the nearest pitch with a confirmed open slot (Slots tab). Kept ≤ 15 minutes.', fnt),
          ('6. Contact order: named HR / People / Office / Operations person → named partner/director/founder (firms under ~100) → general inbox on the firm\'s own domain. No press, privacy, careers, support, sales or other-country inboxes. Emails were only taken where published; none guessed.', fnt),
          ('7. Headcount from the firm\'s own site where stated; firms under 20 or over 500 removed; "Not stated" otherwise.', fnt),
-         ('8. Personal line: one fact from the firm\'s own pages (source linked). Blank when nothing real was found.', fnt), ('', fnt),
+         ('8. Personal line: one fact from the firm\'s own pages (source linked). Blank when nothing real was found.', fnt),
+         ('9. Every email was written individually from that research (Personalised email column). {PRICE} is replaced by the confirmed price on the Offer tab; until then Email draft stays empty. Rows the research flagged are on Hold with the reason.', fnt), ('', fnt),
          ('Sending rules (for when the n8n workflow is switched on)', bold),
          ('Max 150 per inbox per day, spread across working hours; one sender name per inbox (Brian on brian@fcurban.com); stop the batch if bounces exceed 3%; log Contacted on here and reply categories in Notion.', fnt)]
 for k, (t, f_) in enumerate(lines, 1): wr.cell(row=k, column=1, value=t).font = f_
