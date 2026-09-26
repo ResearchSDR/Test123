@@ -82,15 +82,15 @@ wo.row_dimensions[2].height = 42
 NL = 'CHAR(10)'
 for n, r in enumerate(rows, 3):
     ref = lambda h: f'{C(h)}{n}'
-    o = offer[r['pitch']]
+    o = offer.get(r['pitch'], {})  # expansion rows: venue where we run games, no fixed slot yet (first email asks interest only)
     v = {'#': n - 2, 'Priority': r['priority'], 'Segment': r['segment'], 'Area': r['area'], 'Company': r['company'], 'Name for messages': r['short'],
          'Website': r['web'], 'Headcount': r['hc'] if r['hc'] else 'Not stated', 'Companies House no.': r['num'], 'Companies House': 'Open',
          'Accounts': r['acc'].title(), 'Incorporated': r['inc'], 'Registered address': r['reg_addr'], 'Postcode': r['reg_pc'], 'In 933 research list?': 'No',
          'Contact first name': r['fn'] or None, 'Contact full name': r['full'] or None, 'Contact title': r['title'] or None, 'Email': r['email'],
          'Email type': r['tier'], 'Contact source URL': r['email_src'] or None,
          'Office street': r['office_street'] or None, 'Office postcode': r['office_pc'], 'Office basis': r['office_basis'],
-         'Nearest pitch': r['pitch'], 'Walk (min)': round(r['walk']), 'Lead with: pitch': r['pitch'], 'Lead with: slot': o['slot_text'],
-         'Slot type': o['slot_kind'], 'Lead with: format': o['format'], 'Price per player (£)': f'=IF({PRICE}="","",{PRICE})',
+         'Nearest pitch': r['pitch'], 'Walk (min)': round(r['walk']), 'Lead with: pitch': r['pitch'], 'Lead with: slot': o.get('slot_text') or 'No fixed slot yet – agree a time after a yes',
+         'Slot type': o.get('slot_kind') or 'To agree', 'Lead with: format': o.get('format') or '5/7-a-side', 'Price per player (£)': f'=IF({PRICE}="","",{PRICE})',
          'Personal line': r.get('hook') or r['personal'] or None, 'Personal line source': r.get('hook_src') or r['personal_src'] or None,
          'Send to': f'=IF({ref("Direct email")}<>"",{ref("Direct email")},{ref("Email")})',
          'Suppression check': 'pass', 'MX check': 'MX ok · mailbox not verified', 'Hold (check first)': r.get('hold') or None}
@@ -113,7 +113,7 @@ for n, r in enumerate(rows, 3):
         if h in ('Email draft', 'Follow-up email (day 5)'): c.alignment = wrap
     wo.cell(row=n, column=ci['Price per player (£)']).number_format = GBP
     for h, u in (('Website', r['web']), ('Companies House', f"https://find-and-update.company-information.service.gov.uk/company/{r['num']}"),
-                 ('Contact source URL', r['email_src']), ('Personal line source', r['personal_src'])):
+                 ('Contact source URL', r['email_src']), ('Personal line source', r.get('hook_src') or r['personal_src']), ('Lead with: pitch', r.get('venue_url'))):
         if u and u.startswith('http'): c = wo.cell(row=n, column=ci[h]); c.hyperlink = u; c.font = link
     for h in ('Contacted on', 'Follow-up sent on'): wo.cell(row=n, column=ci[h]).number_format = 'd mmm yyyy'
 last = len(rows) + 2
@@ -128,13 +128,13 @@ wo.cell(row=2, column=ci['Office basis']).comment = Comment('Website = address f
 # ---------- Read me ----------
 wr = wb.create_sheet('Read me')
 lines = [('FC Urban · London after-work football leads', title),
-         (f'{len(rows)} companies ({sum(1 for r in rows if not r.get("hold"))} ready once the price is set, {sum(1 for r in rows if r.get("hold"))} on hold) with a published email on their own domain, an office within a 15-minute walk of a pitch that has an open Mon–Thu 17:30–20:00 slot in the next 3 weeks.', fnt), ('', fnt),
+         (f'{len(rows)} companies ({sum(1 for r in rows if not r.get("hold"))} ready, {sum(1 for r in rows if r.get("hold"))} on hold) with a published email on their own domain and an office within a 15-minute walk of a venue where FC Urban already runs games. The first {sum(1 for r in rows if r['pitch'] in offer)} also have a confirmed open Mon–Thu 17:30–20:00 slot (Slots tab); the expansion rows name the venue only, since the first email asks about interest and dates come later.', fnt), ('', fnt),
          ('How it was built', bold),
          ('1. Companies House bulk data: active London companies filing full, medium or group accounts; SIC for law, finance/accounting, insurance, consultancy, tech/software, architecture, recruitment, marketing/agencies (LLPs by name).', fnt),
          ('2. Removed shells, holding/fund/property vehicles, schools, charities, public bodies, hospitality, retail, clinics, formation-agent addresses (>12 brands at one address), and anything in an earlier FC Urban sheet.', fnt),
          ('3. Suppression: brian@fcurban.com Sent (last 90 days) checked domain by domain, plus senders of opt-out / "no thanks" / "not interested" replies.', fnt),
          ('4. Website found and read for each firm: working office from its own contact page (registered office only when the site shows no address, labelled in Office basis).', fnt),
-         ('5. Walk = straight line × 1.3 at 4.8 km/h to the nearest pitch with a confirmed open slot (Slots tab). Kept ≤ 15 minutes.', fnt),
+         ('5. Walk = straight line × 1.3 at 4.8 km/h to the nearest pitch (first rows: pitch with a confirmed open slot, Slots tab; expansion rows: nearest of the 49 venues with FC Urban games in the last 60 days). Kept ≤ 15 minutes.', fnt),
          ('6. Contact order: named HR / People / Office / Operations person → named partner/director/founder (firms under ~100) → general inbox on the firm\'s own domain. No press, privacy, careers, support, sales or other-country inboxes. Emails were only taken where published; none guessed.', fnt),
          ('7. Headcount from the firm\'s own site where stated; firms under 20 or over 500 removed; "Not stated" otherwise.', fnt),
          ('8. Personal line: one fact from the firm\'s own pages (source linked). Blank when nothing real was found.', fnt),
