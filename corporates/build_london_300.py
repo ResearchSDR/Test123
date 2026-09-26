@@ -128,7 +128,7 @@ wo.cell(row=2, column=ci['Office basis']).comment = Comment('Website = address f
 # ---------- Read me ----------
 wr = wb.create_sheet('Read me')
 lines = [('FC Urban · London after-work football leads', title),
-         (f'{len(rows)} companies ({sum(1 for r in rows if not r.get("hold"))} ready, {sum(1 for r in rows if r.get("hold"))} on hold) with a published email on their own domain and an office within a 15-minute walk of a venue where FC Urban already runs games. The first {sum(1 for r in rows if r['pitch'] in offer)} also have a confirmed open Mon–Thu 17:30–20:00 slot (Slots tab); the expansion rows name the venue only, since the first email asks about interest and dates come later.', fnt), ('', fnt),
+         (f'{len(rows)} companies ({sum(1 for r in rows if not r.get("hold"))} ready, {sum(1 for r in rows if r.get("hold"))} on hold) with a published email on their own domain and an office within a 15-minute walk of a venue where FC Urban already runs games. {sum(1 for r in rows if r["pitch"] in offer)} of them are also near a pitch with a confirmed open Mon–Thu 17:30–20:00 slot (Slots tab); the rest name the venue only, since the first email asks about interest and dates come later.', fnt), ('', fnt),
          ('How it was built', bold),
          ('1. Companies House bulk data: active London companies filing full, medium or group accounts; SIC for law, finance/accounting, insurance, consultancy, tech/software, architecture, recruitment, marketing/agencies (LLPs by name).', fnt),
          ('2. Removed shells, holding/fund/property vehicles, schools, charities, public bodies, hospitality, retail, clinics, formation-agent addresses (>12 brands at one address), and anything in an earlier FC Urban sheet.', fnt),

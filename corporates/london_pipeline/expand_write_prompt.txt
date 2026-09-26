@@ -1,0 +1,27 @@
+You research and write one personal cold email per company for Brian at FC Urban (London).
+
+INPUT: /tmp/claude-0/-home-user-Test123/1a31dd2e-3db0-5067-ac37-58491793a12d/scratchpad/w5/win/wNN.json (about 8 companies, each with its own website pages already downloaded, the email we send to, optional named contact, office street/postcode, the nearest FC Urban venue with its URL, walk minutes).
+
+WHAT FC URBAN IS: we organise social football games across London where people can just turn up and play. For companies we help start a regular after-work football group for colleagues: FC Urban takes care of the pitch, tops up players if they're short, payments and organisation. We just need someone internally who enjoys football and can help bring colleagues together.
+
+STEP 1 – RESEARCH (per company)
+- Read the pages in the file first. You MAY use WebFetch on the company's OWN website only (max 2 fetches per company: /news, /blog, /careers, /about, /life-at, /culture). No WebSearch, no other sites.
+- Find ONE true, specific hook that proves the email was written for them: office move/new office on a named street; a dated milestone (funding, launch, award, big hire, anniversary); team size or hiring; culture/socials/wellbeing/sport/charity they describe; a concrete project. Keep the source URL.
+- If nothing real and specific: hook = "" (never invent, never generic flattery).
+- If the site is clearly a different company, a non-London firm with no London office, or the send_to inbox is press/privacy/careers/another country, set "hold" to a short reason.
+
+STEP 2 – WRITE (British English, warm, plain, short paragraphs separated by a blank line, 80–120 words, no exclamation marks, no emojis, no hype, no "hope you're well")
+RULES FROM THE TEAM'S LEARNINGS: NO price, NO dates or times. The only goal: is there interest, and if the reader isn't the right person, please forward to whoever looks after staff socials, wellbeing or employee engagement. Tailor by sector: law/finance/insurance/consultancy/economics → "a regular team social or after-work game, or a game against another firm nearby"; tech/agencies/film/architecture/design → "a weekly office kickabout for the team/studio"; recruitment → "a regular team game or friendly competition against other firms".
+Structure:
+1. Greeting: "Hi {contact_first_name}," if given, else "Hi {brand} team,".
+2. One-sentence personal opener from the hook (skip if hook is ""). State the fact plainly; avoid forced jokes ("switch off together", "cut down on screen time").
+3. "I'm Brian from FC Urban. We organise social football games across London, and we already run games at [{venue_name}]({venue_url}), about a {walk_minutes}-minute walk from your office on {office_street or postcode}."
+4. The ask (sector-tailored): "We're looking for someone at {brand} who'd enjoy helping start a regular …; we handle the pitch, extra players if you're short, payments and organisation."
+5. "Would there be any interest? If it's not for you, would you mind forwarding this to whoever looks after staff socials or wellbeing?" (if writing to a named person on their own address: "Would you be up for it, or is there someone better placed? Either way, feel free to forward this to whoever looks after socials.")
+6. "[FC Urban for companies](https://www.fcurban.com/groups-and-company-pitch-rental/football-pitch-rental-for-groups-corporates)"
+7. "Best,\nBrian\nFC Urban"
+Use the company's natural brand name (e.g. "RBB Economics", not "Rbb Economics Llp").
+SUBJECT: ≤55 chars, natural and specific ("Weekly football for the Veed team", "After-work football near Bonhill Street").
+FOLLOW-UP (5 working days later, 30–55 words): friendly nudge, same one ask (interest, or who to forward to), no price/dates, same sign-off.
+
+OUTPUT: write a JSON list to /tmp/claude-0/-home-user-Test123/1a31dd2e-3db0-5067-ac37-58491793a12d/scratchpad/w5/wout/wNN.json with per company {"num","hook","hook_type","hook_source_url","confidence":"high|medium|low","hold":"" or reason,"notes","subject","body","followup"} (\n for newlines), same order as input. Reply only "done wNN".
