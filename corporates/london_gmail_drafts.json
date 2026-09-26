@@ -1,0 +1,777 @@
+{
+ "mailbox": "brian@fcurban.com",
+ "created": "2026-09-26",
+ "status": "draft (not sent)",
+ "drafts": [
+  {
+   "num": "08650664",
+   "to": "hr@leadscale.com",
+   "draft_id": "r9068336793630222614"
+  },
+  {
+   "num": "09049470",
+   "to": "martin.broughton@exigere.co.uk",
+   "draft_id": "r-4609148663291333719"
+  },
+  {
+   "num": "01959521",
+   "to": "sandra.taylor@veretec.co.uk",
+   "draft_id": "r-741928829801035081"
+  },
+  {
+   "num": "08712584",
+   "to": "robert.gray@codurance.com",
+   "draft_id": "r1039776952417256857"
+  },
+  {
+   "num": "08517073",
+   "to": "sophie.m@preciseconsultants.com",
+   "draft_id": "r7578136403977162874"
+  },
+  {
+   "num": "03869802",
+   "to": "jamie.macfarlane@guybutler.co.uk",
+   "draft_id": "r4873205371023033409"
+  },
+  {
+   "num": "02769447",
+   "to": "iain.mcgill@goodmanmasson.com",
+   "draft_id": "r-3884716481417411444"
+  },
+  {
+   "num": "10994901",
+   "to": "mail@turbinestudios.co.uk",
+   "draft_id": "r-5211682881568189998"
+  },
+  {
+   "num": "09757696",
+   "to": "info@oribiotech.com",
+   "draft_id": "r6456331024899989343"
+  },
+  {
+   "num": "09338935",
+   "to": "talkto@humanmademachine.com",
+   "draft_id": "r2823598803774296914"
+  },
+  {
+   "num": "07080437",
+   "to": "hello@artiq.co",
+   "draft_id": "r-2162770427609257483"
+  },
+  {
+   "num": "03844574",
+   "to": "request@osf.digital",
+   "draft_id": "r-1644553607817892420"
+  },
+  {
+   "num": "02205891",
+   "to": "enquiries@windfallfilms.com",
+   "draft_id": "r-4265948591253281750"
+  },
+  {
+   "num": "10075517",
+   "to": "info@72films.com",
+   "draft_id": "r5847123044946960676"
+  },
+  {
+   "num": "02328023",
+   "to": "info@octoberfilms.co.uk",
+   "draft_id": "r-5396683523895062945"
+  },
+  {
+   "num": "09410777",
+   "to": "info@yendallhunter.com",
+   "draft_id": "r-2089495728838661114"
+  },
+  {
+   "num": "12292684",
+   "to": "london@jenoa.com",
+   "draft_id": "r-8167464058877534822"
+  },
+  {
+   "num": "OC313165",
+   "to": "gje@gje.com",
+   "draft_id": "r-5268792179537410498"
+  },
+  {
+   "num": "OC315356",
+   "to": "london@rbbecon.com",
+   "draft_id": "r1938907170562946410"
+  },
+  {
+   "num": "05195273",
+   "to": "info@montash.com",
+   "draft_id": "r7713217550036421421"
+  },
+  {
+   "num": "02552224",
+   "to": "london@atelierten.com",
+   "draft_id": "r7186704939585877911"
+  },
+  {
+   "num": "06824227",
+   "to": "info@aptem.co.uk",
+   "draft_id": "r-6325417309501130711"
+  },
+  {
+   "num": "07608360",
+   "to": "hello@elsewhen.com",
+   "draft_id": "r-5702122264923729973"
+  },
+  {
+   "num": "11264311",
+   "to": "hello@veed.io",
+   "draft_id": "r1178530633818751775"
+  },
+  {
+   "num": "08624932",
+   "to": "hello@tryzens.com",
+   "draft_id": "r-5467894797132271778"
+  },
+  {
+   "num": "08720267",
+   "to": "mail@karakusevic-carson.com",
+   "draft_id": "r4971507789654171259"
+  },
+  {
+   "num": "08738815",
+   "to": "hello@permutive.com",
+   "draft_id": "r4295528305770976352"
+  },
+  {
+   "num": "02522093",
+   "to": "epa@ericparryarchitects.co.uk",
+   "draft_id": "r-7997342812653230116"
+  },
+  {
+   "num": "07395813",
+   "to": "info@pushgaming.com",
+   "draft_id": "r3856259763607614683"
+  },
+  {
+   "num": "07128139",
+   "to": "info@oliverbernard.com",
+   "draft_id": "r-7134066141352535035"
+  },
+  {
+   "num": "00979521",
+   "to": "hello@wellcomww.com",
+   "draft_id": "r8597134969605436531"
+  },
+  {
+   "num": "08382730",
+   "to": "people@mention-me.com",
+   "draft_id": "r-7576000208648973424"
+  },
+  {
+   "num": "05396257",
+   "to": "simonhunt@oakleafpartnership.com",
+   "draft_id": "r2291861558629968797"
+  },
+  {
+   "num": "09566434",
+   "to": "tylerhaws@hoptroff.com",
+   "draft_id": "r3396433348234584389"
+  },
+  {
+   "num": "07394702",
+   "to": "melanie.reid@stantonhouse.com",
+   "draft_id": "r630892655136966062"
+  },
+  {
+   "num": "03880175",
+   "to": "hr@travelfusion.com",
+   "draft_id": "r6453036050314642951"
+  },
+  {
+   "num": "05532608",
+   "to": "info@simplyeducation.co.uk",
+   "draft_id": "r-6551647472354154608"
+  },
+  {
+   "num": "05258662",
+   "to": "info@ecodriver.co.uk",
+   "draft_id": "r-4303910355099437402"
+  },
+  {
+   "num": "10491678",
+   "to": "info@testingxperts.com",
+   "draft_id": "r-4844706152582752729"
+  },
+  {
+   "num": "10267569",
+   "to": "hello@fenergo.com",
+   "draft_id": "r-4663326422843425901"
+  },
+  {
+   "num": "14401806",
+   "to": "branding@fluenceenergy.com",
+   "draft_id": "r966096476344058541"
+  },
+  {
+   "num": "05724979",
+   "to": "info@vendavo.com",
+   "draft_id": "r5565768143025031366"
+  },
+  {
+   "num": "09980890",
+   "to": "hello@whitepaperco.com",
+   "draft_id": "r4453118440787935517"
+  },
+  {
+   "num": "09808169",
+   "to": "people@hadean.com",
+   "draft_id": "r-2378873504768135634"
+  },
+  {
+   "num": "09924516",
+   "to": "contact@vivacitylabs.com",
+   "draft_id": "r6479779030766664913"
+  },
+  {
+   "num": "07155322",
+   "to": "info@ahmm.co.uk",
+   "draft_id": "r-4685047690814405551"
+  },
+  {
+   "num": "07924059",
+   "to": "info@censuswide.com",
+   "draft_id": "r6485503552076603258"
+  },
+  {
+   "num": "06021756",
+   "to": "enquiries@atech.co.uk",
+   "draft_id": "r-4272193540763626341"
+  },
+  {
+   "num": "03094139",
+   "to": "info@mcbains.co.uk",
+   "draft_id": "r-6842165149983554053"
+  },
+  {
+   "num": "05998321",
+   "to": "hello@fincore.ai",
+   "draft_id": "r8477840999963260119"
+  },
+  {
+   "num": "14150611",
+   "to": "info@gtn.com",
+   "draft_id": "r1420805964157813839"
+  },
+  {
+   "num": "10308260",
+   "to": "esme.muduroglu@yulife.com",
+   "draft_id": "r-2461240300531094560"
+  },
+  {
+   "num": "OC315800",
+   "to": "contact@creditexbrokeragellp.com",
+   "draft_id": "r1194671135173392313"
+  },
+  {
+   "num": "06591591",
+   "to": "hello@made.studio",
+   "draft_id": "r-8256206681914696539"
+  },
+  {
+   "num": "13206820",
+   "to": "info@clovertechnology.co.uk",
+   "draft_id": "r5682154102707858670"
+  },
+  {
+   "num": "06459817",
+   "to": "info@louderproductions.com",
+   "draft_id": "r-829696079575381562"
+  },
+  {
+   "num": "04062416",
+   "to": "mail@arcontech.com",
+   "draft_id": "r8157356889468666033"
+  },
+  {
+   "num": "06797461",
+   "to": "contact@bluesquare.io",
+   "draft_id": "r-8703257292202821193"
+  },
+  {
+   "num": "14061734",
+   "to": "info@container-solutions.com",
+   "draft_id": "r-1966479126336574666"
+  },
+  {
+   "num": "05815806",
+   "to": "info@parseq.com",
+   "draft_id": "r-278541935911969408"
+  },
+  {
+   "num": "08419628",
+   "to": "la@littledotstudios.com",
+   "draft_id": "r518449099875598156"
+  },
+  {
+   "num": "03027028",
+   "to": "info@lucera.com",
+   "draft_id": "r4192557242836696378"
+  },
+  {
+   "num": "04286449",
+   "to": "eddie.eglington@four.agency",
+   "draft_id": "r-4118072058121643108"
+  },
+  {
+   "num": "04740661",
+   "to": "sam.rees@xcede.com",
+   "draft_id": "r5028725258146048446"
+  },
+  {
+   "num": "11885096",
+   "to": "hannah.haigh@meetlifesciences.com",
+   "draft_id": "r8114704832195955959"
+  },
+  {
+   "num": "OC373258",
+   "to": "james.nowell@charcoalblue.com",
+   "draft_id": "r1432365700100965747"
+  },
+  {
+   "num": "04798253",
+   "to": "sarah.gordon@virgohealth.com",
+   "draft_id": "r3818307460420523611"
+  },
+  {
+   "num": "11873883",
+   "to": "luckson.thevakanthan@regis-tr.com",
+   "draft_id": "r4406000785783851669"
+  },
+  {
+   "num": "02418817",
+   "to": "info@pamia.co.uk",
+   "draft_id": "r2268313632405391037"
+  },
+  {
+   "num": "01319458",
+   "to": "catriona.collerton@pagewhite.com",
+   "draft_id": "r-4999274208934895561"
+  },
+  {
+   "num": "02957627",
+   "to": "chris.tansley@tysers.com",
+   "draft_id": "r-672421947637097054"
+  },
+  {
+   "num": "07358166",
+   "to": "ashok.mr@jmangroup.com",
+   "draft_id": "r6856934260485734535"
+  },
+  {
+   "num": "OC432792",
+   "to": "abonell@hwfisher.co.uk",
+   "draft_id": "r7309354593984451473"
+  },
+  {
+   "num": "OC302467",
+   "to": "agriffiths@chapmantaylor.com",
+   "draft_id": "r-6691686381010841730"
+  },
+  {
+   "num": "04803377",
+   "to": "matt.smith@weareinvestigo.com",
+   "draft_id": "r898329961703429480"
+  },
+  {
+   "num": "07921239",
+   "to": "narcisa.lupu@taskize.com",
+   "draft_id": "r-8241631404242723698"
+  },
+  {
+   "num": "09451518",
+   "to": "hello@edume.com",
+   "draft_id": "r-6931198369225607637"
+  },
+  {
+   "num": "10857918",
+   "to": "hello@plandek.com",
+   "draft_id": "r-8419253713365751621"
+  },
+  {
+   "num": "11779559",
+   "to": "newbusiness@hopkins.co.uk",
+   "draft_id": "r4630754824517534025"
+  },
+  {
+   "num": "05246578",
+   "to": "hanan@moneynetint.com",
+   "draft_id": "r3798684656215196604"
+  },
+  {
+   "num": "08823340",
+   "to": "info@plparchitecture.com",
+   "draft_id": "r-3909414264789855593"
+  },
+  {
+   "num": "05013101",
+   "to": "info@procurementleaders.com",
+   "draft_id": "r-6128351533066140034"
+  },
+  {
+   "num": "09732799",
+   "to": "info@onecall24.co.uk",
+   "draft_id": "r-2683017217543647654"
+  },
+  {
+   "num": "OC404597",
+   "to": "studio@alliesandmorrison.com",
+   "draft_id": "r-4600541041801814241"
+  },
+  {
+   "num": "02760212",
+   "to": "info@objectway.com",
+   "draft_id": "r-6301605270061619717"
+  },
+  {
+   "num": "03935705",
+   "to": "info@syntura.io",
+   "draft_id": "r-208995510713604964"
+  },
+  {
+   "num": "OC311400",
+   "to": "info@simkins.com",
+   "draft_id": "r2669579737752545864"
+  },
+  {
+   "num": "06872377",
+   "to": "contact@accuracy.com",
+   "draft_id": "r-7283547664843785379"
+  },
+  {
+   "num": "OC315685",
+   "to": "london@tpbennett.com",
+   "draft_id": "r-8685540256683661886"
+  },
+  {
+   "num": "09297294",
+   "to": "info@thesignalgroup.com",
+   "draft_id": "r-3485087941351486707"
+  },
+  {
+   "num": "11920779",
+   "to": "hello@xpate.com",
+   "draft_id": "r2954186208260443290"
+  },
+  {
+   "num": "09793578",
+   "to": "info@virtuslab.com",
+   "draft_id": "r8962348646288867197"
+  },
+  {
+   "num": "01698321",
+   "to": "enquiries@rshp.com",
+   "draft_id": "r3887366120437046468"
+  },
+  {
+   "num": "05473086",
+   "to": "info@mtshealth.co.uk",
+   "draft_id": "r-527463658751347071"
+  },
+  {
+   "num": "10828503",
+   "to": "info@rheonlabs.com",
+   "draft_id": "r-466127210217268122"
+  },
+  {
+   "num": "07927269",
+   "to": "info@thor-companies.com",
+   "draft_id": "r-4130766691362704875"
+  },
+  {
+   "num": "01580129",
+   "to": "enquiries@kelliherinsurancegroup.co.uk",
+   "draft_id": "r-8824370618582572349"
+  },
+  {
+   "num": "OC428624",
+   "to": "info@preston-turnbull.com",
+   "draft_id": "r-3793729706221591094"
+  },
+  {
+   "num": "OC335375",
+   "to": "london@mathys-squire.com",
+   "draft_id": "r-833817974515343529"
+  },
+  {
+   "num": "06711498",
+   "to": "a.bacquet@thex4group.com",
+   "draft_id": "r3048563153950096550"
+  },
+  {
+   "num": "OC398922",
+   "to": "info@thornbridge.com",
+   "draft_id": "r-2357915976441471401"
+  },
+  {
+   "num": "08350117",
+   "to": "hello@placingplatformlimited.com",
+   "draft_id": "r3138235660469427017"
+  },
+  {
+   "num": "02806042",
+   "to": "sayhello@buildhollywood.co.uk",
+   "draft_id": "r-4726436053988222814"
+  },
+  {
+   "num": "OC382786",
+   "to": "info@venturecommodities.com",
+   "draft_id": "r6401187423236122027"
+  },
+  {
+   "num": "OC385847",
+   "to": "info@prismfp.com",
+   "draft_id": "r3972427449018840413"
+  },
+  {
+   "num": "09308880",
+   "to": "info@lacepartners.com",
+   "draft_id": "r-4466078488135154500"
+  },
+  {
+   "num": "04170748",
+   "to": "studio@heatherwick.com",
+   "draft_id": "r3077173940329965646"
+  },
+  {
+   "num": "00849983",
+   "to": "info@iffresearch.com",
+   "draft_id": "r-4382493550359390921"
+  },
+  {
+   "num": "01010311",
+   "to": "contact@metropress.com",
+   "draft_id": "r-8270367450893604277"
+  },
+  {
+   "num": "08876317",
+   "to": "enquiries@unilink.com",
+   "draft_id": "r1476700896945053953"
+  },
+  {
+   "num": "06837942",
+   "to": "hello@trive.com",
+   "draft_id": "r8704300473555166259"
+  },
+  {
+   "num": "13014681",
+   "to": "info@transferra.uk",
+   "draft_id": "r2006802225630003209"
+  },
+  {
+   "num": "13057479",
+   "to": "info@wanstor.com",
+   "draft_id": "r7363585280059548864"
+  },
+  {
+   "num": "02767482",
+   "to": "info.ptarmigan@ptarmiganmedia.com",
+   "draft_id": "r2790800810933543109"
+  },
+  {
+   "num": "11546990",
+   "to": "info@kit-ar.com",
+   "draft_id": "r6949272153116595600"
+  },
+  {
+   "num": "02477115",
+   "to": "info@careerlegal.com",
+   "draft_id": "r-5668310423198228005"
+  },
+  {
+   "num": "06780612",
+   "to": "hello@bighealth.com",
+   "draft_id": "r2541646263149906938"
+  },
+  {
+   "num": "OC383621",
+   "to": "esg@fulkers.co.uk",
+   "draft_id": "r7697530337971987682"
+  },
+  {
+   "num": "OC306572",
+   "to": "enquiry@ingletonwood.co.uk",
+   "draft_id": "r1734066048834833976"
+  },
+  {
+   "num": "04694217",
+   "to": "enquiries@srcinfrastructure.com",
+   "draft_id": "r3528648512743625864"
+  },
+  {
+   "num": "OC319691",
+   "to": "mail@bishopandsewell.co.uk",
+   "draft_id": "r5808100310488031292"
+  },
+  {
+   "num": "OC370096",
+   "to": "info@ancorafinance.com",
+   "draft_id": "r-6492008470880872408"
+  },
+  {
+   "num": "08171866",
+   "to": "info@adthena.com",
+   "draft_id": "r-5865367324956884099"
+  },
+  {
+   "num": "05590174",
+   "to": "info@redplanetpictures.co.uk",
+   "draft_id": "r-7411433358906221054"
+  },
+  {
+   "num": "09969413",
+   "to": "contact@bestx.co.uk",
+   "draft_id": "r-433928472249476940"
+  },
+  {
+   "num": "03939066",
+   "to": "enquiries@quinnox.com",
+   "draft_id": "r1943623923241095944"
+  },
+  {
+   "num": "OC300026",
+   "to": "communications@maxfordham.com",
+   "draft_id": "r-5971607072031290236"
+  },
+  {
+   "num": "05824876",
+   "to": "contact@elevenfilm.com",
+   "draft_id": "r2861697381247169349"
+  },
+  {
+   "num": "13786942",
+   "to": "info@blue-zoo.co.uk",
+   "draft_id": "r6790105656486994087"
+  },
+  {
+   "num": "07762372",
+   "to": "contactus@sturrockandrobson.com",
+   "draft_id": "r5488644079620070198"
+  },
+  {
+   "num": "01419017",
+   "to": "info@handle.co.uk",
+   "draft_id": "r-4279239754346435465"
+  },
+  {
+   "num": "12837407",
+   "to": "info@attentogroup.com",
+   "draft_id": "r-1211382776335275867"
+  },
+  {
+   "num": "OC308354",
+   "to": "info@turlock-tec.com",
+   "draft_id": "r-8545599000155664111"
+  },
+  {
+   "num": "04235243",
+   "to": "info@esynergy.co.uk",
+   "draft_id": "r3349090573659303178"
+  },
+  {
+   "num": "05592160",
+   "to": "peter.henshaw@cherrythinking.com",
+   "draft_id": "r-5969397973954937423"
+  },
+  {
+   "num": "07209295",
+   "to": "info@company85.com",
+   "draft_id": "r-4953962089080975929"
+  },
+  {
+   "num": "OC347946",
+   "to": "peoplerequest@kobrekim.com",
+   "draft_id": "r-4512703747765698605"
+  },
+  {
+   "num": "09966213",
+   "to": "info@vortexa.com",
+   "draft_id": "r354003085327045799"
+  },
+  {
+   "num": "03442937",
+   "to": "info@dae.mn",
+   "draft_id": "r4089848191747607267"
+  },
+  {
+   "num": "09930262",
+   "to": "team@risksave.com",
+   "draft_id": "r5044640590441699049"
+  },
+  {
+   "num": "OC382284",
+   "to": "email@carpmaels.com",
+   "draft_id": "r5681471552587615415"
+  },
+  {
+   "num": "OC306749",
+   "to": "reception@mewburn.com",
+   "draft_id": "r4150632828290373347"
+  },
+  {
+   "num": "03898768",
+   "to": "info@sanzateaching.com",
+   "draft_id": "r3395747683331386826"
+  },
+  {
+   "num": "04246721",
+   "to": "info@egremontgroup.com",
+   "draft_id": "r6178635621049132984"
+  },
+  {
+   "num": "06715188",
+   "to": "enquiries@riversafe.co.uk",
+   "draft_id": "r471446674915998711"
+  },
+  {
+   "num": "10358376",
+   "to": "london@adp-architecture.com",
+   "draft_id": "r-4984527130958311691"
+  },
+  {
+   "num": "11972677",
+   "to": "info@firstfintech.co.uk",
+   "draft_id": "r-5964603350170780161"
+  },
+  {
+   "num": "OC345900",
+   "to": "london@eip.com",
+   "draft_id": "r-3316888098799303763"
+  },
+  {
+   "num": "04054874",
+   "to": "info@saffroninteractive.com",
+   "draft_id": "r1789423955382874277"
+  },
+  {
+   "num": "OC417920",
+   "to": "info@elan-cap.com",
+   "draft_id": "r698406280002854659"
+  },
+  {
+   "num": "15141819",
+   "to": "info@biotalent.com",
+   "draft_id": "r1470348219847654778"
+  },
+  {
+   "num": "02376241",
+   "to": "info@xpedition.com",
+   "draft_id": "r-2324761858274453122"
+  },
+  {
+   "num": "09420434",
+   "to": "contact@transparity.com",
+   "draft_id": "r7778840340669622454"
+  },
+  {
+   "num": "13338218",
+   "to": "info@shopcircle.co",
+   "draft_id": "r562524343090952834"
+  }
+ ]
+}
