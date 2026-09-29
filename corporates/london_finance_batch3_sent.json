@@ -1,0 +1,272 @@
+[
+ {
+  "num": "03879955",
+  "company": "atomos",
+  "to": "getintouch@atomos.co.uk",
+  "message_id": "1a0ec2f83a780f8f",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-tapoly.com",
+  "company": "Tapoly",
+  "to": "info@tapoly.com",
+  "message_id": "1a0ec2f947a18b27",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-currencyonlinegroup.com",
+  "company": "Currency Online Group",
+  "to": "info@currencyonlinegroup.com",
+  "message_id": "1a0ec2fa819ff7e6",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "bounced: 554 5.7.1 blocked by recipient server",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-meteoram.com",
+  "company": "Meteor Asset Management",
+  "to": "info@meteoram.com",
+  "message_id": "1a0ec2fbbc9a92c2",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-pinnaclewealth.co.uk",
+  "company": "Pinnacle",
+  "to": "info@pinnaclewealth.co.uk",
+  "message_id": "1a0ec2fcf8dc20bc",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "12213334",
+  "company": "Moneliq",
+  "to": "info@moneliq.com",
+  "message_id": "1a0ec303b2409db8",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "12535817",
+  "company": "Payler",
+  "to": "info@payler.com",
+  "message_id": "1a0ec304dbe88efc",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "10723112",
+  "company": "Alt21",
+  "to": "europe@alt21.com",
+  "message_id": "1a0ec305c4be0fee",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "07914165",
+  "company": "TransferGo",
+  "to": "hello@transfergo.com",
+  "message_id": "1a0ec306f3e11344",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "06918027",
+  "company": "Bondsmith",
+  "to": "info@bondsmith.com",
+  "message_id": "1a0ec307d1d7b9c2",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "bounced: 550 mailbox does not exist",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-privatefinance.co.uk",
+  "company": "Private Finance",
+  "to": "mike.perrin@privatefinance.co.uk",
+  "message_id": "1a0ec30bfc969500",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "09561722",
+  "company": "Ozan",
+  "to": "info@ozan.com",
+  "message_id": "1a0ec30cf5a544c3",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-oakleycapital.com",
+  "company": "Oakley Capital",
+  "to": "enquiries@oakleycapital.com",
+  "message_id": "1a0ec30e045179f9",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "04132122",
+  "company": "Polunin Capital Partners",
+  "to": "info@polunin.co.uk",
+  "message_id": "1a0ec30f341abef8",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-esrisks.com",
+  "company": "ES Risks",
+  "to": "chris.hobbs@esrisks.com",
+  "message_id": "1a0ec31024dfc107",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-renovationunderwriting.com",
+  "company": "Renovation Underwriting",
+  "to": "reception@renovationunderwriting.com",
+  "message_id": "1a0ec313dc6f2213",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "09380422",
+  "company": "Pzena",
+  "to": "info@pzena.com",
+  "message_id": "1a0ec314f9260a20",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-thetexelgroup.com",
+  "company": "Texel",
+  "to": "connect@thetexelgroup.com",
+  "message_id": "1a0ec31619a63ac2",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-ramon.co.uk",
+  "company": "Ramon International",
+  "to": "nick.andrews@ramon.co.uk",
+  "message_id": "1a0ec3171a5be15b",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "05367727",
+  "company": "ActivTrades",
+  "to": "info@activtrades.com",
+  "message_id": "1a0ec318274762a0",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "10581138",
+  "company": "Waggel",
+  "to": "hello@waggel.co.uk",
+  "message_id": "1a0ec31afacd6040",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-asr-re.com",
+  "company": "Africa Specialty Risks",
+  "to": "connect@asr-re.com",
+  "message_id": "1a0ec31c29ec1f26",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-pantheonspecialty.com",
+  "company": "Pantheon Specialty",
+  "to": "reception@pantheonspecialty.com",
+  "message_id": "1a0ec31d43effa63",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-peelhunt.com",
+  "company": "Peel Hunt",
+  "to": "info@peelhunt.com",
+  "message_id": "1a0ec31e8f8398da",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-meridianrsl.com",
+  "company": "Meridian Risk Solutions",
+  "to": "marcus.williamson@meridianrsl.com",
+  "message_id": "1a0ec31f9209a7f1",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "09516131",
+  "company": "Quadrature",
+  "to": "info@quadrature.ai",
+  "message_id": "1a0ec32332d61884",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-decusbrokers.com",
+  "company": "Decus Brokers",
+  "to": "info@decusbrokers.com",
+  "message_id": "1a0ec32446629ffc",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-bpl-insurance.com",
+  "company": "BPL",
+  "to": "enquiries@bpl-insurance.com",
+  "message_id": "1a0ec3256e9fbfd1",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-kerrylondon.co.uk",
+  "company": "Kerry London",
+  "to": "info@kerrylondon.co.uk",
+  "message_id": "1a0ec3266e686440",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ },
+ {
+  "num": "D-wovenlight.com",
+  "company": "WovenLight",
+  "to": "info@wovenlight.com",
+  "message_id": "1a0ec327a7a97599",
+  "sent_at_utc": "2026-09-29T08:02-08:05Z",
+  "status": "sent",
+  "link_note": "venue link rewritten to google.com/url redirect by the connector send path"
+ }
+]
