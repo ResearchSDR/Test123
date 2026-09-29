@@ -1,0 +1,514 @@
+{
+ "name": "FC Urban - London daily outreach send (2 waves)",
+ "nodes": [
+  {
+   "parameters": {
+    "rule": {
+     "interval": [
+      {
+       "field": "cronExpression",
+       "expression": "0 9 * * 1-5"
+      },
+      {
+       "field": "cronExpression",
+       "expression": "0 14 * * 1-5"
+      }
+     ]
+    }
+   },
+   "id": "2208a8ad-4648-5d8b-a5bf-59c140e5bb20",
+   "name": "Wave 1 (09:00) and wave 2 (14:00), weekdays",
+   "type": "n8n-nodes-base.scheduleTrigger",
+   "typeVersion": 1.2,
+   "position": [
+    0,
+    0
+   ]
+  },
+  {
+   "parameters": {},
+   "id": "c02029c6-2ef3-505c-b4ab-440216325893",
+   "name": "Manual test run",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    200
+   ]
+  },
+  {
+   "parameters": {
+    "documentId": {
+     "__rl": true,
+     "value": "QUEUE_SHEET_ID",
+     "mode": "id"
+    },
+    "sheetName": {
+     "__rl": true,
+     "value": "Queue",
+     "mode": "name"
+    },
+    "options": {}
+   },
+   "id": "b4a2baab-8272-5c0b-b398-f4bec50e82de",
+   "name": "Read queue",
+   "type": "n8n-nodes-base.googleSheets",
+   "typeVersion": 4.5,
+   "position": [
+    220,
+    100
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "// Pick this wave's rows from the queue. Europe/London date and hour decide the wave.\nconst DAILY_CAP = 200, WAVE_CAP = 100;\nconst now = $now.setZone('Europe/London');\nconst today = now.toFormat('yyyy-MM-dd');\nconst wave = now.hour < 12 ? '1' : '2';\nconst rows = $input.all().map(i => i.json);\nconst sentToday = rows.filter(r => r['Date'] === today && String(r['Status']).trim() === 'Sent').length;\nif (sentToday >= DAILY_CAP) return [];\nconst seenDomains = new Set(rows.filter(r => r['Date'] === today && r['Status'] === 'Sent').map(r => String(r['Email']).split('@').pop().toLowerCase()));\nconst out = [];\nfor (const r of rows) {\n  if (r['Date'] !== today || String(r['Wave']) !== wave) continue;\n  if (String(r['QA']).trim() !== 'pass' || String(r['Approved']).trim().toLowerCase() !== 'yes') continue;\n  if (String(r['Status'] ?? '').trim()) continue;\n  const email = String(r['Email'] ?? '').trim().toLowerCase();\n  if (!email.includes('@')) continue;\n  const dom = email.split('@').pop();\n  if (seenDomains.has(dom)) continue;\n  if (/google\\.com\\/url/i.test(String(r['HTML body'])) || /[\u2013\u2014]/.test(String(r['Body']) + String(r['Subject']))) continue; // belt and braces\n  seenDomains.add(dom);\n  out.push({ json: { ...r, _to: email, _wave: wave, _today: today, _waveStart: Math.floor(Date.now() / 1000) } });\n  if (out.length >= Math.min(WAVE_CAP, DAILY_CAP - sentToday)) break;\n}\nreturn out;\n"
+   },
+   "id": "5811d5fb-bfc6-5325-a1ba-a0f3165ce093",
+   "name": "Build wave",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    440,
+    100
+   ]
+  },
+  {
+   "parameters": {
+    "options": {
+     "reset": false
+    }
+   },
+   "id": "5a73d827-2822-54e7-9c8f-18b7b990ace0",
+   "name": "Loop over queue",
+   "type": "n8n-nodes-base.splitInBatches",
+   "typeVersion": 3,
+   "position": [
+    660,
+    100
+   ]
+  },
+  {
+   "parameters": {
+    "jsCode": "return [{ json: { sentThisWave: $input.all().length, finishedAt: $now.toISO() } }];"
+   },
+   "id": "bff302f3-59a0-56ef-8818-bdfff93a4e0c",
+   "name": "Wave summary",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    880,
+    -100
+   ]
+  },
+  {
+   "parameters": {
+    "sendTo": "={{ $json._to }}",
+    "subject": "={{ $json['Subject'] }}",
+    "emailType": "html",
+    "message": "={{ $json['HTML body'] }}",
+    "options": {
+     "appendAttribution": false
+    }
+   },
+   "id": "b746ae56-0938-59c1-92ec-01dd2dc9a2ca",
+   "name": "Send email",
+   "type": "n8n-nodes-base.gmail",
+   "typeVersion": 2.1,
+   "position": [
+    880,
+    100
+   ],
+   "onError": "continueErrorOutput"
+  },
+  {
+   "parameters": {
+    "operation": "update",
+    "documentId": {
+     "__rl": true,
+     "value": "QUEUE_SHEET_ID",
+     "mode": "id"
+    },
+    "sheetName": {
+     "__rl": true,
+     "value": "Queue",
+     "mode": "name"
+    },
+    "columns": {
+     "mappingMode": "defineBelow",
+     "value": {
+      "row_number": "={{ $('Loop over queue').item.json.row_number }}",
+      "Status": "Sent",
+      "Sent at": "={{ $now.setZone('Europe/London').toFormat('yyyy-MM-dd HH:mm:ss') }}",
+      "Message ID": "={{ $json.id }}",
+      "Thread ID": "={{ $json.threadId }}"
+     },
+     "matchingColumns": [
+      "row_number"
+     ],
+     "schema": []
+    },
+    "options": {}
+   },
+   "id": "169725e6-69c4-5c92-a074-ff6b77b0910e",
+   "name": "Mark sent",
+   "type": "n8n-nodes-base.googleSheets",
+   "typeVersion": 4.5,
+   "position": [
+    1100,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "append",
+    "documentId": {
+     "__rl": true,
+     "value": "LOG_SHEET_ID",
+     "mode": "id"
+    },
+    "sheetName": {
+     "__rl": true,
+     "value": "Log",
+     "mode": "name"
+    },
+    "columns": {
+     "mappingMode": "defineBelow",
+     "value": {
+      "Date": "={{ $('Loop over queue').item.json._today }}",
+      "Wave": "={{ $('Loop over queue').item.json._wave }}",
+      "Sent at": "={{ $now.setZone('Europe/London').toFormat('yyyy-MM-dd HH:mm:ss') }}",
+      "Message ID": "={{ $('Send email').item.json.id }}",
+      "Thread ID": "={{ $('Send email').item.json.threadId }}",
+      "Recipient": "={{ $('Loop over queue').item.json._to }}",
+      "Company": "={{ $('Loop over queue').item.json['Company'] }}",
+      "Venue": "={{ $('Loop over queue').item.json['Venue'] }}",
+      "Hook": "={{ $('Loop over queue').item.json['Hook'] }}"
+     },
+     "schema": []
+    },
+    "options": {}
+   },
+   "id": "1629ae13-77c0-5efb-8f2a-23d3adc4d2c1",
+   "name": "Log send",
+   "type": "n8n-nodes-base.googleSheets",
+   "typeVersion": 4.5,
+   "position": [
+    1320,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "loose",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "tenth",
+       "leftValue": "={{ ($runIndex + 1) % 10 }}",
+       "rightValue": 0,
+       "operator": {
+        "type": "number",
+        "operation": "equals"
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "id": "f36e13e9-a8ef-5bf5-b17f-e15bd147e8fb",
+   "name": "Every 10th send?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    1540,
+    0
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "getAll",
+    "returnAll": true,
+    "filters": {
+     "q": "=from:mailer-daemon after:{{ $('Build wave').first().json._waveStart }}"
+    }
+   },
+   "id": "02b58337-2c5e-5548-beba-16ee03c58360",
+   "name": "Bounces since wave start",
+   "type": "n8n-nodes-base.gmail",
+   "typeVersion": 2.1,
+   "position": [
+    1760,
+    -100
+   ],
+   "alwaysOutputData": true
+  },
+  {
+   "parameters": {
+    "jsCode": "// Stop the wave if bounces since the wave started exceed 3% of emails sent in this wave.\n// Checked after every 10th send (needs at least 20 sends before it can trip).\n// This node runs once per 10 sends, so its own run index gives the sent count.\nconst sent = ($runIndex + 1) * 10;\nconst bounces = $input.all().filter(i => i.json && i.json.id).length;\nif (sent >= 20 && bounces / sent > 0.03) {\n  throw new Error(`Bounce rate ${bounces}/${sent} is over 3%: wave stopped. Check the Inbox for mailer-daemon notices before the next wave.`);\n}\nreturn [{ json: { ok: true, sent, bounces } }];\n"
+   },
+   "id": "73ee1426-376f-5777-9c3f-2eae1402247b",
+   "name": "Bounce gate (3%)",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1980,
+    -100
+   ]
+  },
+  {
+   "parameters": {
+    "mode": "runOnceForEachItem",
+    "jsCode": "// Any Gmail rate-limit / quota / blocked error stops the whole wave. Other errors just mark the row Failed.\nconst err = String($json.error?.message || $json.error || '');\nif (/rate|quota|429|too many|blocked|suspend|limit exceeded|user-rate/i.test(err)) {\n  throw new Error('Gmail refused to send (' + err + '). Wave stopped; nothing else will be sent today until checked.');\n}\nreturn $input.item;\n"
+   },
+   "id": "7994b223-5557-5181-ad64-fae42737c15b",
+   "name": "Stop on rate limit",
+   "type": "n8n-nodes-base.code",
+   "typeVersion": 2,
+   "position": [
+    1100,
+    250
+   ]
+  },
+  {
+   "parameters": {
+    "operation": "update",
+    "documentId": {
+     "__rl": true,
+     "value": "QUEUE_SHEET_ID",
+     "mode": "id"
+    },
+    "sheetName": {
+     "__rl": true,
+     "value": "Queue",
+     "mode": "name"
+    },
+    "columns": {
+     "mappingMode": "defineBelow",
+     "value": {
+      "row_number": "={{ $('Loop over queue').item.json.row_number }}",
+      "Status": "Failed",
+      "Sent at": "={{ $now.setZone('Europe/London').toFormat('yyyy-MM-dd HH:mm:ss') }}",
+      "Send error": "={{ $json.error?.message || $json.error || 'send failed' }}"
+     },
+     "matchingColumns": [
+      "row_number"
+     ],
+     "schema": []
+    },
+    "options": {}
+   },
+   "id": "b97faf84-65a8-5d7d-9fcb-7e72d4927e92",
+   "name": "Mark failed",
+   "type": "n8n-nodes-base.googleSheets",
+   "typeVersion": 4.5,
+   "position": [
+    1320,
+    250
+   ]
+  },
+  {
+   "parameters": {
+    "amount": "={{ 20 + Math.floor(Math.random() * 21) }}",
+    "unit": "seconds"
+   },
+   "id": "52a72473-a3c5-5ba0-a48b-aa37c847201c",
+   "name": "Random wait 20 to 40 s",
+   "type": "n8n-nodes-base.wait",
+   "typeVersion": 1.1,
+   "position": [
+    2200,
+    100
+   ]
+  }
+ ],
+ "connections": {
+  "Wave 1 (09:00) and wave 2 (14:00), weekdays": {
+   "main": [
+    [
+     {
+      "node": "Read queue",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Manual test run": {
+   "main": [
+    [
+     {
+      "node": "Read queue",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Read queue": {
+   "main": [
+    [
+     {
+      "node": "Build wave",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Build wave": {
+   "main": [
+    [
+     {
+      "node": "Loop over queue",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Loop over queue": {
+   "main": [
+    [
+     {
+      "node": "Wave summary",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Send email",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Send email": {
+   "main": [
+    [
+     {
+      "node": "Mark sent",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Stop on rate limit",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Mark sent": {
+   "main": [
+    [
+     {
+      "node": "Log send",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Log send": {
+   "main": [
+    [
+     {
+      "node": "Every 10th send?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Every 10th send?": {
+   "main": [
+    [
+     {
+      "node": "Bounces since wave start",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Random wait 20 to 40 s",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Bounces since wave start": {
+   "main": [
+    [
+     {
+      "node": "Bounce gate (3%)",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Bounce gate (3%)": {
+   "main": [
+    [
+     {
+      "node": "Random wait 20 to 40 s",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Stop on rate limit": {
+   "main": [
+    [
+     {
+      "node": "Mark failed",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Mark failed": {
+   "main": [
+    [
+     {
+      "node": "Random wait 20 to 40 s",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Random wait 20 to 40 s": {
+   "main": [
+    [
+     {
+      "node": "Loop over queue",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "active": false,
+ "settings": {
+  "executionOrder": "v1",
+  "timezone": "Europe/London",
+  "saveManualExecutions": true
+ },
+ "pinData": {}
+}

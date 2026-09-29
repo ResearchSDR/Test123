@@ -1,0 +1,2252 @@
+{
+ "checked": "2026-09-29",
+ "venues": [
+  {
+   "slug": "acton",
+   "url": "https://www.fcurban.com/location/acton",
+   "postcode": "W3 7HB",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 20:00",
+    "Wed 30 Sep 20:00",
+    "Thu 01 Oct 20:00",
+    "Sat 03 Oct 12:00",
+    "Sun 04 Oct 12:00",
+    "Mon 05 Oct 20:00",
+    "Mon 05 Oct 21:00",
+    "Tue 06 Oct 20:00",
+    "Wed 07 Oct 20:00",
+    "Thu 08 Oct 20:00",
+    "Sat 10 Oct 12:00",
+    "Sun 11 Oct 12:00",
+    "Mon 12 Oct 20:00",
+    "Mon 12 Oct 21:00",
+    "Tue 13 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Mon 20:00",
+    "Mon 21:00",
+    "Sat 12:00",
+    "Sun 12:00",
+    "Thu 20:00",
+    "Tue 20:00",
+    "Wed 20:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "alicante-ftbol-indoor",
+   "url": "https://www.fcurban.com/location/alicante-ftbol-indoor",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "arena-alicante-c843c",
+   "url": "https://www.fcurban.com/location/arena-alicante-c843c",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "arena-bar-grill",
+   "url": "https://www.fcurban.com/location/arena-bar-grill",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "ark-academy-wembley-park",
+   "url": "https://www.fcurban.com/location/ark-academy-wembley-park",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "ark-elvin-wembley-central",
+   "url": "https://www.fcurban.com/location/ark-elvin-wembley-central",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "ark-king-solomon",
+   "url": "https://www.fcurban.com/location/ark-king-solomon",
+   "postcode": "NW1 6RX",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "ark-walworth",
+   "url": "https://www.fcurban.com/location/ark-walworth",
+   "postcode": "SE1 5UJ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "aspuddens-idrottsplats",
+   "url": "https://www.fcurban.com/location/aspuddens-idrottsplats",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "asv-blauwwit",
+   "url": "https://www.fcurban.com/location/asv-blauwwit",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "avv-sdz",
+   "url": "https://www.fcurban.com/location/avv-sdz",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 21:00",
+    "Mon 05 Oct 21:00",
+    "Fri 09 Oct 21:00",
+    "Mon 12 Oct 21:00"
+   ],
+   "weekly_pattern": [
+    "Fri 21:00",
+    "Mon 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "barnet",
+   "url": "https://www.fcurban.com/location/barnet",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "battersea-griffin-primary-school",
+   "url": "https://www.fcurban.com/location/battersea-griffin-primary-school",
+   "postcode": "SW8 4JB",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "battersea-powerleague",
+   "url": "https://www.fcurban.com/location/battersea-powerleague",
+   "postcode": "SW8 5EJ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "bellevue-bollplan",
+   "url": "https://www.fcurban.com/location/bellevue-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "bergshamra-ip",
+   "url": "https://www.fcurban.com/location/bergshamra-ip",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "bermondsey",
+   "url": "https://www.fcurban.com/location/bermondsey",
+   "postcode": "SE1 5LA",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 19:00",
+    "Thu 01 Oct 19:00",
+    "Thu 01 Oct 20:00",
+    "Sat 03 Oct 12:00",
+    "Tue 06 Oct 19:00",
+    "Thu 08 Oct 19:00",
+    "Thu 08 Oct 20:00",
+    "Sat 10 Oct 12:00",
+    "Tue 13 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Sat 12:00",
+    "Thu 19:00",
+    "Thu 20:00",
+    "Tue 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "bermondsey-riverside",
+   "url": "https://www.fcurban.com/location/bermondsey-riverside",
+   "postcode": "SE16 4UP",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "betondorp",
+   "url": "https://www.fcurban.com/location/betondorp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "bft-hackney",
+   "url": "https://www.fcurban.com/location/bft-hackney",
+   "postcode": "E2 7SJ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "blauwwit-erasmuspark",
+   "url": "https://www.fcurban.com/location/blauwwit-erasmuspark",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Mon 05 Oct 18:00",
+    "Mon 12 Oct 18:00"
+   ],
+   "weekly_pattern": [
+    "Mon 18:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "borgerstraat",
+   "url": "https://www.fcurban.com/location/borgerstraat",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "borough-academy",
+   "url": "https://www.fcurban.com/location/borough-academy",
+   "postcode": "SE1 0BU",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 19:30",
+    "Fri 09 Oct 19:30"
+   ],
+   "weekly_pattern": [
+    "Fri 19:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "brixton-03dac",
+   "url": "https://www.fcurban.com/location/brixton-03dac",
+   "postcode": "SW9 8BP",
+   "live": true,
+   "next_games": [
+    "Sat 03 Oct 12:00",
+    "Sat 03 Oct 13:00",
+    "Sat 10 Oct 12:00",
+    "Sat 10 Oct 13:00"
+   ],
+   "weekly_pattern": [
+    "Sat 12:00",
+    "Sat 13:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "brixton-angell-town-4g",
+   "url": "https://www.fcurban.com/location/brixton-angell-town-4g",
+   "postcode": "SW9 7JR",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "brixton-ark-evelyn-grace-indoor",
+   "url": "https://www.fcurban.com/location/brixton-ark-evelyn-grace-indoor",
+   "postcode": "SE24 0QT",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "brixton-st-johns-angell-town-school",
+   "url": "https://www.fcurban.com/location/brixton-st-johns-angell-town-school",
+   "postcode": "SW9 7HH",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "brixton-st-johns-angell-town-school-f5217",
+   "url": "https://www.fcurban.com/location/brixton-st-johns-angell-town-school-f5217",
+   "postcode": "SW9 7HH",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "brockley-3g-8d8a8",
+   "url": "https://www.fcurban.com/location/brockley-3g-8d8a8",
+   "postcode": "SE15 3AZ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "camden-castlehaven",
+   "url": "https://www.fcurban.com/location/camden-castlehaven",
+   "postcode": "NW1 8SJ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "camden-castlehaven-ba0af",
+   "url": "https://www.fcurban.com/location/camden-castlehaven-ba0af",
+   "postcode": "NW1 8PU",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "chelsea",
+   "url": "https://www.fcurban.com/location/chelsea",
+   "postcode": "SW3 6NH",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 19:00",
+    "Tue 29 Sep 20:00",
+    "Tue 06 Oct 19:00",
+    "Tue 06 Oct 20:00",
+    "Tue 13 Oct 19:00",
+    "Tue 13 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Tue 19:00",
+    "Tue 20:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "club-deportivo-horizonte-d938f",
+   "url": "https://www.fcurban.com/location/club-deportivo-horizonte-d938f",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "club-san-jorge",
+   "url": "https://www.fcurban.com/location/club-san-jorge",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "cola-shoreditch-park",
+   "url": "https://www.fcurban.com/location/cola-shoreditch-park",
+   "postcode": "N1 5JU",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "colegio-jesuitas",
+   "url": "https://www.fcurban.com/location/colegio-jesuitas",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "colegio-salesianos",
+   "url": "https://www.fcurban.com/location/colegio-salesianos",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "colegio-salesianos-futsal",
+   "url": "https://www.fcurban.com/location/colegio-salesianos-futsal",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "corantijnstraat",
+   "url": "https://www.fcurban.com/location/corantijnstraat",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "coubertin",
+   "url": "https://www.fcurban.com/location/coubertin",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "dalston",
+   "url": "https://www.fcurban.com/location/dalston",
+   "postcode": "E8 2EY",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "de-parrel",
+   "url": "https://www.fcurban.com/location/de-parrel",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 19:00",
+    "Mon 05 Oct 18:00",
+    "Mon 05 Oct 19:00",
+    "Thu 08 Oct 19:00",
+    "Mon 12 Oct 18:00",
+    "Mon 12 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Mon 18:00",
+    "Mon 19:00",
+    "Thu 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "denmark-road-sports-centre",
+   "url": "https://www.fcurban.com/location/denmark-road-sports-centre",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 19:30",
+    "Tue 06 Oct 19:30",
+    "Tue 13 Oct 19:30"
+   ],
+   "weekly_pattern": [
+    "Tue 19:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "dhsc",
+   "url": "https://www.fcurban.com/location/dhsc",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "docklands-surrey-quays",
+   "url": "https://www.fcurban.com/location/docklands-surrey-quays",
+   "postcode": "SE16 5AA",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 21:00",
+    "Sun 04 Oct 12:00",
+    "Mon 05 Oct 21:00",
+    "Wed 07 Oct 21:00",
+    "Sun 11 Oct 12:00",
+    "Mon 12 Oct 21:00"
+   ],
+   "weekly_pattern": [
+    "Mon 21:00",
+    "Sun 12:00",
+    "Wed 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "drakenbergsparken-bollplan",
+   "url": "https://www.fcurban.com/location/drakenbergsparken-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "dulwich-indoor",
+   "url": "https://www.fcurban.com/location/dulwich-indoor",
+   "postcode": "SE22 8PU",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "dvva-sv-de-meer",
+   "url": "https://www.fcurban.com/location/dvva-sv-de-meer",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "enskede-ip",
+   "url": "https://www.fcurban.com/location/enskede-ip",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "eriksdals-bollplan",
+   "url": "https://www.fcurban.com/location/eriksdals-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "eriksdalshallen",
+   "url": "https://www.fcurban.com/location/eriksdalshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "faja-lobi-kds-f765c",
+   "url": "https://www.fcurban.com/location/faja-lobi-kds-f765c",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "garrincha",
+   "url": "https://www.fcurban.com/location/garrincha",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 19:30",
+    "Thu 08 Oct 19:30"
+   ],
+   "weekly_pattern": [
+    "Thu 19:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "gubbngens-bollplan",
+   "url": "https://www.fcurban.com/location/gubbngens-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "gubbngshallen",
+   "url": "https://www.fcurban.com/location/gubbngshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "gymzaal-heidebloemstraat",
+   "url": "https://www.fcurban.com/location/gymzaal-heidebloemstraat",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "gymzaal-kanunnik-faberstraat",
+   "url": "https://www.fcurban.com/location/gymzaal-kanunnik-faberstraat",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "gymzaal-theophile-de-bockstraat",
+   "url": "https://www.fcurban.com/location/gymzaal-theophile-de-bockstraat",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 20:00",
+    "Wed 30 Sep 18:30",
+    "Wed 30 Sep 19:30",
+    "Thu 01 Oct 18:30",
+    "Thu 01 Oct 19:30",
+    "Tue 06 Oct 20:00",
+    "Wed 07 Oct 18:30",
+    "Wed 07 Oct 19:30",
+    "Thu 08 Oct 18:30",
+    "Thu 08 Oct 19:30",
+    "Tue 13 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Thu 18:30",
+    "Thu 19:30",
+    "Tue 20:00",
+    "Wed 18:30",
+    "Wed 19:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "gymzaal-walhallalaan",
+   "url": "https://www.fcurban.com/location/gymzaal-walhallalaan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hackney",
+   "url": "https://www.fcurban.com/location/hackney",
+   "postcode": "E9 6JQ",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 21:00",
+    "Sun 04 Oct 12:00",
+    "Sun 04 Oct 13:00",
+    "Mon 05 Oct 21:00",
+    "Thu 08 Oct 21:00",
+    "Sun 11 Oct 12:00",
+    "Sun 11 Oct 13:00",
+    "Mon 12 Oct 21:00"
+   ],
+   "weekly_pattern": [
+    "Mon 21:00",
+    "Sun 12:00",
+    "Sun 13:00",
+    "Thu 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "haggerston-park",
+   "url": "https://www.fcurban.com/location/haggerston-park",
+   "postcode": "E2 8NH",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "haggerston-school-25aeb",
+   "url": "https://www.fcurban.com/location/haggerston-school-25aeb",
+   "postcode": "E2 8JR",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hagstra-idrottsplats",
+   "url": "https://www.fcurban.com/location/hagstra-idrottsplats",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hampstead-3g",
+   "url": "https://www.fcurban.com/location/hampstead-3g",
+   "postcode": "NW3 2QT",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 19:00",
+    "Thu 01 Oct 21:00",
+    "Wed 07 Oct 19:00",
+    "Thu 08 Oct 21:00"
+   ],
+   "weekly_pattern": [
+    "Thu 21:00",
+    "Wed 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "hart-van-noord",
+   "url": "https://www.fcurban.com/location/hart-van-noord",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hdm",
+   "url": "https://www.fcurban.com/location/hdm",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "heideveldstraat",
+   "url": "https://www.fcurban.com/location/heideveldstraat",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hgerstenssens-bp",
+   "url": "https://www.fcurban.com/location/hgerstenssens-bp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hic-amstelveen",
+   "url": "https://www.fcurban.com/location/hic-amstelveen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "high-tech-soccer-academy",
+   "url": "https://www.fcurban.com/location/high-tech-soccer-academy",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hjorthagens-idrottsplats",
+   "url": "https://www.fcurban.com/location/hjorthagens-idrottsplats",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hjulsta-bp",
+   "url": "https://www.fcurban.com/location/hjulsta-bp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hms",
+   "url": "https://www.fcurban.com/location/hms",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "hogar-provincial",
+   "url": "https://www.fcurban.com/location/hogar-provincial",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "humlegrden",
+   "url": "https://www.fcurban.com/location/humlegrden",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "indoor-blauwwit",
+   "url": "https://www.fcurban.com/location/indoor-blauwwit",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 19:00",
+    "Thu 08 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Thu 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "indoor-merksem",
+   "url": "https://www.fcurban.com/location/indoor-merksem",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "indoor-oosterpark-0f6f2",
+   "url": "https://www.fcurban.com/location/indoor-oosterpark-0f6f2",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "indoor-soccer",
+   "url": "https://www.fcurban.com/location/indoor-soccer",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "infineon-football-ground",
+   "url": "https://www.fcurban.com/location/infineon-football-ground",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "isle-of-dogs-canary-wharf-george-greens-school",
+   "url": "https://www.fcurban.com/location/isle-of-dogs-canary-wharf-george-greens-school",
+   "postcode": "E14 3DW",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "jaarbeursplein",
+   "url": "https://www.fcurban.com/location/jaarbeursplein",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "karlbergsskolans-bp",
+   "url": "https://www.fcurban.com/location/karlbergsskolans-bp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "kennington",
+   "url": "https://www.fcurban.com/location/kennington",
+   "postcode": "SW9 0EN",
+   "live": true,
+   "next_games": [
+    "Mon 05 Oct 20:00",
+    "Mon 12 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Mon 20:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "kentish-town",
+   "url": "https://www.fcurban.com/location/kentish-town",
+   "postcode": "NW5 2SJ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "keshovs-bp",
+   "url": "https://www.fcurban.com/location/keshovs-bp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "klipperstraat",
+   "url": "https://www.fcurban.com/location/klipperstraat",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "kmpetorpshallen",
+   "url": "https://www.fcurban.com/location/kmpetorpshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "knutby-bp",
+   "url": "https://www.fcurban.com/location/knutby-bp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "kristinebergs-ip",
+   "url": "https://www.fcurban.com/location/kristinebergs-ip",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "leisure-united-bullocksteads",
+   "url": "https://www.fcurban.com/location/leisure-united-bullocksteads",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "leyton-drapers-fields-3g",
+   "url": "https://www.fcurban.com/location/leyton-drapers-fields-3g",
+   "postcode": "E15 2BP",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "liverpool-st-attlee-centre",
+   "url": "https://www.fcurban.com/location/liverpool-st-attlee-centre",
+   "postcode": "E1 6RT",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "lloyd-multiplein",
+   "url": "https://www.fcurban.com/location/lloyd-multiplein",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 18:00",
+    "Thu 01 Oct 19:00",
+    "Sat 03 Oct 12:00",
+    "Mon 05 Oct 18:00",
+    "Mon 05 Oct 19:00",
+    "Thu 08 Oct 18:00",
+    "Thu 08 Oct 19:00",
+    "Sat 10 Oct 12:00",
+    "Mon 12 Oct 18:00",
+    "Mon 12 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Mon 18:00",
+    "Mon 19:00",
+    "Sat 12:00",
+    "Thu 18:00",
+    "Thu 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "lngholmens-bollplan",
+   "url": "https://www.fcurban.com/location/lngholmens-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "mabley-green-hackney",
+   "url": "https://www.fcurban.com/location/mabley-green-hackney",
+   "postcode": "E9 5HW",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "market-road",
+   "url": "https://www.fcurban.com/location/market-road",
+   "postcode": "N7 9PL",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "marylebone-ark-king-solomon-academy",
+   "url": "https://www.fcurban.com/location/marylebone-ark-king-solomon-academy",
+   "postcode": "NW1 6RX",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "mlarhjdens-idrottsplats",
+   "url": "https://www.fcurban.com/location/mlarhjdens-idrottsplats",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "montemar-c76a6",
+   "url": "https://www.fcurban.com/location/montemar-c76a6",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "muiderpoort",
+   "url": "https://www.fcurban.com/location/muiderpoort",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Sat 03 Oct 11:00",
+    "Sat 03 Oct 12:00",
+    "Sat 10 Oct 11:00",
+    "Sat 10 Oct 12:00"
+   ],
+   "weekly_pattern": [
+    "Sat 11:00",
+    "Sat 12:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "neptunusschiebroek",
+   "url": "https://www.fcurban.com/location/neptunusschiebroek",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Sun 04 Oct 11:00",
+    "Sun 04 Oct 12:00",
+    "Sun 11 Oct 11:00",
+    "Sun 11 Oct 12:00"
+   ],
+   "weekly_pattern": [
+    "Sun 11:00",
+    "Sun 12:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "norra-real-bollplan",
+   "url": "https://www.fcurban.com/location/norra-real-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "old-st-moreland-primary-school",
+   "url": "https://www.fcurban.com/location/old-st-moreland-primary-school",
+   "postcode": "EC1V 8DW",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 19:00",
+    "Fri 09 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Fri 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "olearys-htorget",
+   "url": "https://www.fcurban.com/location/olearys-htorget",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "olympiapark-soccarena",
+   "url": "https://www.fcurban.com/location/olympiapark-soccarena",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 19:00",
+    "Wed 30 Sep 19:00",
+    "Thu 01 Oct 18:00",
+    "Fri 02 Oct 18:30",
+    "Sat 03 Oct 11:00",
+    "Mon 05 Oct 19:00",
+    "Mon 05 Oct 21:00",
+    "Tue 06 Oct 18:30",
+    "Thu 08 Oct 18:00",
+    "Fri 09 Oct 18:30",
+    "Sat 10 Oct 11:00",
+    "Mon 12 Oct 19:00",
+    "Mon 12 Oct 21:00",
+    "Tue 13 Oct 18:30"
+   ],
+   "weekly_pattern": [
+    "Fri 18:30",
+    "Mon 19:00",
+    "Mon 21:00",
+    "Sat 11:00",
+    "Thu 18:00",
+    "Tue 18:30",
+    "Tue 19:00",
+    "Wed 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "park-grootschijn",
+   "url": "https://www.fcurban.com/location/park-grootschijn",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "piscinas-san-vicente",
+   "url": "https://www.fcurban.com/location/piscinas-san-vicente",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "poplar",
+   "url": "https://www.fcurban.com/location/poplar",
+   "postcode": "E14 0AF",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 20:00",
+    "Tue 06 Oct 20:00",
+    "Thu 08 Oct 20:00",
+    "Tue 13 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Thu 20:00",
+    "Tue 20:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "power-league",
+   "url": "https://www.fcurban.com/location/power-league",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 18:00",
+    "Thu 01 Oct 18:00",
+    "Thu 01 Oct 19:00",
+    "Fri 02 Oct 18:00",
+    "Mon 05 Oct 18:00",
+    "Tue 06 Oct 18:00",
+    "Thu 08 Oct 18:00",
+    "Thu 08 Oct 19:00",
+    "Fri 09 Oct 18:00",
+    "Mon 12 Oct 18:00",
+    "Tue 13 Oct 18:00"
+   ],
+   "weekly_pattern": [
+    "Fri 18:00",
+    "Mon 18:00",
+    "Thu 18:00",
+    "Thu 19:00",
+    "Tue 18:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "powerleague-manchester-central",
+   "url": "https://www.fcurban.com/location/powerleague-manchester-central",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "powerleague-manchester-nicholls",
+   "url": "https://www.fcurban.com/location/powerleague-manchester-nicholls",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "psv-handbal",
+   "url": "https://www.fcurban.com/location/psv-handbal",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 19:00",
+    "Mon 05 Oct 19:00",
+    "Wed 07 Oct 19:00",
+    "Mon 12 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Mon 19:00",
+    "Wed 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "pvc",
+   "url": "https://www.fcurban.com/location/pvc",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "radbout-sportcentrum-56d91",
+   "url": "https://www.fcurban.com/location/radbout-sportcentrum-56d91",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "rdabergshallen",
+   "url": "https://www.fcurban.com/location/rdabergshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "rinkeby-bollplan",
+   "url": "https://www.fcurban.com/location/rinkeby-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "rinkebyhallen",
+   "url": "https://www.fcurban.com/location/rinkebyhallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "rooftop-zuidas",
+   "url": "https://www.fcurban.com/location/rooftop-zuidas",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 18:00",
+    "Wed 30 Sep 19:00",
+    "Wed 07 Oct 18:00",
+    "Wed 07 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Wed 18:00",
+    "Wed 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "rosemary-gardens-3g-islington",
+   "url": "https://www.fcurban.com/location/rosemary-gardens-3g-islington",
+   "postcode": "N1 3JP",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "rstasjns-ip",
+   "url": "https://www.fcurban.com/location/rstasjns-ip",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 21:00",
+    "Wed 07 Oct 21:00",
+    "Fri 09 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Fri 20:00",
+    "Wed 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "rvingehallen",
+   "url": "https://www.fcurban.com/location/rvingehallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "rvv-blijdorp",
+   "url": "https://www.fcurban.com/location/rvv-blijdorp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "scheck-club",
+   "url": "https://www.fcurban.com/location/scheck-club",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "shoreditch-powerleague",
+   "url": "https://www.fcurban.com/location/shoreditch-powerleague",
+   "postcode": "E1 6GJ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "shoreditch-rooftop",
+   "url": "https://www.fcurban.com/location/shoreditch-rooftop",
+   "postcode": "N1 5FT",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 20:00",
+    "Sat 03 Oct 12:00",
+    "Sat 03 Oct 13:00",
+    "Fri 09 Oct 20:00",
+    "Sat 10 Oct 12:00",
+    "Sat 10 Oct 13:00"
+   ],
+   "weekly_pattern": [
+    "Fri 20:00",
+    "Sat 12:00",
+    "Sat 13:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "skanskvarnshallen",
+   "url": "https://www.fcurban.com/location/skanskvarnshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "skarpncks-sportflt",
+   "url": "https://www.fcurban.com/location/skarpncks-sportflt",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "soccerworld",
+   "url": "https://www.fcurban.com/location/soccerworld",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 19:30",
+    "Thu 08 Oct 19:30"
+   ],
+   "weekly_pattern": [
+    "Thu 19:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "soccerworld-mnchen",
+   "url": "https://www.fcurban.com/location/soccerworld-mnchen",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Mon 05 Oct 19:00",
+    "Mon 12 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Mon 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sofiaskolan-bollplan",
+   "url": "https://www.fcurban.com/location/sofiaskolan-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "south-kensington",
+   "url": "https://www.fcurban.com/location/south-kensington",
+   "postcode": "SW3 3DD",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 20:30",
+    "Sat 03 Oct 12:00",
+    "Thu 08 Oct 20:30",
+    "Sat 10 Oct 12:00"
+   ],
+   "weekly_pattern": [
+    "Sat 12:00",
+    "Thu 20:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "south-kensington-f62d5",
+   "url": "https://www.fcurban.com/location/south-kensington-f62d5",
+   "postcode": "SW3 3AP",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "speed-soccer-arnhem",
+   "url": "https://www.fcurban.com/location/speed-soccer-arnhem",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Mon 05 Oct 20:00",
+    "Mon 12 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Mon 20:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "spnga-skills-academy",
+   "url": "https://www.fcurban.com/location/spnga-skills-academy",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportcentrum-cvt",
+   "url": "https://www.fcurban.com/location/sportcentrum-cvt",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 18:30",
+    "Wed 07 Oct 18:30"
+   ],
+   "weekly_pattern": [
+    "Wed 18:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportcentrum-de-houtzagerij",
+   "url": "https://www.fcurban.com/location/sportcentrum-de-houtzagerij",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 18:00",
+    "Thu 01 Oct 20:00",
+    "Sat 03 Oct 11:00",
+    "Mon 05 Oct 18:00",
+    "Wed 07 Oct 18:00",
+    "Thu 08 Oct 20:00",
+    "Sat 10 Oct 11:00",
+    "Mon 12 Oct 18:00"
+   ],
+   "weekly_pattern": [
+    "Mon 18:00",
+    "Sat 11:00",
+    "Thu 20:00",
+    "Wed 18:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportcentrum-wilrijkse-plein",
+   "url": "https://www.fcurban.com/location/sportcentrum-wilrijkse-plein",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportclub-esdo-007c2",
+   "url": "https://www.fcurban.com/location/sportclub-esdo-007c2",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Wed 30 Sep 19:00",
+    "Mon 05 Oct 18:30",
+    "Wed 07 Oct 19:00",
+    "Mon 12 Oct 18:30"
+   ],
+   "weekly_pattern": [
+    "Mon 18:30",
+    "Wed 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporthal-gaslaan",
+   "url": "https://www.fcurban.com/location/sporthal-gaslaan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporthal-lipa",
+   "url": "https://www.fcurban.com/location/sporthal-lipa",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporthal-nieuw-welgelegen",
+   "url": "https://www.fcurban.com/location/sporthal-nieuw-welgelegen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporthal-oostenburg",
+   "url": "https://www.fcurban.com/location/sporthal-oostenburg",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 19:00",
+    "Thu 08 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Thu 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporthal-parkloods",
+   "url": "https://www.fcurban.com/location/sporthal-parkloods",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporthal-zuiderpark",
+   "url": "https://www.fcurban.com/location/sporthal-zuiderpark",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportpark-bijlmer",
+   "url": "https://www.fcurban.com/location/sportpark-bijlmer",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 19:00",
+    "Thu 01 Oct 18:00",
+    "Thu 01 Oct 19:00",
+    "Sun 04 Oct 13:30",
+    "Mon 05 Oct 19:00",
+    "Tue 06 Oct 19:00",
+    "Thu 08 Oct 18:00",
+    "Thu 08 Oct 19:00",
+    "Sun 11 Oct 13:30",
+    "Mon 12 Oct 19:00",
+    "Tue 13 Oct 19:00"
+   ],
+   "weekly_pattern": [
+    "Mon 19:00",
+    "Sun 13:30",
+    "Thu 18:00",
+    "Thu 19:00",
+    "Tue 19:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportpark-de-dreef",
+   "url": "https://www.fcurban.com/location/sportpark-de-dreef",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportpark-lunetten",
+   "url": "https://www.fcurban.com/location/sportpark-lunetten",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 21:00",
+    "Mon 05 Oct 20:30",
+    "Thu 08 Oct 21:00",
+    "Mon 12 Oct 20:30"
+   ],
+   "weekly_pattern": [
+    "Mon 20:30",
+    "Thu 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportpark-spieringshorn",
+   "url": "https://www.fcurban.com/location/sportpark-spieringshorn",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 18:30",
+    "Fri 09 Oct 18:30"
+   ],
+   "weekly_pattern": [
+    "Fri 18:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporttraum",
+   "url": "https://www.fcurban.com/location/sporttraum",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sporttraum-gmbh",
+   "url": "https://www.fcurban.com/location/sporttraum-gmbh",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportveld-zeeburgereiland",
+   "url": "https://www.fcurban.com/location/sportveld-zeeburgereiland",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportzaal-evertsweertplantsoen",
+   "url": "https://www.fcurban.com/location/sportzaal-evertsweertplantsoen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportzaal-radbout",
+   "url": "https://www.fcurban.com/location/sportzaal-radbout",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sportzaal-weesperzijde",
+   "url": "https://www.fcurban.com/location/sportzaal-weesperzijde",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 18:00",
+    "Tue 29 Sep 19:00",
+    "Tue 29 Sep 20:00",
+    "Wed 30 Sep 20:30",
+    "Thu 01 Oct 18:00",
+    "Fri 02 Oct 18:00",
+    "Fri 02 Oct 19:00",
+    "Sat 03 Oct 11:00",
+    "Sat 03 Oct 12:00",
+    "Sun 04 Oct 11:00",
+    "Mon 05 Oct 18:00",
+    "Tue 06 Oct 18:00",
+    "Tue 06 Oct 19:00",
+    "Tue 06 Oct 20:00",
+    "Wed 07 Oct 20:30",
+    "Thu 08 Oct 18:00",
+    "Fri 09 Oct 18:00",
+    "Fri 09 Oct 19:00",
+    "Sat 10 Oct 11:00",
+    "Sat 10 Oct 12:00",
+    "Sun 11 Oct 11:00",
+    "Mon 12 Oct 18:00",
+    "Tue 13 Oct 18:00",
+    "Tue 13 Oct 19:00",
+    "Tue 13 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Fri 18:00",
+    "Fri 19:00",
+    "Mon 18:00",
+    "Sat 11:00",
+    "Sat 12:00",
+    "Sun 11:00",
+    "Thu 18:00",
+    "Tue 18:00",
+    "Tue 19:00",
+    "Tue 20:00",
+    "Wed 20:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "st-erikshallen",
+   "url": "https://www.fcurban.com/location/st-erikshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "st-johns-wood",
+   "url": "https://www.fcurban.com/location/st-johns-wood",
+   "postcode": "NW8 0NL",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 21:00",
+    "Sun 04 Oct 12:00",
+    "Sun 04 Oct 13:00",
+    "Mon 05 Oct 19:30",
+    "Tue 06 Oct 21:00",
+    "Sun 11 Oct 12:00",
+    "Sun 11 Oct 13:00",
+    "Mon 12 Oct 19:30",
+    "Tue 13 Oct 21:00"
+   ],
+   "weekly_pattern": [
+    "Mon 19:30",
+    "Sun 12:00",
+    "Sun 13:00",
+    "Tue 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "st-pancras-corams-fields-3g",
+   "url": "https://www.fcurban.com/location/st-pancras-corams-fields-3g",
+   "postcode": "WC1N 1AZ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "st-pancras-rooftop-4g",
+   "url": "https://www.fcurban.com/location/st-pancras-rooftop-4g",
+   "postcode": "NW1 1RX",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stadshagens-ip",
+   "url": "https://www.fcurban.com/location/stadshagens-ip",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stepney-3g",
+   "url": "https://www.fcurban.com/location/stepney-3g",
+   "postcode": "E1 4DZ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stepney-green",
+   "url": "https://www.fcurban.com/location/stepney-green",
+   "postcode": "E1 4DZ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stermalms-ip",
+   "url": "https://www.fcurban.com/location/stermalms-ip",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stoke-newington-high-school-3g",
+   "url": "https://www.fcurban.com/location/stoke-newington-high-school-3g",
+   "postcode": "N16 9EX",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stra-bollplan",
+   "url": "https://www.fcurban.com/location/stra-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stra-reals-bollplan",
+   "url": "https://www.fcurban.com/location/stra-reals-bollplan",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "stratford",
+   "url": "https://www.fcurban.com/location/stratford",
+   "postcode": "E20 1BD",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sturebyskolans-bp",
+   "url": "https://www.fcurban.com/location/sturebyskolans-bp",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sv-1880-mnchen",
+   "url": "https://www.fcurban.com/location/sv-1880-mnchen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "sv-houtwijk",
+   "url": "https://www.fcurban.com/location/sv-houtwijk",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "svh",
+   "url": "https://www.fcurban.com/location/svh",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "t-hert",
+   "url": "https://www.fcurban.com/location/t-hert",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "tantolunden-bollplann",
+   "url": "https://www.fcurban.com/location/tantolunden-bollplann",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "tottenham-white-hart-lane-99d09",
+   "url": "https://www.fcurban.com/location/tottenham-white-hart-lane-99d09",
+   "postcode": "N17 8HR",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "transvaalbuurt-a9cd5",
+   "url": "https://www.fcurban.com/location/transvaalbuurt-a9cd5",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Sat 03 Oct 10:00",
+    "Sat 03 Oct 11:00",
+    "Sat 03 Oct 12:00",
+    "Sat 10 Oct 10:00",
+    "Sat 10 Oct 11:00",
+    "Sat 10 Oct 12:00"
+   ],
+   "weekly_pattern": [
+    "Sat 10:00",
+    "Sat 11:00",
+    "Sat 12:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "trinity-sports-centre",
+   "url": "https://www.fcurban.com/location/trinity-sports-centre",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "tsv-moosachhartmannshofen",
+   "url": "https://www.fcurban.com/location/tsv-moosachhartmannshofen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "tuinstraat-58a41",
+   "url": "https://www.fcurban.com/location/tuinstraat-58a41",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "universidad-de-alicante",
+   "url": "https://www.fcurban.com/location/universidad-de-alicante",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "usv-hercules",
+   "url": "https://www.fcurban.com/location/usv-hercules",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Sun 04 Oct 11:00",
+    "Sun 11 Oct 11:00"
+   ],
+   "weekly_pattern": [
+    "Sun 11:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "vintervikshallen",
+   "url": "https://www.fcurban.com/location/vintervikshallen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "voetbalvereniging-edo",
+   "url": "https://www.fcurban.com/location/voetbalvereniging-edo",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "vondelpark",
+   "url": "https://www.fcurban.com/location/vondelpark",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Sun 04 Oct 11:00",
+    "Sun 04 Oct 12:00",
+    "Sun 11 Oct 11:00",
+    "Sun 11 Oct 12:00"
+   ],
+   "weekly_pattern": [
+    "Sun 11:00",
+    "Sun 12:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "vrbergs-ip",
+   "url": "https://www.fcurban.com/location/vrbergs-ip",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "vv-maarssen",
+   "url": "https://www.fcurban.com/location/vv-maarssen",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "vv-vredenburch",
+   "url": "https://www.fcurban.com/location/vv-vredenburch",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 19:00",
+    "Sun 04 Oct 11:00",
+    "Fri 09 Oct 19:00",
+    "Sun 11 Oct 10:00"
+   ],
+   "weekly_pattern": [
+    "Fri 19:00",
+    "Sun 10:00",
+    "Sun 11:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "walker-activity-dome",
+   "url": "https://www.fcurban.com/location/walker-activity-dome",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Mon 05 Oct 20:00",
+    "Mon 12 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Mon 20:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "westerpark-c309c",
+   "url": "https://www.fcurban.com/location/westerpark-c309c",
+   "postcode": "",
+   "live": true,
+   "next_games": [
+    "Fri 02 Oct 18:30",
+    "Mon 05 Oct 18:30",
+    "Mon 05 Oct 19:30",
+    "Fri 09 Oct 18:30",
+    "Mon 12 Oct 18:30",
+    "Mon 12 Oct 19:30"
+   ],
+   "weekly_pattern": [
+    "Fri 18:30",
+    "Mon 18:30",
+    "Mon 19:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "white-city-phoenix-academy",
+   "url": "https://www.fcurban.com/location/white-city-phoenix-academy",
+   "postcode": "W12 0RQ",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "whitechapel",
+   "url": "https://www.fcurban.com/location/whitechapel",
+   "postcode": "E1 2JR",
+   "live": true,
+   "next_games": [
+    "Tue 29 Sep 19:30",
+    "Tue 29 Sep 20:30",
+    "Wed 30 Sep 19:30",
+    "Wed 30 Sep 20:30",
+    "Thu 01 Oct 19:30",
+    "Mon 05 Oct 19:30",
+    "Mon 05 Oct 20:30",
+    "Tue 06 Oct 19:30",
+    "Tue 06 Oct 20:30",
+    "Wed 07 Oct 19:30",
+    "Wed 07 Oct 20:30",
+    "Thu 08 Oct 19:30",
+    "Mon 12 Oct 19:30",
+    "Mon 12 Oct 20:30",
+    "Tue 13 Oct 19:30",
+    "Tue 13 Oct 20:30"
+   ],
+   "weekly_pattern": [
+    "Mon 19:30",
+    "Mon 20:30",
+    "Thu 19:30",
+    "Tue 19:30",
+    "Tue 20:30",
+    "Wed 19:30",
+    "Wed 20:30"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "whittington-park",
+   "url": "https://www.fcurban.com/location/whittington-park",
+   "postcode": "N19 4RS",
+   "live": true,
+   "next_games": [
+    "Thu 01 Oct 21:00",
+    "Fri 02 Oct 20:00",
+    "Thu 08 Oct 21:00",
+    "Fri 09 Oct 20:00"
+   ],
+   "weekly_pattern": [
+    "Fri 20:00",
+    "Thu 21:00"
+   ],
+   "is_london_text": true
+  },
+  {
+   "slug": "xerxesdzb",
+   "url": "https://www.fcurban.com/location/xerxesdzb",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "zaandammerplein",
+   "url": "https://www.fcurban.com/location/zaandammerplein",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  },
+  {
+   "slug": "zinkensdamms-idrottsplats-d663d",
+   "url": "https://www.fcurban.com/location/zinkensdamms-idrottsplats-d663d",
+   "postcode": "",
+   "live": false,
+   "next_games": [],
+   "weekly_pattern": [],
+   "is_london_text": true
+  }
+ ]
+}
