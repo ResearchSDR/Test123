@@ -1,0 +1,1110 @@
+[
+ {
+  "slug": "alicante-ftbol-indoor",
+  "city": "Alicante",
+  "address": "Calle T\u00e1rbena 5, 03008 Alicante Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "arena-alicante-c843c",
+  "city": "Alicante",
+  "address": "Av. del Locutor Vicente Hip\u00f3lito, s/n, 03540 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "arena-bar-grill",
+  "city": "Munich",
+  "address": "Riesenfeldstra\u00dfe 30, 80809 Munich",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "ark-academy-wembley-park",
+  "city": "London",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "ark-elvin-wembley-central",
+  "city": "London",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "aspuddens-idrottsplats",
+  "city": "Stockholm",
+  "address": "H\u00f6vdingagatan 20, 126 52 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "asv-blauwwit",
+  "city": "Amsterdam",
+  "address": "Sloterweg 1043K, 1066 CC  Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "avv-sdz",
+  "city": "Amsterdam",
+  "address": "Transformatorweg 10, 1014 AK  Amsterdam",
+  "soon": [
+   "Fri 21:00",
+   "Mon 21:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "barnet",
+  "city": "London",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "bellevue-bollplan",
+  "city": "Stockholm",
+  "address": "Brunnsviksv\u00e4gen 10, 113 47 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "bergshamra-ip",
+  "city": "Stockholm",
+  "address": "Hjortstigen 4, Solna,,  170 71 Stockholmn",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "betondorp",
+  "city": "Amsterdam",
+  "address": "Onderlangs 21-22, 1097 ZJ Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "blauwwit-erasmuspark",
+  "city": "Amsterdam",
+  "address": "Joos Banckersweg 18A, 1056 EP Amsterdam",
+  "soon": [
+   "Mon 18:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "borgerstraat",
+  "city": "Amsterdam",
+  "address": "Borgerstraat 109, 1053PE Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "club-deportivo-horizonte-d938f",
+  "city": "",
+  "address": "C. Brisas, 2, 30830 La \u00d1ora, Murcia, 30830 Murcia",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "club-san-jorge",
+  "city": "",
+  "address": "Avda. Picos de Europa s/n Urb, 30507 Murcia",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "colegio-jesuitas",
+  "city": "Alicante",
+  "address": "C. del Padre Arrupe, 03016 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "colegio-salesianos",
+  "city": "Alicante",
+  "address": "Av. Vicente Blasco Iba\u00f1ez, 03005 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "colegio-salesianos-futsal",
+  "city": "Alicante",
+  "address": "Av. Vicente Blasco Iba\u00f1ez, 03005 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "corantijnstraat",
+  "city": "Amsterdam",
+  "address": "Corantijnstraat 9, 1058 DA Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "coubertin",
+  "city": "Munich",
+  "address": "Coubertinpl. 80, 80809 M\u00fcnchen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "de-parrel",
+  "city": "Groningen",
+  "address": "Eikenlaan 292, 9741EW Groningen",
+  "soon": [
+   "Mon 18:00",
+   "Mon 19:00",
+   "Thu 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "denmark-road-sports-centre",
+  "city": "Manchester",
+  "address": "",
+  "soon": [
+   "Tue 19:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "dhsc",
+  "city": "Utrecht",
+  "address": "Thorbeckelaan 16, 3552 CS Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "drakenbergsparken-bollplan",
+  "city": "Stockholm",
+  "address": "Hornstull, 11741 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "dvva-sv-de-meer",
+  "city": "Amsterdam",
+  "address": "Drie burgpad 5, 1097 HK Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "enskede-ip",
+  "city": "Stockholm",
+  "address": "Enskedev\u00e4gen, 122 63 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "eriksdals-bollplan",
+  "city": "Stockholm",
+  "address": "Ringv\u00e4gen 60, 118 61 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "eriksdalshallen",
+  "city": "Stockholm",
+  "address": "Ringv\u00e4gen 70, 118 61 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "faja-lobi-kds-f765c",
+  "city": "Utrecht",
+  "address": "Rooseveltlaan 1116, 3526 BT Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "garrincha",
+  "city": "Antwerp",
+  "address": "",
+  "soon": [
+   "Thu 19:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "gubbngens-bollplan",
+  "city": "Stockholm",
+  "address": "Gubb\u00e4ngsv\u00e4gen 63, 122 44 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "gubbngshallen",
+  "city": "Stockholm",
+  "address": "Lingv\u00e4gen 131, 122 45 Enskede",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "gymzaal-heidebloemstraat",
+  "city": "Nijmegen",
+  "address": "Heidebloemstraat 75, 6533 SL  Nijmegen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "gymzaal-kanunnik-faberstraat",
+  "city": "Nijmegen",
+  "address": "Kannunnik Faberstraat 65, 6525 TP Nijmegen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "gymzaal-theophile-de-bockstraat",
+  "city": "Amsterdam",
+  "address": "Theophile de Bockstraat 100-D, 1058 VC Amsterdam",
+  "soon": [
+   "Thu 18:30",
+   "Thu 19:30",
+   "Tue 20:00",
+   "Wed 18:30",
+   "Wed 19:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "gymzaal-walhallalaan",
+  "city": "Rotterdam",
+  "address": "Walhallalaan 116, 3072 ES Rotterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hagstra-idrottsplats",
+  "city": "Stockholm",
+  "address": "Hags\u00e4trav\u00e4gen 105, 124 70 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hart-van-noord",
+  "city": "Utrecht",
+  "address": "Trumanlaan 60, 3527 BR Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hdm",
+  "city": "Den Haag",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "heideveldstraat",
+  "city": "Eindhoven",
+  "address": "Heideveldstraat 4, 5643 CH Eindhoven",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hgerstenssens-bp",
+  "city": "Stockholm",
+  "address": "Valutav\u00e4gen, 129 35 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hic-amstelveen",
+  "city": "Amsterdam",
+  "address": "Escapade 7, 1183 NM Amstelveen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "high-tech-soccer-academy",
+  "city": "Eindhoven",
+  "address": "Urkhovenseweg 5, 5641 KA  Eindhoven",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hjorthagens-idrottsplats",
+  "city": "Stockholm",
+  "address": "J\u00e4gm\u00e4stargatan 26, 115 42 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hjulsta-bp",
+  "city": "Stockholm",
+  "address": "Hjulstastr\u00e5ket 31, 163 63 Sp\u00e5nga",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hms",
+  "city": "Utrecht",
+  "address": "Burgemeester Norbruislaan 680, 3555 EZ Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "hogar-provincial",
+  "city": "Alicante",
+  "address": "C. Hogar Provincial, 33, 03559 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "humlegrden",
+  "city": "Stockholm",
+  "address": "Engelbrektsgatan 2, 114 32 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "indoor-blauwwit",
+  "city": "Amsterdam",
+  "address": "Joos Banckersplantsoen 104, 1056 LD Amsterdam",
+  "soon": [
+   "Thu 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "indoor-merksem",
+  "city": "Antwerp",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "indoor-oosterpark-0f6f2",
+  "city": "Amsterdam",
+  "address": "Pieter Nieuwlandstraat 3, 1093 XG Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "indoor-soccer",
+  "city": "",
+  "address": "Calle de la Palmera, 2, 30009 Murcia",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "infineon-football-ground",
+  "city": "Munich",
+  "address": "Campeon-Park, 85579 Munich",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "jaarbeursplein",
+  "city": "Utrecht",
+  "address": "Jaarbeursplein, 3521CA Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "karlbergsskolans-bp",
+  "city": "Stockholm",
+  "address": "Norrbackagatan 31-33, 113 34 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "keshovs-bp",
+  "city": "Stockholm",
+  "address": "\u00c5keshovsv\u00e4gen 43, 168 39  Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "klipperstraat",
+  "city": "Eindhoven",
+  "address": "Klipperstraat 1, 5616 KE Eindhoven",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "kmpetorpshallen",
+  "city": "Stockholm",
+  "address": "Medaljonggatan 3, 126 41 H\u00e4gersten",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "knutby-bp",
+  "city": "Stockholm",
+  "address": "Rinkebysv\u00e4ngen, 163 73 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "kristinebergs-ip",
+  "city": "Stockholm",
+  "address": "Elersv\u00e4gen 37, 112 51 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "leisure-united-bullocksteads",
+  "city": "Newcastle",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "lloyd-multiplein",
+  "city": "Rotterdam",
+  "address": "Schiehaven 13, 3024 EC Rotterdam",
+  "soon": [
+   "Mon 18:00",
+   "Mon 19:00",
+   "Sat 12:00",
+   "Thu 18:00",
+   "Thu 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "lngholmens-bollplan",
+  "city": "Stockholm",
+  "address": "Alstaviksv\u00e4gen, 111 21 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "mlarhjdens-idrottsplats",
+  "city": "Stockholm",
+  "address": "Lotta Sv\u00e4rds gr\u00e4nd 2, 129 55 H\u00e4gersten",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "montemar-c76a6",
+  "city": "Alicante",
+  "address": "Carrer Virgili 25, 03016 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "muiderpoort",
+  "city": "Amsterdam",
+  "address": "Polderweg, 1093 KL Amsterdam",
+  "soon": [
+   "Sat 11:00",
+   "Sat 12:00"
+  ],
+  "weekday_evening": false
+ },
+ {
+  "slug": "neptunusschiebroek",
+  "city": "Rotterdam",
+  "address": "Hazelaarweg 40, 3053PM Rotterdam",
+  "soon": [
+   "Sun 11:00",
+   "Sun 12:00"
+  ],
+  "weekday_evening": false
+ },
+ {
+  "slug": "norra-real-bollplan",
+  "city": "Stockholm",
+  "address": "Roslagsgatan, 113 51 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "olearys-htorget",
+  "city": "Stockholm",
+  "address": "Sl\u00f6jdgatan 11, 111 57 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "olympiapark-soccarena",
+  "city": "Munich",
+  "address": "Spiridon-Louis-Ring 3, 80809 Munich",
+  "soon": [
+   "Fri 18:30",
+   "Mon 21:00",
+   "Sat 11:00",
+   "Thu 18:00",
+   "Tue 18:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "park-grootschijn",
+  "city": "Antwerp",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "piscinas-san-vicente",
+  "city": "Alicante",
+  "address": "San Vicente del Raspeig, 2, 03690 Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "power-league",
+  "city": "Amsterdam",
+  "address": "Sportspark Olympiaplein, 1077 CL Amsterdam",
+  "soon": [
+   "Fri 18:00",
+   "Mon 18:00",
+   "Thu 18:00",
+   "Thu 19:00",
+   "Tue 18:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "powerleague-manchester-central",
+  "city": "Manchester",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "powerleague-manchester-nicholls",
+  "city": "Manchester",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "psv-handbal",
+  "city": "Eindhoven",
+  "address": "Oude Bosschebaan 30, 5624 AA Eindhoven",
+  "soon": [
+   "Mon 19:00",
+   "Wed 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "pvc",
+  "city": "Utrecht",
+  "address": "Kanaalweg 174, 3533 HL Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "radbout-sportcentrum-56d91",
+  "city": "Nijmegen",
+  "address": "Heyendaalseweg 141, 6525 AJ Nijmegen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "rdabergshallen",
+  "city": "Stockholm",
+  "address": "Upplandsgatan 100A, 113 43 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "rinkeby-bollplan",
+  "city": "Stockholm",
+  "address": "Rinkebystr\u00e5ket 53, 163 71 Sp\u00e5nga",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "rinkebyhallen",
+  "city": "Stockholm",
+  "address": "Rinkebystr\u00e5ket 51, 163 71 Sp\u00e5nga, Zweden",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "rooftop-zuidas",
+  "city": "Amsterdam",
+  "address": "Antonio Vivaldistraat 5, 1083 HP Amsterdam",
+  "soon": [
+   "Wed 18:00",
+   "Wed 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "rstasjns-ip",
+  "city": "Stockholm",
+  "address": "Vinterv\u00e4gen 45, 169 54 Solna",
+  "soon": [
+   "Fri 20:00",
+   "Wed 21:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "rvingehallen",
+  "city": "Stockholm",
+  "address": "K\u00f6penhamnsgatan 15, 164 42 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "rvv-blijdorp",
+  "city": "Rotterdam",
+  "address": "Noorderbocht 29, 3039 MA Rotterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "scheck-club",
+  "city": "Munich",
+  "address": "M\u00fcnchner Stra\u00dfe 15, 85774 M\u00fcnchen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "skanskvarnshallen",
+  "city": "Stockholm",
+  "address": "Gullmarsv\u00e4gen, 120 39  Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "skarpncks-sportflt",
+  "city": "Stockholm",
+  "address": "Horisontv\u00e4gen 15, 128 34 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "soccerworld",
+  "city": "Newcastle",
+  "address": "",
+  "soon": [
+   "Thu 19:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "soccerworld-mnchen",
+  "city": "Munich",
+  "address": "Georg-Kainz-Stra\u00dfe 8, 80993 M\u00fcnchen",
+  "soon": [
+   "Mon 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sofiaskolan-bollplan",
+  "city": "Stockholm",
+  "address": "Sk\u00e5negatan 117, 116 35 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "speed-soccer-arnhem",
+  "city": "Arnhem",
+  "address": "Beukenlaan 15, 6823 MA Arnhem",
+  "soon": [
+   "Mon 20:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "spnga-skills-academy",
+  "city": "Stockholm",
+  "address": "Finsp\u00e5ngsgatan 38-40, 163 53 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportcentrum-cvt",
+  "city": "Amsterdam",
+  "address": "Ed Pelsterpark 8, 1087 EJ Amsterdam",
+  "soon": [
+   "Wed 18:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sportcentrum-de-houtzagerij",
+  "city": "Den Haag",
+  "address": "Hobbemastraat 93, 2526 JG  Den Haag",
+  "soon": [
+   "Mon 18:00",
+   "Sat 11:00",
+   "Thu 20:00",
+   "Wed 18:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sportcentrum-wilrijkse-plein",
+  "city": "Antwerp",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportclub-esdo-007c2",
+  "city": "Den Haag",
+  "address": "Hengelolaan 600, 2544 GJ Den Haag",
+  "soon": [
+   "Mon 18:30",
+   "Wed 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sporthal-gaslaan",
+  "city": "Den Haag",
+  "address": "Gaslaan 200, 2562 LN Den Haag",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sporthal-lipa",
+  "city": "Den Haag",
+  "address": "Paets van Troostwijkstraat 93, 2522DM Den Haag",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sporthal-nieuw-welgelegen",
+  "city": "Utrecht",
+  "address": "Grebbeberglaan 13, 3527 VX Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sporthal-oostenburg",
+  "city": "Amsterdam",
+  "address": "Oostenburgergracht 151, 1018 ND Amsterdam",
+  "soon": [
+   "Thu 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sporthal-parkloods",
+  "city": "Antwerp",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sporthal-zuiderpark",
+  "city": "Den Haag",
+  "address": "mr, Meester P. Droogleever Fortuynweg 22, 2533 SR  Den Haag",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportpark-bijlmer",
+  "city": "Amsterdam",
+  "address": "Karspeldreef 501, 1102 BX  Amsterdam",
+  "soon": [
+   "Mon 19:00",
+   "Sun 13:30",
+   "Thu 18:00",
+   "Thu 19:00",
+   "Tue 19:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sportpark-de-dreef",
+  "city": "Utrecht",
+  "address": "Schooneggendreef 27C,, 3562 GG utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportpark-lunetten",
+  "city": "Utrecht",
+  "address": "Olympus 11, 3524 WB Utrecht",
+  "soon": [
+   "Mon 20:30",
+   "Thu 21:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sportpark-spieringshorn",
+  "city": "Amsterdam",
+  "address": "Sportpark Spieringhorn 10, 1043 AA Amsterdam",
+  "soon": [
+   "Fri 18:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "sporttraum",
+  "city": "Munich",
+  "address": "H\u00fcrderstra\u00dfe 2a, 85551 Kirchheim bei M\u00fcnchen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sporttraum-gmbh",
+  "city": "Munich",
+  "address": "H\u00fcrderstra\u00dfe 2a, 85551 Kirchheim bei M\u00fcnchen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportveld-zeeburgereiland",
+  "city": "Amsterdam",
+  "address": "Faas Wilkesstraat 159, 1095MD Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportzaal-evertsweertplantsoen",
+  "city": "Amsterdam",
+  "address": "Evertsweertplantsoen 3 , 1069 RK Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportzaal-radbout",
+  "city": "Nijmegen",
+  "address": "Heyendaalseweg 141, 6525 AJ Nijmegen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sportzaal-weesperzijde",
+  "city": "Amsterdam",
+  "address": "Weesperzijde 57, 1091 EG Amsterdam",
+  "soon": [
+   "Fri 18:00",
+   "Fri 19:00",
+   "Mon 18:00",
+   "Sat 11:00",
+   "Sat 12:00",
+   "Sun 11:00",
+   "Thu 18:00",
+   "Tue 18:00",
+   "Tue 19:00",
+   "Tue 20:00",
+   "Wed 20:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "st-erikshallen",
+  "city": "Stockholm",
+  "address": "Polhemsgatan 35, 112 30 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "stadshagens-ip",
+  "city": "Stockholm",
+  "address": "G\u00f6ransgatan 130, 112 45 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "stermalms-ip",
+  "city": "Stockholm",
+  "address": "Fiskartorpsv\u00e4gen 2, 114 33 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "stra-bollplan",
+  "city": "Stockholm",
+  "address": "Bj\u00f6rks\u00e4trav\u00e4gen 73, 127 38 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "stra-reals-bollplan",
+  "city": "Stockholm",
+  "address": "Artillerigatan 60, 114 45 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sturebyskolans-bp",
+  "city": "Stockholm",
+  "address": "Tystbergav\u00e4gen 41, 122 41 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sv-1880-mnchen",
+  "city": "Munich",
+  "address": "T\u00fcbinger Str. 10, 80686 M\u00fcnchen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "sv-houtwijk",
+  "city": "Den Haag",
+  "address": "L. van Vuurdestraat 16, 2552 JG Den Haag",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "svh",
+  "city": "Den Haag",
+  "address": "Noordweg 74, 2548 AC Den Haag",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "t-hert",
+  "city": "Nijmegen",
+  "address": "Thijmstraat 40, 6531 CS Nijmegen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "tantolunden-bollplann",
+  "city": "Stockholm",
+  "address": "Zinkens V\u00e4g 20, 117 41 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "transvaalbuurt-a9cd5",
+  "city": "Amsterdam",
+  "address": "President Brandstraat 198, 1091 WX Amsterdam",
+  "soon": [
+   "Sat 10:00",
+   "Sat 11:00",
+   "Sat 12:00"
+  ],
+  "weekday_evening": false
+ },
+ {
+  "slug": "trinity-sports-centre",
+  "city": "Manchester",
+  "address": "",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "tsv-moosachhartmannshofen",
+  "city": "Munich",
+  "address": "Lechelstra\u00dfe 35,, 80997 80997",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "tuinstraat-58a41",
+  "city": "Eindhoven",
+  "address": "Tuinstraat 6, 5611 PL Eindhoven",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "universidad-de-alicante",
+  "city": "Alicante",
+  "address": "Sant Vicent del Raspeig, 03690  Alicante",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "usv-hercules",
+  "city": "Utrecht",
+  "address": "Voorveldselaan 2, 3573 PV Utrecht",
+  "soon": [
+   "Sun 11:00"
+  ],
+  "weekday_evening": false
+ },
+ {
+  "slug": "vintervikshallen",
+  "city": "Stockholm",
+  "address": "Vinterviksv\u00e4gen 10, 117 65 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "voetbalvereniging-edo",
+  "city": "Utrecht",
+  "address": "Manitobadreef 10, 3565 CH Utrecht",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "vondelpark",
+  "city": "Amsterdam",
+  "address": "Vondelpark, 1071 AA Amsterdam",
+  "soon": [
+   "Sun 11:00",
+   "Sun 12:00"
+  ],
+  "weekday_evening": false
+ },
+ {
+  "slug": "vrbergs-ip",
+  "city": "Stockholm",
+  "address": "V\u00e5rbergsv\u00e4gen, 127 43 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "vv-maarssen",
+  "city": "Utrecht",
+  "address": "Sportparkweg 1, 3604 AW  Maarssen",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "vv-vredenburch",
+  "city": "Den Haag",
+  "address": "Julialaantje 15B, 2282 NW Rijswijk",
+  "soon": [
+   "Fri 19:00",
+   "Sun 10:00",
+   "Sun 11:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "walker-activity-dome",
+  "city": "Newcastle",
+  "address": "",
+  "soon": [
+   "Mon 20:00"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "westerpark-c309c",
+  "city": "Amsterdam",
+  "address": "Kl\u00f6nneplein 10, 1014 DD Amsterdam",
+  "soon": [
+   "Fri 18:30",
+   "Mon 18:30",
+   "Mon 19:30"
+  ],
+  "weekday_evening": true
+ },
+ {
+  "slug": "xerxesdzb",
+  "city": "Rotterdam",
+  "address": "Igor Stravinskisingel 1 , 3069MA Rotterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "zaandammerplein",
+  "city": "Amsterdam",
+  "address": "Zaamdammerplein, 1013 ZK  Amsterdam",
+  "soon": [],
+  "weekday_evening": false
+ },
+ {
+  "slug": "zinkensdamms-idrottsplats-d663d",
+  "city": "Stockholm",
+  "address": "Ringv\u00e4gen 16, 117 26 Stockholm",
+  "soon": [],
+  "weekday_evening": false
+ }
+]
